@@ -33,15 +33,6 @@ function GetPlayerPed(playerId) end
 -- @return int
 function PlayerId() end
 
--- Sets the ped drunk sounds. This only sets the drunk sound to ped/player. To give the Ped a drunk effect with drunk walking animation try using SetPedMovementClipset
--- @module fivem
--- @submodule player
--- @link https://wiki.fivem.net/wiki/SetPedIsDrunk
--- @param ped Ped
--- @param toggle bool
--- @return void
-function SetPedIsDrunk(ped, toggle) end
-
 -- Sets the model of a player. You must first request it before actually using it.
 -- @module fivem
 -- @submodule player
