@@ -1,7 +1,8 @@
 # FiveM LUA SDK
 
-## Usage
+[FiveM Forum](https://forum.fivem.net/t/documented-fivem-lua-sdk/25957)
 
+## Usage
 If you use [IntelliJ IDEA](https://www.jetbrains.com/idea) you have to install the [LUA Plugin](https://plugins.jetbrains.com/plugin/5055-lua). Via *Project Structure* => *SDKs* you can add the path to this SDK. After this you have to restart your IDE to reload the external libraries. From this point you will get all the functions as autocomplete and with a link to the SDK documentation. 
 
 ## Sources
