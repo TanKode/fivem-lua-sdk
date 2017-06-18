@@ -3,7 +3,6 @@
 -- @submodule streaming
 -- @see LOAD_ALL_OBJECTS_NOW
 -- @usage void LOAD_ALL_OBJECTS_NOW();
--- @param undefined
 -- @return void
 function LoadAllObjectsNow() end
 
@@ -13,16 +12,16 @@ function LoadAllObjectsNow() end
 -- @see LOAD_SCENE
 -- @usage void LOAD_SCENE(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return void
-function LoadScene() end
+function LoadScene(x, y, z) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see NETWORK_UPDATE_LOAD_SCENE
 -- @usage Any NETWORK_UPDATE_LOAD_SCENE();
--- @param undefined
 -- @return Any
 function NetworkUpdateLoadScene() end
 
@@ -31,7 +30,6 @@ function NetworkUpdateLoadScene() end
 -- @submodule streaming
 -- @see NETWORK_STOP_LOAD_SCENE
 -- @usage void NETWORK_STOP_LOAD_SCENE();
--- @param undefined
 -- @return void
 function NetworkStopLoadScene() end
 
@@ -40,7 +38,6 @@ function NetworkStopLoadScene() end
 -- @submodule streaming
 -- @see IS_NETWORK_LOADING_SCENE
 -- @usage BOOL IS_NETWORK_LOADING_SCENE();
--- @param undefined
 -- @return BOOL
 function IsNetworkLoadingScene() end
 
@@ -50,9 +47,9 @@ function IsNetworkLoadingScene() end
 -- @see SET_INTERIOR_ACTIVE
 -- @usage void SET_INTERIOR_ACTIVE(int interiorID, BOOL toggle);
 -- @param interiorID int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetInteriorActive() end
+function SetInteriorActive(interiorID, toggle) end
 
 -- Request a model to be loaded into memory  Looking it the disassembly, it seems like it actually returns the model if it's already loaded.
 -- @module native
@@ -61,7 +58,7 @@ function SetInteriorActive() end
 -- @usage void REQUEST_MODEL(Hash model);
 -- @param model Hash
 -- @return void
-function RequestModel() end
+function RequestModel(model) end
 
 -- @todo
 -- @module native
@@ -70,7 +67,7 @@ function RequestModel() end
 -- @usage void REQUEST_MENU_PED_MODEL(Hash model);
 -- @param model Hash
 -- @return void
-function RequestMenuPedModel() end
+function RequestMenuPedModel(model) end
 
 -- Checks if the specified model has loaded into memory.
 -- @module native
@@ -79,7 +76,7 @@ function RequestMenuPedModel() end
 -- @usage BOOL HAS_MODEL_LOADED(Hash model);
 -- @param model Hash
 -- @return BOOL
-function HasModelLoaded() end
+function HasModelLoaded(model) end
 
 -- Unloads model from memory
 -- @module native
@@ -88,7 +85,7 @@ function HasModelLoaded() end
 -- @usage void SET_MODEL_AS_NO_LONGER_NEEDED(Hash model);
 -- @param model Hash
 -- @return void
-function SetModelAsNoLongerNeeded() end
+function SetModelAsNoLongerNeeded(model) end
 
 -- Check if model is in cdimage(rpf)
 -- @module native
@@ -97,7 +94,7 @@ function SetModelAsNoLongerNeeded() end
 -- @usage BOOL IS_MODEL_IN_CDIMAGE(Hash model);
 -- @param model Hash
 -- @return BOOL
-function IsModelInCdimage() end
+function IsModelInCdimage(model) end
 
 -- Returns whether the specified model exists in the game.
 -- @module native
@@ -106,7 +103,7 @@ function IsModelInCdimage() end
 -- @usage BOOL IS_MODEL_VALID(Hash model);
 -- @param model Hash
 -- @return BOOL
-function IsModelValid() end
+function IsModelValid(model) end
 
 -- Returns whether the specified model represents a vehicle.
 -- @module native
@@ -115,7 +112,7 @@ function IsModelValid() end
 -- @usage BOOL IS_MODEL_A_VEHICLE(Hash model);
 -- @param model Hash
 -- @return BOOL
-function IsModelAVehicle() end
+function IsModelAVehicle(model) end
 
 -- @todo
 -- @module native
@@ -123,9 +120,10 @@ function IsModelAVehicle() end
 -- @see REQUEST_COLLISION_AT_COORD
 -- @usage Any REQUEST_COLLISION_AT_COORD(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return Any
-function RequestCollisionAtCoord() end
+function RequestCollisionAtCoord(x, y, z) end
 
 -- @todo
 -- @module native
@@ -134,7 +132,7 @@ function RequestCollisionAtCoord() end
 -- @usage void REQUEST_COLLISION_FOR_MODEL(Hash model);
 -- @param model Hash
 -- @return void
-function RequestCollisionForModel() end
+function RequestCollisionForModel(model) end
 
 -- @todo
 -- @module native
@@ -143,7 +141,7 @@ function RequestCollisionForModel() end
 -- @usage BOOL HAS_COLLISION_FOR_MODEL_LOADED(Hash model);
 -- @param model Hash
 -- @return BOOL
-function HasCollisionForModelLoaded() end
+function HasCollisionForModelLoaded(model) end
 
 -- MulleDK19: Alias of REQUEST_COLLISION_AT_COORD.
 -- @module native
@@ -151,9 +149,10 @@ function HasCollisionForModelLoaded() end
 -- @see REQUEST_ADDITIONAL_COLLISION_AT_COORD
 -- @usage void REQUEST_ADDITIONAL_COLLISION_AT_COORD(float p0, float p1, float p2);
 -- @param p0 float
--- @param float
+-- @param p1 float
+-- @param p2 float
 -- @return void
-function RequestAdditionalCollisionAtCoord() end
+function RequestAdditionalCollisionAtCoord(p0, p1, p2) end
 
 -- @todo
 -- @module native
@@ -162,7 +161,7 @@ function RequestAdditionalCollisionAtCoord() end
 -- @usage BOOL DOES_ANIM_DICT_EXIST(char* animDict);
 -- @param animDict char*
 -- @return BOOL
-function DoesAnimDictExist() end
+function DoesAnimDictExist(animDict) end
 
 -- @todo
 -- @module native
@@ -171,7 +170,7 @@ function DoesAnimDictExist() end
 -- @usage void REQUEST_ANIM_DICT(char* animDict);
 -- @param animDict char*
 -- @return void
-function RequestAnimDict() end
+function RequestAnimDict(animDict) end
 
 -- @todo
 -- @module native
@@ -180,7 +179,7 @@ function RequestAnimDict() end
 -- @usage BOOL HAS_ANIM_DICT_LOADED(char* animDict);
 -- @param animDict char*
 -- @return BOOL
-function HasAnimDictLoaded() end
+function HasAnimDictLoaded(animDict) end
 
 -- @todo
 -- @module native
@@ -189,7 +188,7 @@ function HasAnimDictLoaded() end
 -- @usage void REMOVE_ANIM_DICT(char* animDict);
 -- @param animDict char*
 -- @return void
-function RemoveAnimDict() end
+function RemoveAnimDict(animDict) end
 
 -- Starts loading the specified animation set. An animation set provides movement animations for a ped. See SET_PED_MOVEMENT_CLIPSET.
 -- @module native
@@ -198,7 +197,7 @@ function RemoveAnimDict() end
 -- @usage void REQUEST_ANIM_SET(char* animSet);
 -- @param animSet char*
 -- @return void
-function RequestAnimSet() end
+function RequestAnimSet(animSet) end
 
 -- Gets whether the specified animation set has finished loading. An animation set provides movement animations for a ped. See SET_PED_MOVEMENT_CLIPSET.  Animation set and clip set are synonymous.
 -- @module native
@@ -207,7 +206,7 @@ function RequestAnimSet() end
 -- @usage BOOL HAS_ANIM_SET_LOADED(char* animSet);
 -- @param animSet char*
 -- @return BOOL
-function HasAnimSetLoaded() end
+function HasAnimSetLoaded(animSet) end
 
 -- Unloads the specified animation set. An animation set provides movement animations for a ped. See SET_PED_MOVEMENT_CLIPSET.  Animation set and clip set are synonymous.
 -- @module native
@@ -216,7 +215,7 @@ function HasAnimSetLoaded() end
 -- @usage void REMOVE_ANIM_SET(char* animSet);
 -- @param animSet char*
 -- @return void
-function RemoveAnimSet() end
+function RemoveAnimSet(animSet) end
 
 -- @todo
 -- @module native
@@ -225,7 +224,7 @@ function RemoveAnimSet() end
 -- @usage void REQUEST_CLIP_SET(char* clipSet);
 -- @param clipSet char*
 -- @return void
-function RequestClipSet() end
+function RequestClipSet(clipSet) end
 
 -- Alias for HAS_ANIM_SET_LOADED.
 -- @module native
@@ -234,7 +233,7 @@ function RequestClipSet() end
 -- @usage BOOL HAS_CLIP_SET_LOADED(char* clipSet);
 -- @param clipSet char*
 -- @return BOOL
-function HasClipSetLoaded() end
+function HasClipSetLoaded(clipSet) end
 
 -- Alias for REMOVE_ANIM_SET.
 -- @module native
@@ -243,7 +242,7 @@ function HasClipSetLoaded() end
 -- @usage void REMOVE_CLIP_SET(char* clipSet);
 -- @param clipSet char*
 -- @return void
-function RemoveClipSet() end
+function RemoveClipSet(clipSet) end
 
 -- Exemple: REQUEST_IPL("TrevorsTrailerTrash");  IPL + Coords: http://pastebin.com/FyV5mMma
 -- @module native
@@ -252,7 +251,7 @@ function RemoveClipSet() end
 -- @usage void REQUEST_IPL(char* iplName);
 -- @param iplName char*
 -- @return void
-function RequestIpl() end
+function RequestIpl(iplName) end
 
 -- Removes an IPL from the map. IPL List: pastebin.com/pwkh0uRP   Example: C#: Function.Call(Hash.REMOVE_IPL, "trevorstrailertidy");  C++: STREAMING::REMOVE_IPL("trevorstrailertidy");  iplName = Name of IPL you want to remove.
 -- @module native
@@ -261,7 +260,7 @@ function RequestIpl() end
 -- @usage void REMOVE_IPL(char* iplName);
 -- @param iplName char*
 -- @return void
-function RemoveIpl() end
+function RemoveIpl(iplName) end
 
 -- @todo
 -- @module native
@@ -270,7 +269,7 @@ function RemoveIpl() end
 -- @usage BOOL IS_IPL_ACTIVE(char* iplName);
 -- @param iplName char*
 -- @return BOOL
-function IsIplActive() end
+function IsIplActive(iplName) end
 
 -- @todo
 -- @module native
@@ -279,7 +278,7 @@ function IsIplActive() end
 -- @usage void SET_STREAMING(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetStreaming() end
+function SetStreaming(toggle) end
 
 -- @todo
 -- @module native
@@ -288,7 +287,7 @@ function SetStreaming() end
 -- @usage void SET_GAME_PAUSES_FOR_STREAMING(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetGamePausesForStreaming() end
+function SetGamePausesForStreaming(toggle) end
 
 -- @todo
 -- @module native
@@ -297,7 +296,7 @@ function SetGamePausesForStreaming() end
 -- @usage void SET_REDUCE_PED_MODEL_BUDGET(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetReducePedModelBudget() end
+function SetReducePedModelBudget(toggle) end
 
 -- @todo
 -- @module native
@@ -306,7 +305,7 @@ function SetReducePedModelBudget() end
 -- @usage void SET_REDUCE_VEHICLE_MODEL_BUDGET(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetReduceVehicleModelBudget() end
+function SetReduceVehicleModelBudget(toggle) end
 
 -- This is a NOP function. It does nothing at all.
 -- @module native
@@ -315,14 +314,13 @@ function SetReduceVehicleModelBudget() end
 -- @usage void SET_DITCH_POLICE_MODELS(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetDitchPoliceModels() end
+function SetDitchPoliceModels(toggle) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see GET_NUMBER_OF_STREAMING_REQUESTS
 -- @usage int GET_NUMBER_OF_STREAMING_REQUESTS();
--- @param undefined
 -- @return int
 function GetNumberOfStreamingRequests() end
 
@@ -331,7 +329,6 @@ function GetNumberOfStreamingRequests() end
 -- @submodule streaming
 -- @see REQUEST_PTFX_ASSET
 -- @usage Any REQUEST_PTFX_ASSET();
--- @param undefined
 -- @return Any
 function RequestPtfxAsset() end
 
@@ -340,7 +337,6 @@ function RequestPtfxAsset() end
 -- @submodule streaming
 -- @see HAS_PTFX_ASSET_LOADED
 -- @usage BOOL HAS_PTFX_ASSET_LOADED();
--- @param undefined
 -- @return BOOL
 function HasPtfxAssetLoaded() end
 
@@ -349,7 +345,6 @@ function HasPtfxAssetLoaded() end
 -- @submodule streaming
 -- @see REMOVE_PTFX_ASSET
 -- @usage void REMOVE_PTFX_ASSET();
--- @param undefined
 -- @return void
 function RemovePtfxAsset() end
 
@@ -360,7 +355,7 @@ function RemovePtfxAsset() end
 -- @usage void REQUEST_NAMED_PTFX_ASSET(char* fxName);
 -- @param fxName char*
 -- @return void
-function RequestNamedPtfxAsset() end
+function RequestNamedPtfxAsset(fxName) end
 
 -- @todo
 -- @module native
@@ -369,7 +364,7 @@ function RequestNamedPtfxAsset() end
 -- @usage BOOL HAS_NAMED_PTFX_ASSET_LOADED(char* fxName);
 -- @param fxName char*
 -- @return BOOL
-function HasNamedPtfxAssetLoaded() end
+function HasNamedPtfxAssetLoaded(fxName) end
 
 -- @todo
 -- @module native
@@ -378,7 +373,7 @@ function HasNamedPtfxAssetLoaded() end
 -- @usage void SET_VEHICLE_POPULATION_BUDGET(int p0);
 -- @param p0 int
 -- @return void
-function SetVehiclePopulationBudget() end
+function SetVehiclePopulationBudget(p0) end
 
 -- @todo
 -- @module native
@@ -387,14 +382,13 @@ function SetVehiclePopulationBudget() end
 -- @usage void SET_PED_POPULATION_BUDGET(int p0);
 -- @param p0 int
 -- @return void
-function SetPedPopulationBudget() end
+function SetPedPopulationBudget(p0) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see CLEAR_FOCUS
 -- @usage void CLEAR_FOCUS();
--- @param undefined
 -- @return void
 function ClearFocus() end
 
@@ -405,7 +399,7 @@ function ClearFocus() end
 -- @usage void SET_FOCUS_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return void
-function SetFocusEntity() end
+function SetFocusEntity(entity) end
 
 -- @todo
 -- @module native
@@ -414,7 +408,7 @@ function SetFocusEntity() end
 -- @usage BOOL IS_ENTITY_FOCUS(Entity entity);
 -- @param entity Entity
 -- @return BOOL
-function IsEntityFocus() end
+function IsEntityFocus(entity) end
 
 -- @todo
 -- @module native
@@ -422,10 +416,13 @@ function IsEntityFocus() end
 -- @see FORMAT_FOCUS_HEADING
 -- @usage Any FORMAT_FOCUS_HEADING(float x, float y, float z, float rad, Any p4, Any p5);
 -- @param x float
--- @param float
--- @param Any
+-- @param y float
+-- @param z float
+-- @param rad float
+-- @param p4 Any
+-- @param p5 Any
 -- @return Any
-function FormatFocusHeading() end
+function FormatFocusHeading(x, y, z, rad, p4, p5) end
 
 -- @todo
 -- @module native
@@ -433,10 +430,15 @@ function FormatFocusHeading() end
 -- @see NEW_LOAD_SCENE_START
 -- @usage BOOL NEW_LOAD_SCENE_START(float p0, float p1, float p2, float p3, float p4, float p5, float p6, Any p7);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 Any
 -- @return BOOL
-function NewLoadSceneStart() end
+function NewLoadSceneStart(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 -- if (!sub_8f12("START LOAD SCENE SAFE")) {     if (CUTSCENE::GET_CUTSCENE_TIME() > 4178) {         STREAMING::_ACCFB4ACF53551B0(1973.845458984375, 3818.447265625, 32.43629837036133, 15.0, 2);         sub_8e9e("START LOAD SCENE SAFE", 1);     } }  (Previously known as STREAMING::_NEW_LOAD_SCENE_START_SAFE)
 -- @module native
@@ -444,17 +446,18 @@ function NewLoadSceneStart() end
 -- @see NEW_LOAD_SCENE_START_SPHERE
 -- @usage BOOL NEW_LOAD_SCENE_START_SPHERE(float x, float y, float z, float radius, Any p4);
 -- @param x float
--- @param float
--- @param Any
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param p4 Any
 -- @return BOOL
-function NewLoadSceneStartSphere() end
+function NewLoadSceneStartSphere(x, y, z, radius, p4) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see NEW_LOAD_SCENE_STOP
 -- @usage void NEW_LOAD_SCENE_STOP();
--- @param undefined
 -- @return void
 function NewLoadSceneStop() end
 
@@ -463,7 +466,6 @@ function NewLoadSceneStop() end
 -- @submodule streaming
 -- @see IS_NEW_LOAD_SCENE_ACTIVE
 -- @usage BOOL IS_NEW_LOAD_SCENE_ACTIVE();
--- @param undefined
 -- @return BOOL
 function IsNewLoadSceneActive() end
 
@@ -472,7 +474,6 @@ function IsNewLoadSceneActive() end
 -- @submodule streaming
 -- @see IS_NEW_LOAD_SCENE_LOADED
 -- @usage BOOL IS_NEW_LOAD_SCENE_LOADED();
--- @param undefined
 -- @return BOOL
 function IsNewLoadSceneLoaded() end
 
@@ -482,17 +483,17 @@ function IsNewLoadSceneLoaded() end
 -- @see START_PLAYER_SWITCH
 -- @usage void START_PLAYER_SWITCH(Ped from, Ped to, int flags, int switchType);
 -- @param from Ped
--- @param Ped
--- @param int
+-- @param to Ped
+-- @param flags int
+-- @param switchType int
 -- @return void
-function StartPlayerSwitch() end
+function StartPlayerSwitch(from, to, flags, switchType) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see STOP_PLAYER_SWITCH
 -- @usage void STOP_PLAYER_SWITCH();
--- @param undefined
 -- @return void
 function StopPlayerSwitch() end
 
@@ -501,7 +502,6 @@ function StopPlayerSwitch() end
 -- @submodule streaming
 -- @see IS_PLAYER_SWITCH_IN_PROGRESS
 -- @usage BOOL IS_PLAYER_SWITCH_IN_PROGRESS();
--- @param undefined
 -- @return BOOL
 function IsPlayerSwitchInProgress() end
 
@@ -510,7 +510,6 @@ function IsPlayerSwitchInProgress() end
 -- @submodule streaming
 -- @see GET_PLAYER_SWITCH_TYPE
 -- @usage int GET_PLAYER_SWITCH_TYPE();
--- @param undefined
 -- @return int
 function GetPlayerSwitchType() end
 
@@ -520,16 +519,19 @@ function GetPlayerSwitchType() end
 -- @see GET_IDEAL_PLAYER_SWITCH_TYPE
 -- @usage int GET_IDEAL_PLAYER_SWITCH_TYPE(float x1, float y1, float z1, float x2, float y2, float z2);
 -- @param x1 float
--- @param float
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
 -- @return int
-function GetIdealPlayerSwitchType() end
+function GetIdealPlayerSwitchType(x1, y1, z1, x2, y2, z2) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see GET_PLAYER_SWITCH_STATE
 -- @usage int GET_PLAYER_SWITCH_STATE();
--- @param undefined
 -- @return int
 function GetPlayerSwitchState() end
 
@@ -538,7 +540,6 @@ function GetPlayerSwitchState() end
 -- @submodule streaming
 -- @see GET_PLAYER_SHORT_SWITCH_STATE
 -- @usage int GET_PLAYER_SHORT_SWITCH_STATE();
--- @param undefined
 -- @return int
 function GetPlayerShortSwitchState() end
 
@@ -548,17 +549,22 @@ function GetPlayerShortSwitchState() end
 -- @see SET_PLAYER_SWITCH_OUTRO
 -- @usage void SET_PLAYER_SWITCH_OUTRO(float p0, float p1, float p2, float p3, float p4, float p5, float p6, float p7, Any p8);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 float
+-- @param p8 Any
 -- @return void
-function SetPlayerSwitchOutro() end
+function SetPlayerSwitchOutro(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
 -- Hash collision
 -- @module native
 -- @submodule streaming
 -- @see SET_PLAYER_INVERTED_UP
 -- @usage int SET_PLAYER_INVERTED_UP();
--- @param undefined
 -- @return int
 function SetPlayerInvertedUp() end
 
@@ -567,7 +573,6 @@ function SetPlayerInvertedUp() end
 -- @submodule streaming
 -- @see DESTROY_PLAYER_IN_PAUSE_MENU
 -- @usage Any DESTROY_PLAYER_IN_PAUSE_MENU();
--- @param undefined
 -- @return Any
 function DestroyPlayerInPauseMenu() end
 
@@ -578,14 +583,13 @@ function DestroyPlayerInPauseMenu() end
 -- @usage void PREFETCH_SRL(char* srl);
 -- @param srl char*
 -- @return void
-function PrefetchSrl() end
+function PrefetchSrl(srl) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see IS_SRL_LOADED
 -- @usage BOOL IS_SRL_LOADED();
--- @param undefined
 -- @return BOOL
 function IsSrlLoaded() end
 
@@ -594,7 +598,6 @@ function IsSrlLoaded() end
 -- @submodule streaming
 -- @see BEGIN_SRL
 -- @usage void BEGIN_SRL();
--- @param undefined
 -- @return void
 function BeginSrl() end
 
@@ -603,7 +606,6 @@ function BeginSrl() end
 -- @submodule streaming
 -- @see END_SRL
 -- @usage void END_SRL();
--- @param undefined
 -- @return void
 function EndSrl() end
 
@@ -614,7 +616,7 @@ function EndSrl() end
 -- @usage void SET_SRL_TIME(float p0);
 -- @param p0 float
 -- @return void
-function SetSrlTime() end
+function SetSrlTime(p0) end
 
 -- @todo
 -- @module native
@@ -622,16 +624,17 @@ function SetSrlTime() end
 -- @see SET_HD_AREA
 -- @usage void SET_HD_AREA(float x, float y, float z, float ground);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
+-- @param ground float
 -- @return void
-function SetHdArea() end
+function SetHdArea(x, y, z, ground) end
 
 -- @todo
 -- @module native
 -- @submodule streaming
 -- @see CLEAR_HD_AREA
 -- @usage void CLEAR_HD_AREA();
--- @param undefined
 -- @return void
 function ClearHdArea() end
 
@@ -640,6 +643,5 @@ function ClearHdArea() end
 -- @submodule streaming
 -- @see SHUTDOWN_CREATOR_BUDGET
 -- @usage void SHUTDOWN_CREATOR_BUDGET();
--- @param undefined
 -- @return void
 function ShutdownCreatorBudget() end

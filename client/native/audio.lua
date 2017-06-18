@@ -4,10 +4,10 @@
 -- @see PLAY_PED_RINGTONE
 -- @usage void PLAY_PED_RINGTONE(char* ringtoneName, Ped ped, BOOL p2);
 -- @param ringtoneName char*
--- @param Ped
--- @param BOOL
+-- @param ped Ped
+-- @param p2 BOOL
 -- @return void
-function PlayPedRingtone() end
+function PlayPedRingtone(ringtoneName, ped, p2) end
 
 -- @todo
 -- @module native
@@ -16,7 +16,7 @@ function PlayPedRingtone() end
 -- @usage BOOL IS_PED_RINGTONE_PLAYING(Ped ped);
 -- @param ped Ped
 -- @return BOOL
-function IsPedRingtonePlaying() end
+function IsPedRingtonePlaying(ped) end
 
 -- @todo
 -- @module native
@@ -25,14 +25,13 @@ function IsPedRingtonePlaying() end
 -- @usage void STOP_PED_RINGTONE(Ped ped);
 -- @param ped Ped
 -- @return void
-function StopPedRingtone() end
+function StopPedRingtone(ped) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see IS_MOBILE_PHONE_CALL_ONGOING
 -- @usage BOOL IS_MOBILE_PHONE_CALL_ONGOING();
--- @param undefined
 -- @return BOOL
 function IsMobilePhoneCallOngoing() end
 
@@ -41,7 +40,6 @@ function IsMobilePhoneCallOngoing() end
 -- @submodule audio
 -- @see CREATE_NEW_SCRIPTED_CONVERSATION
 -- @usage void CREATE_NEW_SCRIPTED_CONVERSATION();
--- @param undefined
 -- @return void
 function CreateNewScriptedConversation() end
 
@@ -51,11 +49,20 @@ function CreateNewScriptedConversation() end
 -- @see ADD_LINE_TO_CONVERSATION
 -- @usage void ADD_LINE_TO_CONVERSATION(int p0, char* p1, char* p2, int p3, int p4, BOOL p5, BOOL p6, BOOL p7, BOOL p8, int p9, BOOL p10, BOOL p11, BOOL p12);
 -- @param p0 int
--- @param char*
--- @param int
--- @param BOOL
+-- @param p1 char*
+-- @param p2 char*
+-- @param p3 int
+-- @param p4 int
+-- @param p5 BOOL
+-- @param p6 BOOL
+-- @param p7 BOOL
+-- @param p8 BOOL
+-- @param p9 int
+-- @param p10 BOOL
+-- @param p11 BOOL
+-- @param p12 BOOL
 -- @return void
-function AddLineToConversation() end
+function AddLineToConversation(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
 -- 4 calls in the b617d scripts. The only one with p0 and p2 in clear text:  AUDIO::ADD_PED_TO_CONVERSATION(5, l_AF, "DINAPOLI");  ================================================= One of the 2 calls in dialogue_handler.c p0 is in a while-loop, and so is determined to also possibly be 0 - 15. Based on it asking if does_entity_exist for the global I have determined that p1 is, in fact, the ped, but could be wrong.
 -- @module native
@@ -63,10 +70,10 @@ function AddLineToConversation() end
 -- @see ADD_PED_TO_CONVERSATION
 -- @usage void ADD_PED_TO_CONVERSATION(Any p0, Any ped, char* p2);
 -- @param p0 Any
--- @param Any
--- @param char*
+-- @param ped Any
+-- @param p2 char*
 -- @return void
-function AddPedToConversation() end
+function AddPedToConversation(p0, ped, p2) end
 
 -- If this is the correct name, what microphone? I know your TV isn't going to reach out and adjust your headset so..
 -- @module native
@@ -74,9 +81,17 @@ function AddPedToConversation() end
 -- @see SET_MICROPHONE_POSITION
 -- @usage void SET_MICROPHONE_POSITION(BOOL p0, float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3);
 -- @param p0 BOOL
--- @param float
+-- @param x1 float
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param x3 float
+-- @param y3 float
+-- @param z3 float
 -- @return void
-function SetMicrophonePosition() end
+function SetMicrophonePosition(p0, x1, y1, z1, x2, y2, z2, x3, y3, z3) end
 
 -- @todo
 -- @module native
@@ -84,9 +99,9 @@ function SetMicrophonePosition() end
 -- @see START_SCRIPT_PHONE_CONVERSATION
 -- @usage void START_SCRIPT_PHONE_CONVERSATION(BOOL p0, BOOL p1);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function StartScriptPhoneConversation() end
+function StartScriptPhoneConversation(p0, p1) end
 
 -- @todo
 -- @module native
@@ -94,9 +109,9 @@ function StartScriptPhoneConversation() end
 -- @see PRELOAD_SCRIPT_PHONE_CONVERSATION
 -- @usage void PRELOAD_SCRIPT_PHONE_CONVERSATION(BOOL p0, BOOL p1);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function PreloadScriptPhoneConversation() end
+function PreloadScriptPhoneConversation(p0, p1) end
 
 -- @todo
 -- @module native
@@ -104,9 +119,11 @@ function PreloadScriptPhoneConversation() end
 -- @see START_SCRIPT_CONVERSATION
 -- @usage void START_SCRIPT_CONVERSATION(BOOL p0, BOOL p1, BOOL p2, BOOL p3);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
+-- @param p3 BOOL
 -- @return void
-function StartScriptConversation() end
+function StartScriptConversation(p0, p1, p2, p3) end
 
 -- @todo
 -- @module native
@@ -114,16 +131,17 @@ function StartScriptConversation() end
 -- @see PRELOAD_SCRIPT_CONVERSATION
 -- @usage void PRELOAD_SCRIPT_CONVERSATION(BOOL p0, BOOL p1, BOOL p2, BOOL p3);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
+-- @param p3 BOOL
 -- @return void
-function PreloadScriptConversation() end
+function PreloadScriptConversation(p0, p1, p2, p3) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see START_PRELOADED_CONVERSATION
 -- @usage void START_PRELOADED_CONVERSATION();
--- @param undefined
 -- @return void
 function StartPreloadedConversation() end
 
@@ -132,7 +150,6 @@ function StartPreloadedConversation() end
 -- @submodule audio
 -- @see IS_SCRIPTED_CONVERSATION_ONGOING
 -- @usage BOOL IS_SCRIPTED_CONVERSATION_ONGOING();
--- @param undefined
 -- @return BOOL
 function IsScriptedConversationOngoing() end
 
@@ -141,7 +158,6 @@ function IsScriptedConversationOngoing() end
 -- @submodule audio
 -- @see IS_SCRIPTED_CONVERSATION_LOADED
 -- @usage BOOL IS_SCRIPTED_CONVERSATION_LOADED();
--- @param undefined
 -- @return BOOL
 function IsScriptedConversationLoaded() end
 
@@ -150,7 +166,6 @@ function IsScriptedConversationLoaded() end
 -- @submodule audio
 -- @see GET_CURRENT_SCRIPTED_CONVERSATION_LINE
 -- @usage Any GET_CURRENT_SCRIPTED_CONVERSATION_LINE();
--- @param undefined
 -- @return Any
 function GetCurrentScriptedConversationLine() end
 
@@ -161,14 +176,13 @@ function GetCurrentScriptedConversationLine() end
 -- @usage void PAUSE_SCRIPTED_CONVERSATION(BOOL p0);
 -- @param p0 BOOL
 -- @return void
-function PauseScriptedConversation() end
+function PauseScriptedConversation(p0) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see RESTART_SCRIPTED_CONVERSATION
 -- @usage void RESTART_SCRIPTED_CONVERSATION();
--- @param undefined
 -- @return void
 function RestartScriptedConversation() end
 
@@ -179,14 +193,13 @@ function RestartScriptedConversation() end
 -- @usage Any STOP_SCRIPTED_CONVERSATION(BOOL p0);
 -- @param p0 BOOL
 -- @return Any
-function StopScriptedConversation() end
+function StopScriptedConversation(p0) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see SKIP_TO_NEXT_SCRIPTED_CONVERSATION_LINE
 -- @usage void SKIP_TO_NEXT_SCRIPTED_CONVERSATION_LINE();
--- @param undefined
 -- @return void
 function SkipToNextScriptedConversationLine() end
 
@@ -196,9 +209,10 @@ function SkipToNextScriptedConversationLine() end
 -- @see INTERRUPT_CONVERSATION
 -- @usage void INTERRUPT_CONVERSATION(Any p0, Any* p1, Any* p2);
 -- @param p0 Any
--- @param Any*
+-- @param p1 Any*
+-- @param p2 Any*
 -- @return void
-function InterruptConversation() end
+function InterruptConversation(p0, p1, p2) end
 
 -- @todo
 -- @module native
@@ -207,14 +221,13 @@ function InterruptConversation() end
 -- @usage void REGISTER_SCRIPT_WITH_AUDIO(Any p0);
 -- @param p0 Any
 -- @return void
-function RegisterScriptWithAudio() end
+function RegisterScriptWithAudio(p0) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see UNREGISTER_SCRIPT_WITH_AUDIO
 -- @usage void UNREGISTER_SCRIPT_WITH_AUDIO();
--- @param undefined
 -- @return void
 function UnregisterScriptWithAudio() end
 
@@ -224,9 +237,9 @@ function UnregisterScriptWithAudio() end
 -- @see REQUEST_MISSION_AUDIO_BANK
 -- @usage BOOL REQUEST_MISSION_AUDIO_BANK(char* p0, BOOL p1);
 -- @param p0 char*
--- @param BOOL
+-- @param p1 BOOL
 -- @return BOOL
-function RequestMissionAudioBank() end
+function RequestMissionAudioBank(p0, p1) end
 
 -- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/XZ1tmGEz
 -- @module native
@@ -234,9 +247,9 @@ function RequestMissionAudioBank() end
 -- @see REQUEST_AMBIENT_AUDIO_BANK
 -- @usage BOOL REQUEST_AMBIENT_AUDIO_BANK(char* p0, BOOL p1);
 -- @param p0 char*
--- @param BOOL
+-- @param p1 BOOL
 -- @return BOOL
-function RequestAmbientAudioBank() end
+function RequestAmbientAudioBank(p0, p1) end
 
 -- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/AkmDAVn6
 -- @module native
@@ -244,9 +257,9 @@ function RequestAmbientAudioBank() end
 -- @see REQUEST_SCRIPT_AUDIO_BANK
 -- @usage BOOL REQUEST_SCRIPT_AUDIO_BANK(char* p0, BOOL p1);
 -- @param p0 char*
--- @param BOOL
+-- @param p1 BOOL
 -- @return BOOL
-function RequestScriptAudioBank() end
+function RequestScriptAudioBank(p0, p1) end
 
 -- @todo
 -- @module native
@@ -254,9 +267,9 @@ function RequestScriptAudioBank() end
 -- @see HINT_AMBIENT_AUDIO_BANK
 -- @usage Any HINT_AMBIENT_AUDIO_BANK(Any p0, Any p1);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
 -- @return Any
-function HintAmbientAudioBank() end
+function HintAmbientAudioBank(p0, p1) end
 
 -- @todo
 -- @module native
@@ -264,16 +277,15 @@ function HintAmbientAudioBank() end
 -- @see HINT_SCRIPT_AUDIO_BANK
 -- @usage Any HINT_SCRIPT_AUDIO_BANK(Any p0, Any p1);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
 -- @return Any
-function HintScriptAudioBank() end
+function HintScriptAudioBank(p0, p1) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see RELEASE_MISSION_AUDIO_BANK
 -- @usage void RELEASE_MISSION_AUDIO_BANK();
--- @param undefined
 -- @return void
 function ReleaseMissionAudioBank() end
 
@@ -282,7 +294,6 @@ function ReleaseMissionAudioBank() end
 -- @submodule audio
 -- @see RELEASE_AMBIENT_AUDIO_BANK
 -- @usage void RELEASE_AMBIENT_AUDIO_BANK();
--- @param undefined
 -- @return void
 function ReleaseAmbientAudioBank() end
 
@@ -293,14 +304,13 @@ function ReleaseAmbientAudioBank() end
 -- @usage void RELEASE_NAMED_SCRIPT_AUDIO_BANK(char* audioBank);
 -- @param audioBank char*
 -- @return void
-function ReleaseNamedScriptAudioBank() end
+function ReleaseNamedScriptAudioBank(audioBank) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see RELEASE_SCRIPT_AUDIO_BANK
 -- @usage void RELEASE_SCRIPT_AUDIO_BANK();
--- @param undefined
 -- @return void
 function ReleaseScriptAudioBank() end
 
@@ -309,7 +319,6 @@ function ReleaseScriptAudioBank() end
 -- @submodule audio
 -- @see GET_SOUND_ID
 -- @usage int GET_SOUND_ID();
--- @param undefined
 -- @return int
 function GetSoundId() end
 
@@ -320,7 +329,7 @@ function GetSoundId() end
 -- @usage void RELEASE_SOUND_ID(int soundId);
 -- @param soundId int
 -- @return void
-function ReleaseSoundId() end
+function ReleaseSoundId(soundId) end
 
 -- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/A8Ny8AHZ
 -- @module native
@@ -328,11 +337,13 @@ function ReleaseSoundId() end
 -- @see PLAY_SOUND
 -- @usage void PLAY_SOUND(Player soundId, char* audioName, char* audioRef, BOOL p3, Any p4, BOOL p5);
 -- @param soundId Player
--- @param char*
--- @param BOOL
--- @param Any
+-- @param audioName char*
+-- @param audioRef char*
+-- @param p3 BOOL
+-- @param p4 Any
+-- @param p5 BOOL
 -- @return void
-function PlaySound() end
+function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
 
 -- list: pastebin.com/DCeRiaLJ  All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/0neZdsZ5
 -- @module native
@@ -340,10 +351,11 @@ function PlaySound() end
 -- @see PLAY_SOUND_FRONTEND
 -- @usage void PLAY_SOUND_FRONTEND(int soundId, char* audioName, char* audioRef, BOOL p3);
 -- @param soundId int
--- @param char*
--- @param BOOL
+-- @param audioName char*
+-- @param audioRef char*
+-- @param p3 BOOL
 -- @return void
-function PlaySoundFrontend() end
+function PlaySoundFrontend(soundId, audioName, audioRef, p3) end
 
 -- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/f2A7vTj0  No changes made in b678d.  gtaforums.com/topic/795622-audio-for-mods
 -- @module native
@@ -351,12 +363,13 @@ function PlaySoundFrontend() end
 -- @see PLAY_SOUND_FROM_ENTITY
 -- @usage void PLAY_SOUND_FROM_ENTITY(int soundId, char* audioName, Entity entity, char* audioRef, BOOL p4, Any p5);
 -- @param soundId int
--- @param char*
--- @param Entity
--- @param BOOL
--- @param Any
+-- @param audioName char*
+-- @param entity Entity
+-- @param audioRef char*
+-- @param p4 BOOL
+-- @param p5 Any
 -- @return void
-function PlaySoundFromEntity() end
+function PlaySoundFromEntity(soundId, audioName, entity, audioRef, p4, p5) end
 
 -- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/eeFc5DiW  gtaforums.com/topic/795622-audio-for-mods
 -- @module native
@@ -364,12 +377,16 @@ function PlaySoundFromEntity() end
 -- @see PLAY_SOUND_FROM_COORD
 -- @usage void PLAY_SOUND_FROM_COORD(int soundId, char* audioName, float x, float y, float z, char* audioRef, BOOL p6, int range, BOOL p8);
 -- @param soundId int
--- @param char*
--- @param float
--- @param BOOL
--- @param int
+-- @param audioName char*
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param audioRef char*
+-- @param p6 BOOL
+-- @param range int
+-- @param p8 BOOL
 -- @return void
-function PlaySoundFromCoord() end
+function PlaySoundFromCoord(soundId, audioName, x, y, z, audioRef, p6, range, p8) end
 
 -- @todo
 -- @module native
@@ -378,7 +395,7 @@ function PlaySoundFromCoord() end
 -- @usage void STOP_SOUND(int soundId);
 -- @param soundId int
 -- @return void
-function StopSound() end
+function StopSound(soundId) end
 
 -- Could this be used alongside either,  SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES or _SET_NETWORK_ID_SYNC_TO_PLAYER to make it so other players can hear the sound while online? It'd be a bit troll-fun to be able to play the Zancudo UFO creepy sounds globally.
 -- @module native
@@ -387,7 +404,7 @@ function StopSound() end
 -- @usage int GET_NETWORK_ID_FROM_SOUND_ID(int soundId);
 -- @param soundId int
 -- @return int
-function GetNetworkIdFromSoundId() end
+function GetNetworkIdFromSoundId(soundId) end
 
 -- @todo
 -- @module native
@@ -396,7 +413,7 @@ function GetNetworkIdFromSoundId() end
 -- @usage int GET_SOUND_ID_FROM_NETWORK_ID(int netId);
 -- @param netId int
 -- @return int
-function GetSoundIdFromNetworkId() end
+function GetSoundIdFromNetworkId(netId) end
 
 -- @todo
 -- @module native
@@ -404,10 +421,10 @@ function GetSoundIdFromNetworkId() end
 -- @see SET_VARIABLE_ON_SOUND
 -- @usage void SET_VARIABLE_ON_SOUND(int soundId, Any* p1, float p2);
 -- @param soundId int
--- @param Any*
--- @param float
+-- @param p1 Any*
+-- @param p2 float
 -- @return void
-function SetVariableOnSound() end
+function SetVariableOnSound(soundId, p1, p2) end
 
 -- From the scripts, p0:  "ArmWrestlingIntensity", "INOUT", "Monkey_Stream", "ZoomLevel"
 -- @module native
@@ -415,9 +432,9 @@ function SetVariableOnSound() end
 -- @see SET_VARIABLE_ON_STREAM
 -- @usage void SET_VARIABLE_ON_STREAM(char* p0, float p1);
 -- @param p0 char*
--- @param float
+-- @param p1 float
 -- @return void
-function SetVariableOnStream() end
+function SetVariableOnStream(p0, p1) end
 
 -- @todo
 -- @module native
@@ -425,9 +442,9 @@ function SetVariableOnStream() end
 -- @see OVERRIDE_UNDERWATER_STREAM
 -- @usage void OVERRIDE_UNDERWATER_STREAM(Any* p0, BOOL p1);
 -- @param p0 Any*
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function OverrideUnderwaterStream() end
+function OverrideUnderwaterStream(p0, p1) end
 
 -- @todo
 -- @module native
@@ -436,7 +453,7 @@ function OverrideUnderwaterStream() end
 -- @usage BOOL HAS_SOUND_FINISHED(int soundId);
 -- @param soundId int
 -- @return BOOL
-function HasSoundFinished() end
+function HasSoundFinished(soundId) end
 
 -- @todo
 -- @module native
@@ -445,14 +462,13 @@ function HasSoundFinished() end
 -- @usage void OVERRIDE_TREVOR_RAGE(Any* p0);
 -- @param p0 Any*
 -- @return void
-function OverrideTrevorRage() end
+function OverrideTrevorRage(p0) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see RESET_TREVOR_RAGE
 -- @usage void RESET_TREVOR_RAGE();
--- @param undefined
 -- @return void
 function ResetTrevorRage() end
 
@@ -462,9 +478,9 @@ function ResetTrevorRage() end
 -- @see SET_PLAYER_ANGRY
 -- @usage void SET_PLAYER_ANGRY(Ped playerPed, BOOL disabled);
 -- @param playerPed Ped
--- @param BOOL
+-- @param disabled BOOL
 -- @return void
-function SetPlayerAngry() end
+function SetPlayerAngry(playerPed, disabled) end
 
 -- Needs another parameter [int p2]. The signature is PED::PLAY_PAIN(Ped ped, int painID, int p1, int p2);  Last 2 parameters always seem to be 0.  EX: Function.Call(Hash.PLAY_PAIN, TestPed, 6, 0, 0);  Known Pain IDs ________________________  1 - Doesn't seem to do anything. Does NOT crash the game like previously said. (Latest patch) 6 - Scream (Short) 7 - Scared Scream (Kinda Long) 8 - On Fire
 -- @module native
@@ -472,9 +488,10 @@ function SetPlayerAngry() end
 -- @see PLAY_PAIN
 -- @usage void PLAY_PAIN(Ped ped, int painID, int p1);
 -- @param ped Ped
--- @param int
+-- @param painID int
+-- @param p1 int
 -- @return void
-function PlayPain() end
+function PlayPain(ped, painID, p1) end
 
 -- Audio List gtaforums.com/topic/795622-audio-for-mods/  All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/FTeAj4yZ  Yes
 -- @module native
@@ -482,9 +499,9 @@ function PlayPain() end
 -- @see SET_AMBIENT_VOICE_NAME
 -- @usage void SET_AMBIENT_VOICE_NAME(Ped ped, char* name);
 -- @param ped Ped
--- @param char*
+-- @param name char*
 -- @return void
-function SetAmbientVoiceName() end
+function SetAmbientVoiceName(ped, name) end
 
 -- Needs to be called every frame.
 -- @module native
@@ -493,7 +510,7 @@ function SetAmbientVoiceName() end
 -- @usage void STOP_CURRENT_PLAYING_AMBIENT_SPEECH(Ped ped);
 -- @param ped Ped
 -- @return void
-function StopCurrentPlayingAmbientSpeech() end
+function StopCurrentPlayingAmbientSpeech(ped) end
 
 -- @todo
 -- @module native
@@ -502,7 +519,7 @@ function StopCurrentPlayingAmbientSpeech() end
 -- @usage BOOL IS_AMBIENT_SPEECH_PLAYING(Ped p0);
 -- @param p0 Ped
 -- @return BOOL
-function IsAmbientSpeechPlaying() end
+function IsAmbientSpeechPlaying(p0) end
 
 -- @todo
 -- @module native
@@ -511,7 +528,7 @@ function IsAmbientSpeechPlaying() end
 -- @usage BOOL IS_SCRIPTED_SPEECH_PLAYING(Any p0);
 -- @param p0 Any
 -- @return BOOL
-function IsScriptedSpeechPlaying() end
+function IsScriptedSpeechPlaying(p0) end
 
 -- @todo
 -- @module native
@@ -520,7 +537,7 @@ function IsScriptedSpeechPlaying() end
 -- @usage BOOL IS_ANY_SPEECH_PLAYING(Ped ped);
 -- @param ped Ped
 -- @return BOOL
-function IsAnySpeechPlaying() end
+function IsAnySpeechPlaying(ped) end
 
 -- @todo
 -- @module native
@@ -529,7 +546,7 @@ function IsAnySpeechPlaying() end
 -- @usage BOOL IS_PED_IN_CURRENT_CONVERSATION(Ped ped);
 -- @param ped Ped
 -- @return BOOL
-function IsPedInCurrentConversation() end
+function IsPedInCurrentConversation(ped) end
 
 -- Sets the ped drunk sounds.  Only works with PLAYER_PED_ID  ====================================================  As mentioned above, this only sets the drunk sound to ped/player.  To give the Ped a drunk effect with drunk walking animation try using SET_PED_MOVEMENT_CLIPSET  Below is an example  if (!Function.Call<bool>(Hash.HAS_ANIM_SET_LOADED, "move_m@drunk@verydrunk"))                 {                     Function.Call(Hash.REQUEST_ANIM_SET, "move_m@drunk@verydrunk");                 }                 Function.Call(Hash.SET_PED_MOVEMENT_CLIPSET, Ped.Handle, "move_m@drunk@verydrunk", 0x3E800000);    And to stop the effect use RESET_PED_MOVEMENT_CLIPSET
 -- @module native
@@ -537,9 +554,9 @@ function IsPedInCurrentConversation() end
 -- @see SET_PED_IS_DRUNK
 -- @usage void SET_PED_IS_DRUNK(Ped ped, BOOL toggle);
 -- @param ped Ped
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetPedIsDrunk() end
+function SetPedIsDrunk(ped, toggle) end
 
 -- mood can be 0 or 1 (it's not a boolean value!). Effects audio of the animal.
 -- @module native
@@ -547,16 +564,15 @@ function SetPedIsDrunk() end
 -- @see SET_ANIMAL_MOOD
 -- @usage void SET_ANIMAL_MOOD(Ped animal, int mood);
 -- @param animal Ped
--- @param int
+-- @param mood int
 -- @return void
-function SetAnimalMood() end
+function SetAnimalMood(animal, mood) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see IS_MOBILE_PHONE_RADIO_ACTIVE
 -- @usage BOOL IS_MOBILE_PHONE_RADIO_ACTIVE();
--- @param undefined
 -- @return BOOL
 function IsMobilePhoneRadioActive() end
 
@@ -567,14 +583,13 @@ function IsMobilePhoneRadioActive() end
 -- @usage void SET_MOBILE_PHONE_RADIO_STATE(BOOL state);
 -- @param state BOOL
 -- @return void
-function SetMobilePhoneRadioState() end
+function SetMobilePhoneRadioState(state) end
 
 -- Returns 255 (radio off index) if the function fails.
 -- @module native
 -- @submodule audio
 -- @see GET_PLAYER_RADIO_STATION_INDEX
 -- @usage int GET_PLAYER_RADIO_STATION_INDEX();
--- @param undefined
 -- @return int
 function GetPlayerRadioStationIndex() end
 
@@ -583,7 +598,6 @@ function GetPlayerRadioStationIndex() end
 -- @submodule audio
 -- @see GET_PLAYER_RADIO_STATION_NAME
 -- @usage char* GET_PLAYER_RADIO_STATION_NAME();
--- @param undefined
 -- @return char*
 function GetPlayerRadioStationName() end
 
@@ -594,14 +608,13 @@ function GetPlayerRadioStationName() end
 -- @usage char* GET_RADIO_STATION_NAME(int radioStation);
 -- @param radioStation int
 -- @return char*
-function GetRadioStationName() end
+function GetRadioStationName(radioStation) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see GET_PLAYER_RADIO_STATION_GENRE
 -- @usage Any GET_PLAYER_RADIO_STATION_GENRE();
--- @param undefined
 -- @return Any
 function GetPlayerRadioStationGenre() end
 
@@ -610,7 +623,6 @@ function GetPlayerRadioStationGenre() end
 -- @submodule audio
 -- @see IS_RADIO_RETUNING
 -- @usage BOOL IS_RADIO_RETUNING();
--- @param undefined
 -- @return BOOL
 function IsRadioRetuning() end
 
@@ -621,7 +633,7 @@ function IsRadioRetuning() end
 -- @usage void SET_RADIO_TO_STATION_NAME(char* stationName);
 -- @param stationName char*
 -- @return void
-function SetRadioToStationName() end
+function SetRadioToStationName(stationName) end
 
 -- For a full list, see here: pastebin.com/Kj9t38KF
 -- @module native
@@ -629,9 +641,9 @@ function SetRadioToStationName() end
 -- @see SET_VEH_RADIO_STATION
 -- @usage void SET_VEH_RADIO_STATION(Vehicle vehicle, char* radioStation);
 -- @param vehicle Vehicle
--- @param char*
+-- @param radioStation char*
 -- @return void
-function SetVehRadioStation() end
+function SetVehRadioStation(vehicle, radioStation) end
 
 -- @todo
 -- @module native
@@ -639,9 +651,9 @@ function SetVehRadioStation() end
 -- @see SET_EMITTER_RADIO_STATION
 -- @usage void SET_EMITTER_RADIO_STATION(char* emitterName, char* radioStation);
 -- @param emitterName char*
--- @param char*
+-- @param radioStation char*
 -- @return void
-function SetEmitterRadioStation() end
+function SetEmitterRadioStation(emitterName, radioStation) end
 
 -- Example: AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_01_STAGE", false);	AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_02_MAIN_ROOM", false);	AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_03_BACK_ROOM", false);  This turns off surrounding sounds not connected directly to peds.
 -- @module native
@@ -649,9 +661,9 @@ function SetEmitterRadioStation() end
 -- @see SET_STATIC_EMITTER_ENABLED
 -- @usage void SET_STATIC_EMITTER_ENABLED(char* emitterName, BOOL toggle);
 -- @param emitterName char*
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetStaticEmitterEnabled() end
+function SetStaticEmitterEnabled(emitterName, toggle) end
 
 -- Sets radio station by index.
 -- @module native
@@ -660,7 +672,7 @@ function SetStaticEmitterEnabled() end
 -- @usage void SET_RADIO_TO_STATION_INDEX(int radioStation);
 -- @param radioStation int
 -- @return void
-function SetRadioToStationIndex() end
+function SetRadioToStationIndex(radioStation) end
 
 -- @todo
 -- @module native
@@ -669,7 +681,7 @@ function SetRadioToStationIndex() end
 -- @usage void SET_FRONTEND_RADIO_ACTIVE(BOOL active);
 -- @param active BOOL
 -- @return void
-function SetFrontendRadioActive() end
+function SetFrontendRadioActive(active) end
 
 -- I see this as a native that would of been used back in GTA III when you finally unlocked the bridge to the next island and such.
 -- @module native
@@ -678,7 +690,7 @@ function SetFrontendRadioActive() end
 -- @usage void UNLOCK_MISSION_NEWS_STORY(int newsStory);
 -- @param newsStory int
 -- @return void
-function UnlockMissionNewsStory() end
+function UnlockMissionNewsStory(newsStory) end
 
 -- @todo
 -- @module native
@@ -687,14 +699,13 @@ function UnlockMissionNewsStory() end
 -- @usage int GET_NUMBER_OF_PASSENGER_VOICE_VARIATIONS(Any p0);
 -- @param p0 Any
 -- @return int
-function GetNumberOfPassengerVoiceVariations() end
+function GetNumberOfPassengerVoiceVariations(p0) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see GET_AUDIBLE_MUSIC_TRACK_TEXT_ID
 -- @usage int GET_AUDIBLE_MUSIC_TRACK_TEXT_ID();
--- @param undefined
 -- @return int
 function GetAudibleMusicTrackTextId() end
 
@@ -705,14 +716,13 @@ function GetAudibleMusicTrackTextId() end
 -- @usage void PLAY_END_CREDITS_MUSIC(BOOL play);
 -- @param play BOOL
 -- @return void
-function PlayEndCreditsMusic() end
+function PlayEndCreditsMusic(play) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see SKIP_RADIO_FORWARD
 -- @usage void SKIP_RADIO_FORWARD();
--- @param undefined
 -- @return void
 function SkipRadioForward() end
 
@@ -723,7 +733,7 @@ function SkipRadioForward() end
 -- @usage void FREEZE_RADIO_STATION(char* radioStation);
 -- @param radioStation char*
 -- @return void
-function FreezeRadioStation() end
+function FreezeRadioStation(radioStation) end
 
 -- @todo
 -- @module native
@@ -732,7 +742,7 @@ function FreezeRadioStation() end
 -- @usage void UNFREEZE_RADIO_STATION(char* radioStation);
 -- @param radioStation char*
 -- @return void
-function UnfreezeRadioStation() end
+function UnfreezeRadioStation(radioStation) end
 
 -- @todo
 -- @module native
@@ -741,7 +751,7 @@ function UnfreezeRadioStation() end
 -- @usage void SET_RADIO_AUTO_UNFREEZE(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetRadioAutoUnfreeze() end
+function SetRadioAutoUnfreeze(toggle) end
 
 -- @todo
 -- @module native
@@ -750,7 +760,7 @@ function SetRadioAutoUnfreeze() end
 -- @usage void SET_INITIAL_PLAYER_STATION(char* radioStation);
 -- @param radioStation char*
 -- @return void
-function SetInitialPlayerStation() end
+function SetInitialPlayerStation(radioStation) end
 
 -- @todo
 -- @module native
@@ -759,7 +769,7 @@ function SetInitialPlayerStation() end
 -- @usage void SET_USER_RADIO_CONTROL_ENABLED(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetUserRadioControlEnabled() end
+function SetUserRadioControlEnabled(toggle) end
 
 -- Only found this one in the decompiled scripts:  AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");
 -- @module native
@@ -767,9 +777,9 @@ function SetUserRadioControlEnabled() end
 -- @see SET_RADIO_TRACK
 -- @usage void SET_RADIO_TRACK(char* radioStation, char* radioTrack);
 -- @param radioStation char*
--- @param char*
+-- @param radioTrack char*
 -- @return void
-function SetRadioTrack() end
+function SetRadioTrack(radioStation, radioTrack) end
 
 -- @todo
 -- @module native
@@ -777,9 +787,9 @@ function SetRadioTrack() end
 -- @see SET_VEHICLE_RADIO_LOUD
 -- @usage void SET_VEHICLE_RADIO_LOUD(Vehicle vehicle, BOOL toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetVehicleRadioLoud() end
+function SetVehicleRadioLoud(vehicle, toggle) end
 
 -- Enables Radio on phone.
 -- @module native
@@ -788,7 +798,7 @@ function SetVehicleRadioLoud() end
 -- @usage void SET_MOBILE_RADIO_ENABLED_DURING_GAMEPLAY(BOOL Toggle);
 -- @param Toggle BOOL
 -- @return void
-function SetMobileRadioEnabledDuringGameplay() end
+function SetMobileRadioEnabledDuringGameplay(Toggle) end
 
 -- can't seem to enable radio on cop cars etc
 -- @module native
@@ -796,9 +806,9 @@ function SetMobileRadioEnabledDuringGameplay() end
 -- @see SET_VEHICLE_RADIO_ENABLED
 -- @usage void SET_VEHICLE_RADIO_ENABLED(Vehicle vehicle, BOOL toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetVehicleRadioEnabled() end
+function SetVehicleRadioEnabled(vehicle, toggle) end
 
 -- @todo
 -- @module native
@@ -807,7 +817,7 @@ function SetVehicleRadioEnabled() end
 -- @usage int FIND_RADIO_STATION_INDEX(int station);
 -- @param station int
 -- @return int
-function FindRadioStationIndex() end
+function FindRadioStationIndex(station) end
 
 -- @todo
 -- @module native
@@ -815,9 +825,10 @@ function FindRadioStationIndex() end
 -- @see SET_AMBIENT_ZONE_STATE
 -- @usage void SET_AMBIENT_ZONE_STATE(Any* p0, BOOL p1, BOOL p2);
 -- @param p0 Any*
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
 -- @return void
-function SetAmbientZoneState() end
+function SetAmbientZoneState(p0, p1, p2) end
 
 -- This function also has a p2, unknown. Signature AUDIO::CLEAR_AMBIENT_ZONE_STATE(char* zoneName, bool p1, Any p2);  Still needs more research.   Here are the names I've found: pastebin.com/AfA0Qjyv
 -- @module native
@@ -825,9 +836,9 @@ function SetAmbientZoneState() end
 -- @see CLEAR_AMBIENT_ZONE_STATE
 -- @usage void CLEAR_AMBIENT_ZONE_STATE(char* zoneName, BOOL p1);
 -- @param zoneName char*
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function ClearAmbientZoneState() end
+function ClearAmbientZoneState(zoneName, p1) end
 
 -- @todo
 -- @module native
@@ -835,9 +846,10 @@ function ClearAmbientZoneState() end
 -- @see SET_AMBIENT_ZONE_LIST_STATE
 -- @usage void SET_AMBIENT_ZONE_LIST_STATE(Any* p0, BOOL p1, BOOL p2);
 -- @param p0 Any*
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
 -- @return void
-function SetAmbientZoneListState() end
+function SetAmbientZoneListState(p0, p1, p2) end
 
 -- @todo
 -- @module native
@@ -845,9 +857,9 @@ function SetAmbientZoneListState() end
 -- @see CLEAR_AMBIENT_ZONE_LIST_STATE
 -- @usage void CLEAR_AMBIENT_ZONE_LIST_STATE(Any* p0, BOOL p1);
 -- @param p0 Any*
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function ClearAmbientZoneListState() end
+function ClearAmbientZoneListState(p0, p1) end
 
 -- All occurrences found in b617d, sorted alphabetically and identical lines removed: pastebin.com/jYvw7N1S
 -- @module native
@@ -855,9 +867,10 @@ function ClearAmbientZoneListState() end
 -- @see SET_AMBIENT_ZONE_STATE_PERSISTENT
 -- @usage void SET_AMBIENT_ZONE_STATE_PERSISTENT(char* ambientZone, BOOL p1, BOOL p2);
 -- @param ambientZone char*
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
 -- @return void
-function SetAmbientZoneStatePersistent() end
+function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
 
 -- All occurrences found in b617d, sorted alphabetically and identical lines removed: pastebin.com/WkXDGgQL
 -- @module native
@@ -865,9 +878,10 @@ function SetAmbientZoneStatePersistent() end
 -- @see SET_AMBIENT_ZONE_LIST_STATE_PERSISTENT
 -- @usage void SET_AMBIENT_ZONE_LIST_STATE_PERSISTENT(char* ambientZone, BOOL p1, BOOL p2);
 -- @param ambientZone char*
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
 -- @return void
-function SetAmbientZoneListStatePersistent() end
+function SetAmbientZoneListStatePersistent(ambientZone, p1, p2) end
 
 -- @todo
 -- @module native
@@ -876,7 +890,7 @@ function SetAmbientZoneListStatePersistent() end
 -- @usage BOOL IS_AMBIENT_ZONE_ENABLED(char* ambientZone);
 -- @param ambientZone char*
 -- @return BOOL
-function IsAmbientZoneEnabled() end
+function IsAmbientZoneEnabled(ambientZone) end
 
 -- All occurrences found in b617d, sorted alphabetically and identical lines removed:   AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_AK"); AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_CUSTOM"); AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_TOOTHLESS");
 -- @module native
@@ -885,7 +899,7 @@ function IsAmbientZoneEnabled() end
 -- @usage void SET_CUTSCENE_AUDIO_OVERRIDE(char* p0);
 -- @param p0 char*
 -- @return void
-function SetCutsceneAudioOverride() end
+function SetCutsceneAudioOverride(p0) end
 
 -- Called 5 times in the scripts. All occurrences found in b617d, sorted alphabetically and identical lines removed:   AUDIO::GET_PLAYER_HEADSET_SOUND_ALTERNATE("INOUT", 0.0); AUDIO::GET_PLAYER_HEADSET_SOUND_ALTERNATE("INOUT", 1.0);
 -- @module native
@@ -893,9 +907,9 @@ function SetCutsceneAudioOverride() end
 -- @see GET_PLAYER_HEADSET_SOUND_ALTERNATE
 -- @usage void GET_PLAYER_HEADSET_SOUND_ALTERNATE(char* p0, float p1);
 -- @param p0 char*
--- @param float
+-- @param p1 float
 -- @return void
-function GetPlayerHeadsetSoundAlternate() end
+function GetPlayerHeadsetSoundAlternate(p0, p1) end
 
 -- Please change to void. (Does not return anything!)  Plays the given police radio message.  All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/GBnsQ5hr
 -- @module native
@@ -903,9 +917,9 @@ function GetPlayerHeadsetSoundAlternate() end
 -- @see PLAY_POLICE_REPORT
 -- @usage Any PLAY_POLICE_REPORT(char* name, float p1);
 -- @param name char*
--- @param float
+-- @param p1 float
 -- @return Any
-function PlayPoliceReport() end
+function PlayPoliceReport(name, p1) end
 
 -- Plays the siren sound of a vehicle which is otherwise activated when fastly double-pressing the horn key. Only works on vehicles with a police siren.
 -- @module native
@@ -914,7 +928,7 @@ function PlayPoliceReport() end
 -- @usage void BLIP_SIREN(Vehicle vehicle);
 -- @param vehicle Vehicle
 -- @return void
-function BlipSiren() end
+function BlipSiren(vehicle) end
 
 -- vehicle - the vehicle whose horn should be overwritten mute - p1 seems to be an option for muting the horn p2 - maybe a horn id, since the function AUDIO::GET_VEHICLE_DEFAULT_HORN(veh) exists?
 -- @module native
@@ -922,10 +936,10 @@ function BlipSiren() end
 -- @see OVERRIDE_VEH_HORN
 -- @usage void OVERRIDE_VEH_HORN(Vehicle vehicle, BOOL mute, int p2);
 -- @param vehicle Vehicle
--- @param BOOL
--- @param int
+-- @param mute BOOL
+-- @param p2 int
 -- @return void
-function OverrideVehHorn() end
+function OverrideVehHorn(vehicle, mute, p2) end
 
 -- Checks whether the horn of a vehicle is currently played.
 -- @module native
@@ -934,7 +948,7 @@ function OverrideVehHorn() end
 -- @usage BOOL IS_HORN_ACTIVE(Vehicle vehicle);
 -- @param vehicle Vehicle
 -- @return BOOL
-function IsHornActive() end
+function IsHornActive(vehicle) end
 
 -- Makes pedestrians sound their horn longer, faster and more agressive when they use their horn.
 -- @module native
@@ -943,14 +957,13 @@ function IsHornActive() end
 -- @usage void SET_AGGRESSIVE_HORNS(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetAggressiveHorns() end
+function SetAggressiveHorns(toggle) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see IS_STREAM_PLAYING
 -- @usage BOOL IS_STREAM_PLAYING();
--- @param undefined
 -- @return BOOL
 function IsStreamPlaying() end
 
@@ -959,7 +972,6 @@ function IsStreamPlaying() end
 -- @submodule audio
 -- @see GET_STREAM_PLAY_TIME
 -- @usage int GET_STREAM_PLAY_TIME();
--- @param undefined
 -- @return int
 function GetStreamPlayTime() end
 
@@ -969,9 +981,9 @@ function GetStreamPlayTime() end
 -- @see LOAD_STREAM
 -- @usage BOOL LOAD_STREAM(char* streamName, char* soundSet);
 -- @param streamName char*
--- @param char*
+-- @param soundSet char*
 -- @return BOOL
-function LoadStream() end
+function LoadStream(streamName, soundSet) end
 
 -- Example: AUDIO::LOAD_STREAM_WITH_START_OFFSET("STASH_TOXIN_STREAM", 2400, "FBI_05_SOUNDS");  Only called a few times in the scripts.
 -- @module native
@@ -979,10 +991,10 @@ function LoadStream() end
 -- @see LOAD_STREAM_WITH_START_OFFSET
 -- @usage BOOL LOAD_STREAM_WITH_START_OFFSET(char* streamName, int startOffset, char* soundSet);
 -- @param streamName char*
--- @param int
--- @param char*
+-- @param startOffset int
+-- @param soundSet char*
 -- @return BOOL
-function LoadStreamWithStartOffset() end
+function LoadStreamWithStartOffset(streamName, startOffset, soundSet) end
 
 -- @todo
 -- @module native
@@ -991,7 +1003,7 @@ function LoadStreamWithStartOffset() end
 -- @usage void PLAY_STREAM_FROM_PED(Ped ped);
 -- @param ped Ped
 -- @return void
-function PlayStreamFromPed() end
+function PlayStreamFromPed(ped) end
 
 -- @todo
 -- @module native
@@ -1000,7 +1012,7 @@ function PlayStreamFromPed() end
 -- @usage void PLAY_STREAM_FROM_VEHICLE(Vehicle vehicle);
 -- @param vehicle Vehicle
 -- @return void
-function PlayStreamFromVehicle() end
+function PlayStreamFromVehicle(vehicle) end
 
 -- Used with AUDIO::LOAD_STREAM  Example from finale_heist2b.c4: AI::TASK_SYNCHRONIZED_SCENE(l_4C8[2/*14*/], l_4C8[2/*14*/]._f7, l_30A, "push_out_vault_l", 4.0, -1.5, 5, 713, 4.0, 0);                     PED::SET_SYNCHRONIZED_SCENE_PHASE(l_4C8[2/*14*/]._f7, 0.0);                     PED::_2208438012482A1A(l_4C8[2/*14*/], 0, 0);                     PED::SET_PED_COMBAT_ATTRIBUTES(l_4C8[2/*14*/], 38, 1);                     PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(l_4C8[2/*14*/], 1);                     if (AUDIO::LOAD_STREAM("Gold_Cart_Push_Anim_01", "BIG_SCORE_3B_SOUNDS")) {                         AUDIO::PLAY_STREAM_FROM_OBJECT(l_36F[0/*1*/]);                     }
 -- @module native
@@ -1009,14 +1021,13 @@ function PlayStreamFromVehicle() end
 -- @usage void PLAY_STREAM_FROM_OBJECT(Object object);
 -- @param object Object
 -- @return void
-function PlayStreamFromObject() end
+function PlayStreamFromObject(object) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see PLAY_STREAM_FRONTEND
 -- @usage void PLAY_STREAM_FRONTEND();
--- @param undefined
 -- @return void
 function PlayStreamFrontend() end
 
@@ -1026,16 +1037,16 @@ function PlayStreamFrontend() end
 -- @see SPECIAL_FRONTEND_EQUAL
 -- @usage void SPECIAL_FRONTEND_EQUAL(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return void
-function SpecialFrontendEqual() end
+function SpecialFrontendEqual(x, y, z) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see STOP_STREAM
 -- @usage void STOP_STREAM();
--- @param undefined
 -- @return void
 function StopStream() end
 
@@ -1045,9 +1056,9 @@ function StopStream() end
 -- @see STOP_PED_SPEAKING
 -- @usage void STOP_PED_SPEAKING(Ped ped, BOOL shaking);
 -- @param ped Ped
--- @param BOOL
+-- @param shaking BOOL
 -- @return void
-function StopPedSpeaking() end
+function StopPedSpeaking(ped, shaking) end
 
 -- @todo
 -- @module native
@@ -1055,9 +1066,9 @@ function StopPedSpeaking() end
 -- @see DISABLE_PED_PAIN_AUDIO
 -- @usage void DISABLE_PED_PAIN_AUDIO(Ped ped, BOOL toggle);
 -- @param ped Ped
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function DisablePedPainAudio() end
+function DisablePedPainAudio(ped, toggle) end
 
 -- Common in the scripts: AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 -- @module native
@@ -1066,7 +1077,7 @@ function DisablePedPainAudio() end
 -- @usage BOOL IS_AMBIENT_SPEECH_DISABLED(Ped ped);
 -- @param ped Ped
 -- @return BOOL
-function IsAmbientSpeechDisabled() end
+function IsAmbientSpeechDisabled(ped) end
 
 -- @todo
 -- @module native
@@ -1074,9 +1085,9 @@ function IsAmbientSpeechDisabled() end
 -- @see SET_SIREN_WITH_NO_DRIVER
 -- @usage void SET_SIREN_WITH_NO_DRIVER(Vehicle vehicle, BOOL toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetSirenWithNoDriver() end
+function SetSirenWithNoDriver(vehicle, toggle) end
 
 -- @todo
 -- @module native
@@ -1084,9 +1095,9 @@ function SetSirenWithNoDriver() end
 -- @see SET_HORN_ENABLED
 -- @usage void SET_HORN_ENABLED(Vehicle vehicle, BOOL toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetHornEnabled() end
+function SetHornEnabled(vehicle, toggle) end
 
 -- @todo
 -- @module native
@@ -1094,9 +1105,9 @@ function SetHornEnabled() end
 -- @see SET_AUDIO_VEHICLE_PRIORITY
 -- @usage void SET_AUDIO_VEHICLE_PRIORITY(Vehicle vehicle, Any p1);
 -- @param vehicle Vehicle
--- @param Any
+-- @param p1 Any
 -- @return void
-function SetAudioVehiclePriority() end
+function SetAudioVehiclePriority(vehicle, p1) end
 
 -- @todo
 -- @module native
@@ -1104,9 +1115,9 @@ function SetAudioVehiclePriority() end
 -- @see USE_SIREN_AS_HORN
 -- @usage void USE_SIREN_AS_HORN(Vehicle vehicle, BOOL toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function UseSirenAsHorn() end
+function UseSirenAsHorn(vehicle, toggle) end
 
 -- SET_VEHICLE_BOOST_ACTIVE(vehicle, 1, 0); SET_VEHICLE_BOOST_ACTIVE(vehicle, 0, 0);   Will give a boost-soundeffect.
 -- @module native
@@ -1114,9 +1125,9 @@ function UseSirenAsHorn() end
 -- @see SET_VEHICLE_BOOST_ACTIVE
 -- @usage void SET_VEHICLE_BOOST_ACTIVE(Vehicle vehicle, BOOL Toggle);
 -- @param vehicle Vehicle
--- @param BOOL
+-- @param Toggle BOOL
 -- @return void
-function SetVehicleBoostActive() end
+function SetVehicleBoostActive(vehicle, Toggle) end
 
 -- p1 appears to only be "0" or "3". I personally use "0" as p1.
 -- @module native
@@ -1124,9 +1135,9 @@ function SetVehicleBoostActive() end
 -- @see PLAY_VEHICLE_DOOR_OPEN_SOUND
 -- @usage void PLAY_VEHICLE_DOOR_OPEN_SOUND(Vehicle vehicle, int p1);
 -- @param vehicle Vehicle
--- @param int
+-- @param p1 int
 -- @return void
-function PlayVehicleDoorOpenSound() end
+function PlayVehicleDoorOpenSound(vehicle, p1) end
 
 -- This native only comes up once. And in that one instance, p1 is "1".
 -- @module native
@@ -1134,16 +1145,15 @@ function PlayVehicleDoorOpenSound() end
 -- @see PLAY_VEHICLE_DOOR_CLOSE_SOUND
 -- @usage void PLAY_VEHICLE_DOOR_CLOSE_SOUND(Vehicle vehicle, int p1);
 -- @param vehicle Vehicle
--- @param int
+-- @param p1 int
 -- @return void
-function PlayVehicleDoorCloseSound() end
+function PlayVehicleDoorCloseSound(vehicle, p1) end
 
 -- Hardcoded to return 1
 -- @module native
 -- @submodule audio
 -- @see IS_GAME_IN_CONTROL_OF_MUSIC
 -- @usage BOOL IS_GAME_IN_CONTROL_OF_MUSIC();
--- @param undefined
 -- @return BOOL
 function IsGameInControlOfMusic() end
 
@@ -1154,7 +1164,7 @@ function IsGameInControlOfMusic() end
 -- @usage void SET_GPS_ACTIVE(BOOL active);
 -- @param active BOOL
 -- @return void
-function SetGpsActive() end
+function SetGpsActive(active) end
 
 -- Called 38 times in the scripts. There are 5 different audioNames used.   One unknown removed below.    AUDIO::PLAY_MISSION_COMPLETE_AUDIO("DEAD");  AUDIO::PLAY_MISSION_COMPLETE_AUDIO("FRANKLIN_BIG_01");  AUDIO::PLAY_MISSION_COMPLETE_AUDIO("GENERIC_FAILED");  AUDIO::PLAY_MISSION_COMPLETE_AUDIO("TREVOR_SMALL_01");
 -- @module native
@@ -1163,14 +1173,13 @@ function SetGpsActive() end
 -- @usage void PLAY_MISSION_COMPLETE_AUDIO(char* audioName);
 -- @param audioName char*
 -- @return void
-function PlayMissionCompleteAudio() end
+function PlayMissionCompleteAudio(audioName) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see IS_MISSION_COMPLETE_PLAYING
 -- @usage BOOL IS_MISSION_COMPLETE_PLAYING();
--- @param undefined
 -- @return BOOL
 function IsMissionCompletePlaying() end
 
@@ -1181,7 +1190,7 @@ function IsMissionCompletePlaying() end
 -- @usage BOOL START_AUDIO_SCENE(char* scene);
 -- @param scene char*
 -- @return BOOL
-function StartAudioScene() end
+function StartAudioScene(scene) end
 
 -- @todo
 -- @module native
@@ -1190,14 +1199,13 @@ function StartAudioScene() end
 -- @usage void STOP_AUDIO_SCENE(char* scene);
 -- @param scene char*
 -- @return void
-function StopAudioScene() end
+function StopAudioScene(scene) end
 
 -- ??
 -- @module native
 -- @submodule audio
 -- @see STOP_AUDIO_SCENES
 -- @usage void STOP_AUDIO_SCENES();
--- @param undefined
 -- @return void
 function StopAudioScenes() end
 
@@ -1208,7 +1216,7 @@ function StopAudioScenes() end
 -- @usage BOOL IS_AUDIO_SCENE_ACTIVE(char* scene);
 -- @param scene char*
 -- @return BOOL
-function IsAudioSceneActive() end
+function IsAudioSceneActive(scene) end
 
 -- @todo
 -- @module native
@@ -1216,17 +1224,16 @@ function IsAudioSceneActive() end
 -- @see SET_AUDIO_SCENE_VARIABLE
 -- @usage void SET_AUDIO_SCENE_VARIABLE(char* scene, char* variable, float value);
 -- @param scene char*
--- @param char*
--- @param float
+-- @param variable char*
+-- @param value float
 -- @return void
-function SetAudioSceneVariable() end
+function SetAudioSceneVariable(scene, variable, value) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see AUDIO_IS_SCRIPTED_MUSIC_PLAYING
 -- @usage Any AUDIO_IS_SCRIPTED_MUSIC_PLAYING();
--- @param undefined
 -- @return Any
 function AudioIsScriptedMusicPlaying() end
 
@@ -1237,7 +1244,7 @@ function AudioIsScriptedMusicPlaying() end
 -- @usage BOOL PREPARE_MUSIC_EVENT(char* eventName);
 -- @param eventName char*
 -- @return BOOL
-function PrepareMusicEvent() end
+function PrepareMusicEvent(eventName) end
 
 -- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 -- @module native
@@ -1246,7 +1253,7 @@ function PrepareMusicEvent() end
 -- @usage BOOL CANCEL_MUSIC_EVENT(char* eventName);
 -- @param eventName char*
 -- @return BOOL
-function CancelMusicEvent() end
+function CancelMusicEvent(eventName) end
 
 -- List of all usable event names found in b617d used with this native. Sorted alphabetically and identical names removed: pastebin.com/RzDFmB1W  All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 -- @module native
@@ -1255,14 +1262,13 @@ function CancelMusicEvent() end
 -- @usage BOOL TRIGGER_MUSIC_EVENT(char* eventName);
 -- @param eventName char*
 -- @return BOOL
-function TriggerMusicEvent() end
+function TriggerMusicEvent(eventName) end
 
 -- @todo
 -- @module native
 -- @submodule audio
 -- @see GET_MUSIC_PLAYTIME
 -- @usage Any GET_MUSIC_PLAYTIME();
--- @param undefined
 -- @return Any
 function GetMusicPlaytime() end
 
@@ -1271,7 +1277,6 @@ function GetMusicPlaytime() end
 -- @submodule audio
 -- @see CLEAR_ALL_BROKEN_GLASS
 -- @usage Any CLEAR_ALL_BROKEN_GLASS();
--- @param undefined
 -- @return Any
 function ClearAllBrokenGlass() end
 
@@ -1282,7 +1287,7 @@ function ClearAllBrokenGlass() end
 -- @usage BOOL PREPARE_ALARM(char* alarmName);
 -- @param alarmName char*
 -- @return BOOL
-function PrepareAlarm() end
+function PrepareAlarm(alarmName) end
 
 -- Example:  This will start the alarm at Fort Zancudo.  AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  First parameter (char) is the name of the alarm. Second parameter (bool) is unknown, it does not seem to make a difference if this one is 0 or 1.  ----------  It DOES make a difference but it has to do with the duration or something I dunno yet  ----------   Found in the b617d scripts:   AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS", 0);  AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER", 1);  AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER_B", 0);  AUDIO::START_ALARM("BIG_SCORE_HEIST_VAULT_ALARMS", a_0);  AUDIO::START_ALARM("FBI_01_MORGUE_ALARMS", 1);  AUDIO::START_ALARM("FIB_05_BIOTECH_LAB_ALARMS", 0);  AUDIO::START_ALARM("JEWEL_STORE_HEIST_ALARMS", 0);  AUDIO::START_ALARM("PALETO_BAY_SCORE_ALARM", 1);  AUDIO::START_ALARM("PALETO_BAY_SCORE_CHICKEN_FACTORY_ALARM", 0);  AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  AUDIO::START_ALARM("PORT_OF_LS_HEIST_SHIP_ALARMS", 0);  AUDIO::START_ALARM("PRISON_ALARMS", 0);  AUDIO::START_ALARM("PROLOGUE_VAULT_ALARMS", 0);
 -- @module native
@@ -1290,9 +1295,9 @@ function PrepareAlarm() end
 -- @see START_ALARM
 -- @usage void START_ALARM(char* alarmName, BOOL p2);
 -- @param alarmName char*
--- @param BOOL
+-- @param p2 BOOL
 -- @return void
-function StartAlarm() end
+function StartAlarm(alarmName, p2) end
 
 -- Example:  This will stop the alarm at Fort Zancudo.  AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  First parameter (char) is the name of the alarm. Second parameter (bool) has to be true (1) to have any effect.
 -- @module native
@@ -1300,9 +1305,9 @@ function StartAlarm() end
 -- @see STOP_ALARM
 -- @usage void STOP_ALARM(char* alarmName, BOOL toggle);
 -- @param alarmName char*
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function StopAlarm() end
+function StopAlarm(alarmName, toggle) end
 
 -- @todo
 -- @module native
@@ -1311,7 +1316,7 @@ function StopAlarm() end
 -- @usage void STOP_ALL_ALARMS(BOOL stop);
 -- @param stop BOOL
 -- @return void
-function StopAllAlarms() end
+function StopAllAlarms(stop) end
 
 -- Example:  bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");
 -- @module native
@@ -1320,7 +1325,7 @@ function StopAllAlarms() end
 -- @usage BOOL IS_ALARM_PLAYING(char* alarmName);
 -- @param alarmName char*
 -- @return BOOL
-function IsAlarmPlaying() end
+function IsAlarmPlaying(alarmName) end
 
 -- Returns hash of default vehicle horn  Hash is stored in audVehicleAudioEntity
 -- @module native
@@ -1329,7 +1334,7 @@ function IsAlarmPlaying() end
 -- @usage Hash GET_VEHICLE_DEFAULT_HORN(Vehicle vehicle);
 -- @param vehicle Vehicle
 -- @return Hash
-function GetVehicleDefaultHorn() end
+function GetVehicleDefaultHorn(vehicle) end
 
 -- @todo
 -- @module native
@@ -1338,7 +1343,7 @@ function GetVehicleDefaultHorn() end
 -- @usage void RESET_PED_AUDIO_FLAGS(Any p0);
 -- @param p0 Any
 -- @return void
-function ResetPedAudioFlags() end
+function ResetPedAudioFlags(p0) end
 
 -- Possible flag names: "ActivateSwitchWheelAudio" "AllowAmbientSpeechInSlowMo" "AllowCutsceneOverScreenFade" "AllowForceRadioAfterRetune" "AllowPainAndAmbientSpeechToPlayDuringCutscene" "AllowPlayerAIOnMission" "AllowPoliceScannerWhenPlayerHasNoControl" "AllowRadioDuringSwitch" "AllowRadioOverScreenFade" "AllowScoreAndRadio" "AllowScriptedSpeechInSlowMo" "AvoidMissionCompleteDelay" "DisableAbortConversationForDeathAndInjury" "DisableAbortConversationForRagdoll" "DisableBarks" "DisableFlightMusic" "DisableReplayScriptStreamRecording" "EnableHeadsetBeep" "ForceConversationInterrupt" "ForceSeamlessRadioSwitch" "ForceSniperAudio" "FrontendRadioDisabled" "HoldMissionCompleteWhenPrepared" "IsDirectorModeActive" "IsPlayerOnMissionForSpeech" "ListenerReverbDisabled" "LoadMPData" "MobileRadioInGame" "OnlyAllowScriptTriggerPoliceScanner" "PlayMenuMusic" "PoliceScannerDisabled" "ScriptedConvListenerMaySpeak" "SpeechDucksScore" "SuppressPlayerScubaBreathing" "WantedMusicDisabled" "WantedMusicOnMission"  ------------------------------- No added flag names between b393d and b573d, including b573d.  #######################################################################  "IsDirectorModeActive" is an audio flag which will allow you to play speech infinitely without any pauses like in Director Mode.  -----------------------------------------------------------------------  All flag IDs and hashes:  ID: 01 | Hash: 0x20A7858F ID: 02 | Hash: 0xA11C2259 ID: 03 | Hash: 0x08DE4700 ID: 04 | Hash: 0x989F652F ID: 05 | Hash: 0x3C9E76BA ID: 06 | Hash: 0xA805FEB0 ID: 07 | Hash: 0x4B94EA26 ID: 08 | Hash: 0x803ACD34 ID: 09 | Hash: 0x7C741226 ID: 10 | Hash: 0x31DB9EBD ID: 11 | Hash: 0xDF386F18 ID: 12 | Hash: 0x669CED42 ID: 13 | Hash: 0x51F22743 ID: 14 | Hash: 0x2052B35C ID: 15 | Hash: 0x071472DC ID: 16 | Hash: 0xF9928BCC ID: 17 | Hash: 0x7ADBDD48 ID: 18 | Hash: 0xA959BA1A ID: 19 | Hash: 0xBBE89B60 ID: 20 | Hash: 0x87A08871 ID: 21 | Hash: 0xED1057CE ID: 22 | Hash: 0x1584AD7A ID: 23 | Hash: 0x8582CFCB ID: 24 | Hash: 0x7E5E2FB0 ID: 25 | Hash: 0xAE4F72DB ID: 26 | Hash: 0x5D16D1FA ID: 27 | Hash: 0x06B2F4B8 ID: 28 | Hash: 0x5D4CDC96 ID: 29 | Hash: 0x8B5A48BA ID: 30 | Hash: 0x98FBD539 ID: 31 | Hash: 0xD8CB0473 ID: 32 | Hash: 0x5CBB4874 ID: 33 | Hash: 0x2E9F93A9 ID: 34 | Hash: 0xD93BEA86 ID: 35 | Hash: 0x92109B7D ID: 36 | Hash: 0xB7EC9E4D ID: 37 | Hash: 0xCABDBB1D ID: 38 | Hash: 0xB3FD4A52 ID: 39 | Hash: 0x370D94E5 ID: 40 | Hash: 0xA0F7938F ID: 41 | Hash: 0xCBE1CE81 ID: 42 | Hash: 0xC27F1271 ID: 43 | Hash: 0x9E3258EB ID: 44 | Hash: 0x551CDA5B ID: 45 | Hash: 0xCB6D663C ID: 46 | Hash: 0x7DACE87F ID: 47 | Hash: 0xF9DE416F ID: 48 | Hash: 0x882E6E9E ID: 49 | Hash: 0x16B447E7 ID: 50 | Hash: 0xBD867739 ID: 51 | Hash: 0xA3A58604 ID: 52 | Hash: 0x7E046BBC ID: 53 | Hash: 0xD95FDB98 ID: 54 | Hash: 0x5842C0ED ID: 55 | Hash: 0x285FECC6 ID: 56 | Hash: 0x9351AC43 ID: 57 | Hash: 0x50032E75 ID: 58 | Hash: 0xAE6D0D59 ID: 59 | Hash: 0xD6351785 ID: 60 | Hash: 0xD25D71BC ID: 61 | Hash: 0x1F7F6423 ID: 62 | Hash: 0xE24C3AA6 ID: 63 | Hash: 0xBFFDD2B7
 -- @module native
@@ -1346,9 +1351,9 @@ function ResetPedAudioFlags() end
 -- @see SET_AUDIO_FLAG
 -- @usage void SET_AUDIO_FLAG(char* flagName, BOOL toggle);
 -- @param flagName char*
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetAudioFlag() end
+function SetAudioFlag(flagName, toggle) end
 
 -- @todo
 -- @module native
@@ -1356,9 +1361,9 @@ function SetAudioFlag() end
 -- @see PREPARE_SYNCHRONIZED_AUDIO_EVENT
 -- @usage Any PREPARE_SYNCHRONIZED_AUDIO_EVENT(char* p0, Any p1);
 -- @param p0 char*
--- @param Any
+-- @param p1 Any
 -- @return Any
-function PrepareSynchronizedAudioEvent() end
+function PrepareSynchronizedAudioEvent(p0, p1) end
 
 -- @todo
 -- @module native
@@ -1366,9 +1371,9 @@ function PrepareSynchronizedAudioEvent() end
 -- @see PREPARE_SYNCHRONIZED_AUDIO_EVENT_FOR_SCENE
 -- @usage BOOL PREPARE_SYNCHRONIZED_AUDIO_EVENT_FOR_SCENE(Any p0, Any* p1);
 -- @param p0 Any
--- @param Any*
+-- @param p1 Any*
 -- @return BOOL
-function PrepareSynchronizedAudioEventForScene() end
+function PrepareSynchronizedAudioEventForScene(p0, p1) end
 
 -- @todo
 -- @module native
@@ -1377,7 +1382,7 @@ function PrepareSynchronizedAudioEventForScene() end
 -- @usage BOOL PLAY_SYNCHRONIZED_AUDIO_EVENT(Any p0);
 -- @param p0 Any
 -- @return BOOL
-function PlaySynchronizedAudioEvent() end
+function PlaySynchronizedAudioEvent(p0) end
 
 -- @todo
 -- @module native
@@ -1386,4 +1391,4 @@ function PlaySynchronizedAudioEvent() end
 -- @usage BOOL STOP_SYNCHRONIZED_AUDIO_EVENT(Any p0);
 -- @param p0 Any
 -- @return BOOL
-function StopSynchronizedAudioEvent() end
+function StopSynchronizedAudioEvent(p0) end

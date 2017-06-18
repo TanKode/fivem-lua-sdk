@@ -5,7 +5,7 @@
 -- @usage void WAIT(int ms);
 -- @param ms int
 -- @return void
-function Wait() end
+function Wait(ms) end
 
 -- Examples:  g_384A = SYSTEM::START_NEW_SCRIPT("cellphone_flashhand", 1424);  l_10D = SYSTEM::START_NEW_SCRIPT("taxiService", 1828);  SYSTEM::START_NEW_SCRIPT("AM_MP_YACHT", 5000);  SYSTEM::START_NEW_SCRIPT("emergencycall", 512);  SYSTEM::START_NEW_SCRIPT("emergencycall", 512);   SYSTEM::START_NEW_SCRIPT("FM_maintain_cloud_header_data", 1424);  SYSTEM::START_NEW_SCRIPT("FM_Mission_Controller", 31000);  SYSTEM::START_NEW_SCRIPT("tennis_family", 3650);  SYSTEM::START_NEW_SCRIPT("Celebrations", 3650);  Decompiled examples of usage when starting a script:       SCRIPT::REQUEST_SCRIPT(a_0);     if (SCRIPT::HAS_SCRIPT_LOADED(a_0)) {         SYSTEM::START_NEW_SCRIPT(a_0, v_3);         SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED(a_0);         return 1;     }   or:      v_2 = "MrsPhilips2";     SCRIPT::REQUEST_SCRIPT(v_2);     while (!SCRIPT::HAS_SCRIPT_LOADED(v_2)) {     SCRIPT::REQUEST_SCRIPT(v_2);     SYSTEM::WAIT(0);     }     sub_8792(36);     SYSTEM::START_NEW_SCRIPT(v_2, 17000);     SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED(v_2);  All native script names: pastebin.com/K9adDsu4 and pastebin.com/yLNWicUi
 -- @module native
@@ -13,9 +13,9 @@ function Wait() end
 -- @see START_NEW_SCRIPT
 -- @usage int START_NEW_SCRIPT(char* scriptName, int stackSize);
 -- @param scriptName char*
--- @param int
+-- @param stackSize int
 -- @return int
-function StartNewScript() end
+function StartNewScript(scriptName, stackSize) end
 
 -- return : script thread id, 0 if failed Pass pointer to struct of args in p1, size of struct goes into p2
 -- @module native
@@ -23,10 +23,11 @@ function StartNewScript() end
 -- @see START_NEW_SCRIPT_WITH_ARGS
 -- @usage int START_NEW_SCRIPT_WITH_ARGS(char* scriptName, Any* args, int argCount, int stackSize);
 -- @param scriptName char*
--- @param Any*
--- @param int
+-- @param args Any*
+-- @param argCount int
+-- @param stackSize int
 -- @return int
-function StartNewScriptWithArgs() end
+function StartNewScriptWithArgs(scriptName, args, argCount, stackSize) end
 
 -- @todo
 -- @module native
@@ -34,9 +35,9 @@ function StartNewScriptWithArgs() end
 -- @see START_NEW_SCRIPT_WITH_NAME_HASH
 -- @usage int START_NEW_SCRIPT_WITH_NAME_HASH(Hash scriptHash, int stackSize);
 -- @param scriptHash Hash
--- @param int
+-- @param stackSize int
 -- @return int
-function StartNewScriptWithNameHash() end
+function StartNewScriptWithNameHash(scriptHash, stackSize) end
 
 -- @todo
 -- @module native
@@ -44,17 +45,17 @@ function StartNewScriptWithNameHash() end
 -- @see START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS
 -- @usage int START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS(Hash scriptHash, Any* args, int argCount, int stackSize);
 -- @param scriptHash Hash
--- @param Any*
--- @param int
+-- @param args Any*
+-- @param argCount int
+-- @param stackSize int
 -- @return int
-function StartNewScriptWithNameHashAndArgs() end
+function StartNewScriptWithNameHashAndArgs(scriptHash, args, argCount, stackSize) end
 
 -- Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).
 -- @module native
 -- @submodule system
 -- @see TIMERA
 -- @usage int TIMERA();
--- @param undefined
 -- @return int
 function Timera() end
 
@@ -63,7 +64,6 @@ function Timera() end
 -- @submodule system
 -- @see TIMERB
 -- @usage int TIMERB();
--- @param undefined
 -- @return int
 function Timerb() end
 
@@ -74,7 +74,7 @@ function Timerb() end
 -- @usage void SETTIMERA(int value);
 -- @param value int
 -- @return void
-function Settimera() end
+function Settimera(value) end
 
 -- @todo
 -- @module native
@@ -83,14 +83,13 @@ function Settimera() end
 -- @usage void SETTIMERB(int value);
 -- @param value int
 -- @return void
-function Settimerb() end
+function Settimerb(value) end
 
 -- Gets the current frame time.
 -- @module native
 -- @submodule system
 -- @see TIMESTEP
 -- @usage float TIMESTEP();
--- @param undefined
 -- @return float
 function Timestep() end
 
@@ -101,7 +100,7 @@ function Timestep() end
 -- @usage float SIN(float value);
 -- @param value float
 -- @return float
-function Sin() end
+function Sin(value) end
 
 -- @todo
 -- @module native
@@ -110,7 +109,7 @@ function Sin() end
 -- @usage float COS(float value);
 -- @param value float
 -- @return float
-function Cos() end
+function Cos(value) end
 
 -- @todo
 -- @module native
@@ -119,7 +118,7 @@ function Cos() end
 -- @usage float SQRT(float value);
 -- @param value float
 -- @return float
-function Sqrt() end
+function Sqrt(value) end
 
 -- @todo
 -- @module native
@@ -127,9 +126,9 @@ function Sqrt() end
 -- @see POW
 -- @usage float POW(float base, float exponent);
 -- @param base float
--- @param float
+-- @param exponent float
 -- @return float
-function Pow() end
+function Pow(base, exponent) end
 
 -- Calculates the magnitude of a vector.
 -- @module native
@@ -137,9 +136,10 @@ function Pow() end
 -- @see VMAG
 -- @usage float VMAG(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return float
-function Vmag() end
+function Vmag(x, y, z) end
 
 -- Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)
 -- @module native
@@ -147,9 +147,10 @@ function Vmag() end
 -- @see VMAG2
 -- @usage float VMAG2(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return float
-function Vmag2() end
+function Vmag2(x, y, z) end
 
 -- Calculates distance between vectors.
 -- @module native
@@ -157,9 +158,13 @@ function Vmag2() end
 -- @see VDIST
 -- @usage float VDIST(float x1, float y1, float z1, float x2, float y2, float z2);
 -- @param x1 float
--- @param float
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
 -- @return float
-function Vdist() end
+function Vdist(x1, y1, z1, x2, y2, z2) end
 
 -- Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)
 -- @module native
@@ -167,9 +172,13 @@ function Vdist() end
 -- @see VDIST2
 -- @usage float VDIST2(float x1, float y1, float z1, float x2, float y2, float z2);
 -- @param x1 float
--- @param float
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
 -- @return float
-function Vdist2() end
+function Vdist2(x1, y1, z1, x2, y2, z2) end
 
 -- @todo
 -- @module native
@@ -177,9 +186,9 @@ function Vdist2() end
 -- @see SHIFT_LEFT
 -- @usage int SHIFT_LEFT(int value, int bitShift);
 -- @param value int
--- @param int
+-- @param bitShift int
 -- @return int
-function ShiftLeft() end
+function ShiftLeft(value, bitShift) end
 
 -- @todo
 -- @module native
@@ -187,9 +196,9 @@ function ShiftLeft() end
 -- @see SHIFT_RIGHT
 -- @usage int SHIFT_RIGHT(int value, int bitShift);
 -- @param value int
--- @param int
+-- @param bitShift int
 -- @return int
-function ShiftRight() end
+function ShiftRight(value, bitShift) end
 
 -- @todo
 -- @module native
@@ -198,7 +207,7 @@ function ShiftRight() end
 -- @usage int FLOOR(float value);
 -- @param value float
 -- @return int
-function Floor() end
+function Floor(value) end
 
 -- I'm guessing this rounds a float value up to the next whole number, and FLOOR rounds it down
 -- @module native
@@ -207,7 +216,7 @@ function Floor() end
 -- @usage int CEIL(float value);
 -- @param value float
 -- @return int
-function Ceil() end
+function Ceil(value) end
 
 -- @todo
 -- @module native
@@ -216,7 +225,7 @@ function Ceil() end
 -- @usage int ROUND(float value);
 -- @param value float
 -- @return int
-function Round() end
+function Round(value) end
 
 -- @todo
 -- @module native
@@ -225,4 +234,4 @@ function Round() end
 -- @usage float TO_FLOAT(int value);
 -- @param value int
 -- @return float
-function ToFloat() end
+function ToFloat(value) end

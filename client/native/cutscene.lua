@@ -4,16 +4,15 @@
 -- @see REQUEST_CUTSCENE
 -- @usage void REQUEST_CUTSCENE(char* cutsceneName, int p1);
 -- @param cutsceneName char*
--- @param int
+-- @param p1 int
 -- @return void
-function RequestCutscene() end
+function RequestCutscene(cutsceneName, p1) end
 
 -- @todo
 -- @module native
 -- @submodule cutscene
 -- @see REMOVE_CUTSCENE
 -- @usage void REMOVE_CUTSCENE();
--- @param undefined
 -- @return void
 function RemoveCutscene() end
 
@@ -22,7 +21,6 @@ function RemoveCutscene() end
 -- @submodule cutscene
 -- @see HAS_CUTSCENE_LOADED
 -- @usage BOOL HAS_CUTSCENE_LOADED();
--- @param undefined
 -- @return BOOL
 function HasCutsceneLoaded() end
 
@@ -33,7 +31,7 @@ function HasCutsceneLoaded() end
 -- @usage BOOL HAS_THIS_CUTSCENE_LOADED(char* cutsceneName);
 -- @param cutsceneName char*
 -- @return BOOL
-function HasThisCutsceneLoaded() end
+function HasThisCutsceneLoaded(cutsceneName) end
 
 -- some kind of flag. Usually 0.
 -- @module native
@@ -42,7 +40,7 @@ function HasThisCutsceneLoaded() end
 -- @usage void START_CUTSCENE(int p0);
 -- @param p0 int
 -- @return void
-function StartCutscene() end
+function StartCutscene(p0) end
 
 -- p3: some kind of flag. Usually 0.
 -- @module native
@@ -50,10 +48,11 @@ function StartCutscene() end
 -- @see START_CUTSCENE_AT_COORDS
 -- @usage void START_CUTSCENE_AT_COORDS(float x, float y, float z, int p3);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param p3 int
 -- @return void
-function StartCutsceneAtCoords() end
+function StartCutsceneAtCoords(x, y, z, p3) end
 
 -- @todo
 -- @module native
@@ -62,14 +61,13 @@ function StartCutsceneAtCoords() end
 -- @usage void STOP_CUTSCENE(BOOL p0);
 -- @param p0 BOOL
 -- @return void
-function StopCutscene() end
+function StopCutscene(p0) end
 
 -- @todo
 -- @module native
 -- @submodule cutscene
 -- @see STOP_CUTSCENE_IMMEDIATELY
 -- @usage void STOP_CUTSCENE_IMMEDIATELY();
--- @param undefined
 -- @return void
 function StopCutsceneImmediately() end
 
@@ -79,17 +77,18 @@ function StopCutsceneImmediately() end
 -- @see SET_CUTSCENE_ORIGIN
 -- @usage void SET_CUTSCENE_ORIGIN(float x, float y, float z, float p3, int p4);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param p3 float
+-- @param p4 int
 -- @return void
-function SetCutsceneOrigin() end
+function SetCutsceneOrigin(x, y, z, p3, p4) end
 
 -- @todo
 -- @module native
 -- @submodule cutscene
 -- @see GET_CUTSCENE_TIME
 -- @usage int GET_CUTSCENE_TIME();
--- @param undefined
 -- @return int
 function GetCutsceneTime() end
 
@@ -98,7 +97,6 @@ function GetCutsceneTime() end
 -- @submodule cutscene
 -- @see GET_CUTSCENE_TOTAL_DURATION
 -- @usage int GET_CUTSCENE_TOTAL_DURATION();
--- @param undefined
 -- @return int
 function GetCutsceneTotalDuration() end
 
@@ -107,7 +105,6 @@ function GetCutsceneTotalDuration() end
 -- @submodule cutscene
 -- @see WAS_CUTSCENE_SKIPPED
 -- @usage BOOL WAS_CUTSCENE_SKIPPED();
--- @param undefined
 -- @return BOOL
 function WasCutsceneSkipped() end
 
@@ -116,7 +113,6 @@ function WasCutsceneSkipped() end
 -- @submodule cutscene
 -- @see HAS_CUTSCENE_FINISHED
 -- @usage BOOL HAS_CUTSCENE_FINISHED();
--- @param undefined
 -- @return BOOL
 function HasCutsceneFinished() end
 
@@ -125,7 +121,6 @@ function HasCutsceneFinished() end
 -- @submodule cutscene
 -- @see IS_CUTSCENE_ACTIVE
 -- @usage BOOL IS_CUTSCENE_ACTIVE();
--- @param undefined
 -- @return BOOL
 function IsCutsceneActive() end
 
@@ -134,7 +129,6 @@ function IsCutsceneActive() end
 -- @submodule cutscene
 -- @see IS_CUTSCENE_PLAYING
 -- @usage BOOL IS_CUTSCENE_PLAYING();
--- @param undefined
 -- @return BOOL
 function IsCutscenePlaying() end
 
@@ -143,7 +137,6 @@ function IsCutscenePlaying() end
 -- @submodule cutscene
 -- @see GET_CUTSCENE_SECTION_PLAYING
 -- @usage int GET_CUTSCENE_SECTION_PLAYING();
--- @param undefined
 -- @return int
 function GetCutsceneSectionPlaying() end
 
@@ -153,9 +146,9 @@ function GetCutsceneSectionPlaying() end
 -- @see GET_ENTITY_INDEX_OF_CUTSCENE_ENTITY
 -- @usage Entity GET_ENTITY_INDEX_OF_CUTSCENE_ENTITY(char* cutsceneEntName, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param Hash
+-- @param modelHash Hash
 -- @return Entity
-function GetEntityIndexOfCutsceneEntity() end
+function GetEntityIndexOfCutsceneEntity(cutsceneEntName, modelHash) end
 
 -- @todo
 -- @module native
@@ -163,11 +156,12 @@ function GetEntityIndexOfCutsceneEntity() end
 -- @see REGISTER_ENTITY_FOR_CUTSCENE
 -- @usage void REGISTER_ENTITY_FOR_CUTSCENE(Ped cutscenePed, char* cutsceneEntName, int p2, Hash modelHash, int p4);
 -- @param cutscenePed Ped
--- @param char*
--- @param int
--- @param Hash
+-- @param cutsceneEntName char*
+-- @param p2 int
+-- @param modelHash Hash
+-- @param p4 int
 -- @return void
-function RegisterEntityForCutscene() end
+function RegisterEntityForCutscene(cutscenePed, cutsceneEntName, p2, modelHash, p4) end
 
 -- @todo
 -- @module native
@@ -175,9 +169,9 @@ function RegisterEntityForCutscene() end
 -- @see GET_ENTITY_INDEX_OF_REGISTERED_ENTITY
 -- @usage Entity GET_ENTITY_INDEX_OF_REGISTERED_ENTITY(char* cutsceneEntName, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param Hash
+-- @param modelHash Hash
 -- @return Entity
-function GetEntityIndexOfRegisteredEntity() end
+function GetEntityIndexOfRegisteredEntity(cutsceneEntName, modelHash) end
 
 -- Only used twice in R* scripts
 -- @module native
@@ -185,9 +179,13 @@ function GetEntityIndexOfRegisteredEntity() end
 -- @see SET_CUTSCENE_TRIGGER_AREA
 -- @usage void SET_CUTSCENE_TRIGGER_AREA(float p0, float p1, float p2, float p3, float p4, float p5);
 -- @param p0 float
--- @param float
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
 -- @return void
-function SetCutsceneTriggerArea() end
+function SetCutsceneTriggerArea(p0, p1, p2, p3, p4, p5) end
 
 -- modelHash (p1) was always 0 in R* scripts
 -- @module native
@@ -195,9 +193,9 @@ function SetCutsceneTriggerArea() end
 -- @see CAN_SET_ENTER_STATE_FOR_REGISTERED_ENTITY
 -- @usage BOOL CAN_SET_ENTER_STATE_FOR_REGISTERED_ENTITY(char* cutsceneEntName, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param Hash
+-- @param modelHash Hash
 -- @return BOOL
-function CanSetEnterStateForRegisteredEntity() end
+function CanSetEnterStateForRegisteredEntity(cutsceneEntName, modelHash) end
 
 -- @todo
 -- @module native
@@ -205,9 +203,9 @@ function CanSetEnterStateForRegisteredEntity() end
 -- @see CAN_SET_EXIT_STATE_FOR_REGISTERED_ENTITY
 -- @usage BOOL CAN_SET_EXIT_STATE_FOR_REGISTERED_ENTITY(char* cutsceneEntName, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param Hash
+-- @param modelHash Hash
 -- @return BOOL
-function CanSetExitStateForRegisteredEntity() end
+function CanSetExitStateForRegisteredEntity(cutsceneEntName, modelHash) end
 
 -- @todo
 -- @module native
@@ -216,7 +214,7 @@ function CanSetExitStateForRegisteredEntity() end
 -- @usage BOOL CAN_SET_EXIT_STATE_FOR_CAMERA(BOOL p0);
 -- @param p0 BOOL
 -- @return BOOL
-function CanSetExitStateForCamera() end
+function CanSetExitStateForCamera(p0) end
 
 -- @todo
 -- @module native
@@ -224,16 +222,17 @@ function CanSetExitStateForCamera() end
 -- @see SET_CUTSCENE_FADE_VALUES
 -- @usage void SET_CUTSCENE_FADE_VALUES(BOOL p0, BOOL p1, BOOL p2, BOOL p3);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
+-- @param p3 BOOL
 -- @return void
-function SetCutsceneFadeValues() end
+function SetCutsceneFadeValues(p0, p1, p2, p3) end
 
 -- @todo
 -- @module native
 -- @submodule cutscene
 -- @see REGISTER_SYNCHRONISED_SCRIPT_SPEECH
 -- @usage void REGISTER_SYNCHRONISED_SCRIPT_SPEECH();
--- @param undefined
 -- @return void
 function RegisterSynchronisedScriptSpeech() end
 
@@ -243,10 +242,12 @@ function RegisterSynchronisedScriptSpeech() end
 -- @see SET_CUTSCENE_PED_COMPONENT_VARIATION
 -- @usage void SET_CUTSCENE_PED_COMPONENT_VARIATION(char* cutsceneEntName, int p1, int p2, int p3, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param int
--- @param Hash
+-- @param p1 int
+-- @param p2 int
+-- @param p3 int
+-- @param modelHash Hash
 -- @return void
-function SetCutscenePedComponentVariation() end
+function SetCutscenePedComponentVariation(cutsceneEntName, p1, p2, p3, modelHash) end
 
 -- @todo
 -- @module native
@@ -254,9 +255,9 @@ function SetCutscenePedComponentVariation() end
 -- @see DOES_CUTSCENE_ENTITY_EXIST
 -- @usage BOOL DOES_CUTSCENE_ENTITY_EXIST(char* cutsceneEntName, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param Hash
+-- @param modelHash Hash
 -- @return BOOL
-function DoesCutsceneEntityExist() end
+function DoesCutsceneEntityExist(cutsceneEntName, modelHash) end
 
 -- Thanks R*! ;)  if ((l_161 == 0) || (l_161 == 2)) {     sub_2ea27("Trying to set Jimmy prop variation");     CUTSCENE::_0546524ADE2E9723("Jimmy_Boston", 1, 0, 0, 0); }
 -- @module native
@@ -264,7 +265,9 @@ function DoesCutsceneEntityExist() end
 -- @see SET_CUTSCENE_PED_PROP_VARIATION
 -- @usage void SET_CUTSCENE_PED_PROP_VARIATION(char* cutsceneEntName, int p1, int p2, int p3, Hash modelHash);
 -- @param cutsceneEntName char*
--- @param int
--- @param Hash
+-- @param p1 int
+-- @param p2 int
+-- @param p3 int
+-- @param modelHash Hash
 -- @return void
-function SetCutscenePedPropVariation() end
+function SetCutscenePedPropVariation(cutsceneEntName, p1, p2, p3, modelHash) end

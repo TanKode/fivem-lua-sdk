@@ -5,7 +5,7 @@
 -- @usage void SET_DEBUG_LINES_AND_SPHERES_DRAWING_ACTIVE(BOOL enabled);
 -- @param enabled BOOL
 -- @return void
-function SetDebugLinesAndSpheresDrawingActive() end
+function SetDebugLinesAndSpheresDrawingActive(enabled) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -13,10 +13,17 @@ function SetDebugLinesAndSpheresDrawingActive() end
 -- @see DRAW_DEBUG_LINE
 -- @usage void DRAW_DEBUG_LINE(float x1, float y1, float z1, float x2, float y2, float z2, int red, int green, int blue, int alpha);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugLine() end
+function DrawDebugLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -24,10 +31,21 @@ function DrawDebugLine() end
 -- @see DRAW_DEBUG_LINE_WITH_TWO_COLOURS
 -- @usage void DRAW_DEBUG_LINE_WITH_TWO_COLOURS(float x1, float y1, float z1, float x2, float y2, float z2, int r1, int g1, int b1, int r2, int g2, int b2, int alpha1, int alpha2);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param r1 int
+-- @param g1 int
+-- @param b1 int
+-- @param r2 int
+-- @param g2 int
+-- @param b2 int
+-- @param alpha1 int
+-- @param alpha2 int
 -- @return void
-function DrawDebugLineWithTwoColours() end
+function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2, b2, alpha1, alpha2) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -35,10 +53,15 @@ function DrawDebugLineWithTwoColours() end
 -- @see DRAW_DEBUG_SPHERE
 -- @usage void DRAW_DEBUG_SPHERE(float x, float y, float z, float radius, int red, int green, int blue, int alpha);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugSphere() end
+function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -46,10 +69,17 @@ function DrawDebugSphere() end
 -- @see DRAW_DEBUG_BOX
 -- @usage void DRAW_DEBUG_BOX(float x1, float y1, float z1, float x2, float y2, float z2, int red, int green, int blue, int alpha);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugBox() end
+function DrawDebugBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -57,10 +87,15 @@ function DrawDebugBox() end
 -- @see DRAW_DEBUG_CROSS
 -- @usage void DRAW_DEBUG_CROSS(float x, float y, float z, float size, int red, int green, int blue, int alpha);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param size float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugCross() end
+function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -68,10 +103,15 @@ function DrawDebugCross() end
 -- @see DRAW_DEBUG_TEXT
 -- @usage void DRAW_DEBUG_TEXT(char* text, float x, float y, float z, int red, int green, int blue, int alpha);
 -- @param text char*
--- @param float
--- @param int
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugText() end
+function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
 
 -- NOTE: Debugging functions are not present in the retail version of the game.
 -- @module native
@@ -79,10 +119,15 @@ function DrawDebugText() end
 -- @see DRAW_DEBUG_TEXT_2D
 -- @usage void DRAW_DEBUG_TEXT_2D(char* text, float x, float y, float z, int red, int green, int blue, int alpha);
 -- @param text char*
--- @param float
--- @param int
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawDebugText_2d() end
+function DrawDebugText_2d(text, x, y, z, red, green, blue, alpha) end
 
 -- Draws a depth-tested line from one point to another. ---------------- x1, y1, z1 : Coordinates for the first point x2, y2, z2 : Coordinates for the second point r, g, b, alpha : Color with RGBA-Values I recommend using a predefined function to call this. [VB.NET] Public Sub DrawLine(from As Vector3, [to] As Vector3, col As Color)     [Function].Call(Hash.DRAW_LINE, from.X, from.Y, from.Z, [to].X, [to].Y, [to].Z, col.R, col.G, col.B, col.A) End Sub  [C#] public void DrawLine(Vector3 from, Vector3 to, Color col) {     Function.Call(Hash.DRAW_LINE, from.X, from.Y, from.Z, to.X, to.Y, to.Z, col.R, col.G, col.B, col.A); }
 -- @module native
@@ -90,10 +135,17 @@ function DrawDebugText_2d() end
 -- @see DRAW_LINE
 -- @usage void DRAW_LINE(float x1, float y1, float z1, float x2, float y2, float z2, int red, int green, int blue, int alpha);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawLine() end
+function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
 -- x/y/z - Location of a vertex (in world coords), presumably. ---------------- x1, y1, z1     : Coordinates for the first point x2, y2, z2     : Coordinates for the second point x3, y3, z3     : Coordinates for the third point r, g, b, alpha : Color with RGBA-Values  Keep in mind that only one side of the drawn triangle is visible: It's the side, in which the vector-product of the vectors heads to: (b-a)x(c-a) Or (b-a)x(c-b). But be aware: The function seems to work somehow differently. I have trouble having them drawn in rotated orientation. Try it yourself and if you somehow succeed, please edit this and post your solution. I recommend using a predefined function to call this. [VB.NET] Public Sub DrawPoly(a As Vector3, b As Vector3, c As Vector3, col As Color)     [Function].Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A) End Sub  [C#] public void DrawPoly(Vector3 a, Vector3 b, Vector3 c, Color col) {     Function.Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A); } BTW: Intersecting triangles are not supported: They overlap in the order they were called.
 -- @module native
@@ -101,10 +153,20 @@ function DrawLine() end
 -- @see DRAW_POLY
 -- @usage void DRAW_POLY(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3, int red, int green, int blue, int alpha);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param x3 float
+-- @param y3 float
+-- @param z3 float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawPoly() end
+function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) end
 
 -- x,y,z = start pos x2,y2,z2 = end pos  Draw's a 3D Box between the two x,y,z coords. -------------- Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere. I recommend using a predefined function to call this. [VB.NET] Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)     [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A) End Sub  [C#] public void DrawBox(Vector3 a, Vector3 b, Color col) {     Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A); }
 -- @module native
@@ -112,17 +174,23 @@ function DrawPoly() end
 -- @see DRAW_BOX
 -- @usage void DRAW_BOX(float x1, float y1, float z1, float x2, float y2, float z2, int red, int green, int blue, int alpha);
 -- @param x1 float
--- @param float
--- @param int
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawBox() end
+function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
 -- This function is hard-coded to always return 0.
 -- @module native
 -- @submodule graphics
 -- @see GET_MAXIMUM_NUMBER_OF_PHOTOS
 -- @usage int GET_MAXIMUM_NUMBER_OF_PHOTOS();
--- @param undefined
 -- @return int
 function GetMaximumNumberOfPhotos() end
 
@@ -132,10 +200,15 @@ function GetMaximumNumberOfPhotos() end
 -- @see DRAW_LIGHT_WITH_RANGE
 -- @usage void DRAW_LIGHT_WITH_RANGE(float posX, float posY, float posZ, int colorR, int colorG, int colorB, float range, float intensity);
 -- @param posX float
--- @param float
--- @param int
+-- @param posY float
+-- @param posZ float
+-- @param colorR int
+-- @param colorG int
+-- @param colorB int
+-- @param range float
+-- @param intensity float
 -- @return void
-function DrawLightWithRange() end
+function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, intensity) end
 
 -- Parameters: * pos - coordinate where the spotlight is located * dir - the direction vector the spotlight should aim at from its current position * r,g,b - color of the spotlight * distance - the maximum distance the light can reach * brightness - the brightness of the light * roundness - "smoothness" of the circle edge * radius - the radius size of the spotlight * falloff - the falloff size of the light's edge (example: www.i.imgur.com/DemAWeO.jpg)  Example in C# (spotlight aims at the closest vehicle): Vector3 myPos = Game.Player.Character.Position; Vehicle nearest = World.GetClosestVehicle(myPos , 1000f); Vector3 destinationCoords = nearest.Position; Vector3 dirVector = destinationCoords - myPos; dirVector.Normalize(); Function.Call(Hash.DRAW_SPOT_LIGHT, pos.X, pos.Y, pos.Z, dirVector.X, dirVector.Y, dirVector.Z, 255, 255, 255, 100.0f, 1f, 0.0f, 13.0f, 1f);
 -- @module native
@@ -143,10 +216,21 @@ function DrawLightWithRange() end
 -- @see DRAW_SPOT_LIGHT
 -- @usage void DRAW_SPOT_LIGHT(float posX, float posY, float posZ, float dirX, float dirY, float dirZ, int colorR, int colorG, int colorB, float distance, float brightness, float roundness, float radius, float falloff);
 -- @param posX float
--- @param float
--- @param int
+-- @param posY float
+-- @param posZ float
+-- @param dirX float
+-- @param dirY float
+-- @param dirZ float
+-- @param colorR int
+-- @param colorG int
+-- @param colorB int
+-- @param distance float
+-- @param brightness float
+-- @param roundness float
+-- @param radius float
+-- @param falloff float
 -- @return void
-function DrawSpotLight() end
+function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, roundness, radius, falloff) end
 
 -- enum MarkerTypes { 	MarkerTypeUpsideDownCone = 0, 	MarkerTypeVerticalCylinder = 1, 	MarkerTypeThickChevronUp = 2, 	MarkerTypeThinChevronUp = 3, 	MarkerTypeCheckeredFlagRect = 4, 	MarkerTypeCheckeredFlagCircle = 5, 	MarkerTypeVerticleCircle = 6, 	MarkerTypePlaneModel = 7, 	MarkerTypeLostMCDark = 8, 	MarkerTypeLostMCLight = 9, 	MarkerTypeNumber0 = 10, 	MarkerTypeNumber1 = 11, 	MarkerTypeNumber2 = 12, 	MarkerTypeNumber3 = 13, 	MarkerTypeNumber4 = 14, 	MarkerTypeNumber5 = 15, 	MarkerTypeNumber6 = 16, 	MarkerTypeNumber7 = 17, 	MarkerTypeNumber8 = 18, 	MarkerTypeNumber9 = 19, 	MarkerTypeChevronUpx1 = 20, 	MarkerTypeChevronUpx2 = 21, 	MarkerTypeChevronUpx3 = 22, 	MarkerTypeHorizontalCircleFat = 23, 	MarkerTypeReplayIcon = 24, 	MarkerTypeHorizontalCircleSkinny = 25, 	MarkerTypeHorizontalCircleSkinny_Arrow = 26, 	MarkerTypeHorizontalSplitArrowCircle = 27, 	MarkerTypeDebugSphere = 28, 	MarkerTypeDallorSign = 29, 	MarkerTypeHorizontalBars = 30, 	MarkerTypeWolfHead = 31 };  dirX/Y/Z represent a heading on each axis in which the marker should face, alternatively you can rotate each axis independently with rotX/Y/Z (and set dirX/Y/Z all to 0).  faceCamera - Rotates only the y-axis (the heading) towards the camera  p19 - no effect, default value in script is 2  rotate - Rotates only on the y-axis (the heading)  textureDict - Name of texture dictionary to load texture from (e.g. "GolfPutting")  textureName - Name of texture inside dictionary to load (e.g. "PuttingMarker")  drawOnEnts - Draws the marker onto any entities that intersect it  basically what he said, except textureDict and textureName are totally not char*, or if so, then they are always set to 0/NULL/nullptr in every script I checked, eg:  bj.c: graphics::draw_marker(6, vParam0, 0f, 0f, 1f, 0f, 0f, 0f, 4f, 4f, 4f, 240, 200, 80, iVar1, 0, 0, 2, 0, 0, 0, false);  his is what I used to draw an amber downward pointing chevron "V", has to be redrawn every frame.  The 180 is for 180 degrees rotation around the Y axis, the 50 is alpha, assuming max is 100, but it will accept 255.  GRAPHICS::DRAW_MARKER(2, v.x, v.y, v.z + 2, 0, 0, 0, 0, 180, 0, 2, 2, 2, 255, 128, 0, 50, 0, 1, 1, 0, 0, 0, 0);
 -- @module native
@@ -154,12 +238,31 @@ function DrawSpotLight() end
 -- @see DRAW_MARKER
 -- @usage void DRAW_MARKER(int type, float posX, float posY, float posZ, float dirX, float dirY, float dirZ, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, int red, int green, int blue, int alpha, BOOL bobUpAndDown, BOOL faceCamera, int p19, BOOL rotate, char* textureDict, char* textureName, BOOL drawOnEnts);
 -- @param type int
--- @param float
--- @param int
--- @param BOOL
--- @param char*
+-- @param posX float
+-- @param posY float
+-- @param posZ float
+-- @param dirX float
+-- @param dirY float
+-- @param dirZ float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
+-- @param scaleX float
+-- @param scaleY float
+-- @param scaleZ float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
+-- @param bobUpAndDown BOOL
+-- @param faceCamera BOOL
+-- @param p19 int
+-- @param rotate BOOL
+-- @param textureDict char*
+-- @param textureName char*
+-- @param drawOnEnts BOOL
 -- @return void
-function DrawMarker() end
+function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
 
 -- Creates a checkpoint. Returns the handle of the checkpoint.  20/03/17 : Attention, checkpoints are already handled by the game itself, so you must not loop it like markers.  Parameters: * type - The type of checkpoint to create. See below for a list of checkpoint types. * pos1 - The position of the checkpoint. * pos2 - The position of the next checkpoint to point to. * radius - The radius of the checkpoint. * color - The color of the checkpoint. * reserved - Special parameter, see below for details. Usually set to 0 in the scripts.  Checkpoint types: 0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker 15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker       20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker     30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  35-38-------Ring: Airplane Up, Left, Right, UpsideDown 39----------? 40----------Ring: just a ring 41----------? 42-44-------Cylinder w/ number (uses 'reserved' parameter) 45-47-------Cylinder no arrow or number  If using type 42-44, reserved sets number / number and shape to display  0-99------------Just numbers (0-99) 100-109-----------------Arrow (0-9) 110-119------------Two arrows (0-9) 120-129----------Three arrows (0-9) 130-139----------------Circle (0-9) 140-149------------CycleArrow (0-9) 150-159----------------Circle (0-9) 160-169----Circle  w/ pointer (0-9) 170-179-------Perforated ring (0-9) 180-189----------------Sphere (0-9)
 -- @module native
@@ -167,10 +270,20 @@ function DrawMarker() end
 -- @see CREATE_CHECKPOINT
 -- @usage int CREATE_CHECKPOINT(int type, float posX1, float posY1, float posZ1, float posX2, float posY2, float posZ2, float radius, int red, int green, int blue, int alpha, int reserved);
 -- @param type int
--- @param float
--- @param int
+-- @param posX1 float
+-- @param posY1 float
+-- @param posZ1 float
+-- @param posX2 float
+-- @param posY2 float
+-- @param posZ2 float
+-- @param radius float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
+-- @param reserved int
 -- @return int
-function CreateCheckpoint() end
+function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, radius, red, green, blue, alpha, reserved) end
 
 -- Sets the cylinder height of the checkpoint.  Parameters: * nearHeight - The height of the checkpoint when inside of the radius. * farHeight - The height of the checkpoint when outside of the radius. * radius - The radius of the checkpoint.
 -- @module native
@@ -178,9 +291,11 @@ function CreateCheckpoint() end
 -- @see SET_CHECKPOINT_CYLINDER_HEIGHT
 -- @usage void SET_CHECKPOINT_CYLINDER_HEIGHT(int checkpoint, float nearHeight, float farHeight, float radius);
 -- @param checkpoint int
--- @param float
+-- @param nearHeight float
+-- @param farHeight float
+-- @param radius float
 -- @return void
-function SetCheckpointCylinderHeight() end
+function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) end
 
 -- Sets the checkpoint color.
 -- @module native
@@ -188,9 +303,12 @@ function SetCheckpointCylinderHeight() end
 -- @see SET_CHECKPOINT_RGBA
 -- @usage void SET_CHECKPOINT_RGBA(int checkpoint, int red, int green, int blue, int alpha);
 -- @param checkpoint int
--- @param int
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function SetCheckpointRgba() end
+function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
 
 -- @todo
 -- @module native
@@ -199,7 +317,7 @@ function SetCheckpointRgba() end
 -- @usage void DELETE_CHECKPOINT(int checkpoint);
 -- @param checkpoint int
 -- @return void
-function DeleteCheckpoint() end
+function DeleteCheckpoint(checkpoint) end
 
 -- last param isnt a toggle
 -- @module native
@@ -207,9 +325,9 @@ function DeleteCheckpoint() end
 -- @see REQUEST_STREAMED_TEXTURE_DICT
 -- @usage void REQUEST_STREAMED_TEXTURE_DICT(char* textureDict, BOOL p1);
 -- @param textureDict char*
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function RequestStreamedTextureDict() end
+function RequestStreamedTextureDict(textureDict, p1) end
 
 -- @todo
 -- @module native
@@ -218,7 +336,7 @@ function RequestStreamedTextureDict() end
 -- @usage BOOL HAS_STREAMED_TEXTURE_DICT_LOADED(char* textureDict);
 -- @param textureDict char*
 -- @return BOOL
-function HasStreamedTextureDictLoaded() end
+function HasStreamedTextureDictLoaded(textureDict) end
 
 -- @todo
 -- @module native
@@ -227,7 +345,7 @@ function HasStreamedTextureDictLoaded() end
 -- @usage void SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED(char* textureDict);
 -- @param textureDict char*
 -- @return void
-function SetStreamedTextureDictAsNoLongerNeeded() end
+function SetStreamedTextureDictAsNoLongerNeeded(textureDict) end
 
 -- Draws a rectangle on the screen.  -x: The relative X point of the center of the rectangle. (0.0-1.0, 0.0 is the left edge of the screen, 1.0 is the right edge of the screen)  -y: The relative Y point of the center of the rectangle. (0.0-1.0, 0.0 is the top edge of the screen, 1.0 is the bottom edge of the screen)  -width: The relative width of the rectangle. (0.0-1.0, 1.0 means the whole screen width)  -height: The relative height of the rectangle. (0.0-1.0, 1.0 means the whole screen height)  -R: Red part of the color. (0-255)  -G: Green part of the color. (0-255)  -B: Blue part of the color. (0-255)  -A: Alpha part of the color. (0-255, 0 means totally transparent, 255 means totally opaque)  The total number of rectangles to be drawn in one frame is apparently limited to 399.
 -- @module native
@@ -235,17 +353,21 @@ function SetStreamedTextureDictAsNoLongerNeeded() end
 -- @see DRAW_RECT
 -- @usage void DRAW_RECT(float x, float y, float width, float height, int r, int g, int b, int a);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param width float
+-- @param height float
+-- @param r int
+-- @param g int
+-- @param b int
+-- @param a int
 -- @return void
-function DrawRect() end
+function DrawRect(x, y, width, height, r, g, b, a) end
 
 -- Gets the scale of safe zone. if the safe zone size scale is max, it will return 1.0.
 -- @module native
 -- @submodule graphics
 -- @see GET_SAFE_ZONE_SIZE
 -- @usage float GET_SAFE_ZONE_SIZE();
--- @param undefined
 -- @return float
 function GetSafeZoneSize() end
 
@@ -255,11 +377,18 @@ function GetSafeZoneSize() end
 -- @see DRAW_SPRITE
 -- @usage void DRAW_SPRITE(char* textureDict, char* textureName, float screenX, float screenY, float width, float height, float heading, int red, int green, int blue, int alpha);
 -- @param textureDict char*
--- @param char*
--- @param float
--- @param int
+-- @param textureName char*
+-- @param screenX float
+-- @param screenY float
+-- @param width float
+-- @param height float
+-- @param heading float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawSprite() end
+function DrawSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
 -- Example: GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");  I tried this and nothing happened...
 -- @module native
@@ -267,9 +396,9 @@ function DrawSprite() end
 -- @see ADD_ENTITY_ICON
 -- @usage Any ADD_ENTITY_ICON(Entity entity, char* icon);
 -- @param entity Entity
--- @param char*
+-- @param icon char*
 -- @return Any
-function AddEntityIcon() end
+function AddEntityIcon(entity, icon) end
 
 -- @todo
 -- @module native
@@ -277,9 +406,9 @@ function AddEntityIcon() end
 -- @see SET_ENTITY_ICON_VISIBILITY
 -- @usage void SET_ENTITY_ICON_VISIBILITY(Entity entity, BOOL toggle);
 -- @param entity Entity
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetEntityIconVisibility() end
+function SetEntityIconVisibility(entity, toggle) end
 
 -- @todo
 -- @module native
@@ -287,9 +416,12 @@ function SetEntityIconVisibility() end
 -- @see SET_ENTITY_ICON_COLOR
 -- @usage void SET_ENTITY_ICON_COLOR(Entity entity, int red, int green, int blue, int alpha);
 -- @param entity Entity
--- @param int
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function SetEntityIconColor() end
+function SetEntityIconColor(entity, red, green, blue, alpha) end
 
 -- Sets the on-screen drawing origin for draw-functions (which is normally x=0,y=0 in the upper left corner of the screen) to a world coordinate. From now on, the screen coordinate which displays the given world coordinate on the screen is seen as x=0,y=0.  Example in C#: Vector3 boneCoord = somePed.GetBoneCoord(Bone.SKEL_Head); Function.Call(Hash.SET_DRAW_ORIGIN, boneCoord.X, boneCoord.Y, boneCoord.Z, 0); Function.Call(Hash.DRAW_SPRITE, "helicopterhud", "hud_corner", -0.01, -0.015, 0.013, 0.013, 0.0, 255, 0, 0, 200); Function.Call(Hash.DRAW_SPRITE, "helicopterhud", "hud_corner", 0.01, -0.015, 0.013, 0.013, 90.0, 255, 0, 0, 200); Function.Call(Hash.DRAW_SPRITE, "helicopterhud", "hud_corner", -0.01, 0.015, 0.013, 0.013, 270.0, 255, 0, 0, 200); Function.Call(Hash.DRAW_SPRITE, "helicopterhud", "hud_corner", 0.01, 0.015, 0.013, 0.013, 180.0, 255, 0, 0, 200); Function.Call(Hash.CLEAR_DRAW_ORIGIN);  Result: www11.pic-upload.de/19.06.15/bkqohvil2uao.jpg If the pedestrian starts walking around now, the sprites are always around her head, no matter where the head is displayed on the screen.  This function also effects the drawing of texts and other UI-elements. The effect can be reset by calling GRAPHICS::CLEAR_DRAW_ORIGIN().
 -- @module native
@@ -297,17 +429,17 @@ function SetEntityIconColor() end
 -- @see SET_DRAW_ORIGIN
 -- @usage void SET_DRAW_ORIGIN(float x, float y, float z, Any p3);
 -- @param x float
--- @param float
--- @param Any
+-- @param y float
+-- @param z float
+-- @param p3 Any
 -- @return void
-function SetDrawOrigin() end
+function SetDrawOrigin(x, y, z, p3) end
 
 -- Resets the screen's draw-origin which was changed by the function GRAPHICS::SET_DRAW_ORIGIN(...) back to x=0,y=0.  See GRAPHICS::SET_DRAW_ORIGIN(...) for further information.
 -- @module native
 -- @submodule graphics
 -- @see CLEAR_DRAW_ORIGIN
 -- @usage void CLEAR_DRAW_ORIGIN();
--- @param undefined
 -- @return void
 function ClearDrawOrigin() end
 
@@ -318,7 +450,7 @@ function ClearDrawOrigin() end
 -- @usage void ATTACH_TV_AUDIO_TO_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return void
-function AttachTvAudioToEntity() end
+function AttachTvAudioToEntity(entity) end
 
 -- Might be more appropriate in AUDIO?  Rockstar made it like this.  Probably changes tvs from being a 3d audio to being "global" audio
 -- @module native
@@ -327,7 +459,7 @@ function AttachTvAudioToEntity() end
 -- @usage void SET_TV_AUDIO_FRONTEND(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetTvAudioFrontend() end
+function SetTvAudioFrontend(toggle) end
 
 -- @todo
 -- @module native
@@ -336,7 +468,7 @@ function SetTvAudioFrontend() end
 -- @usage int LOAD_MOVIE_MESH_SET(char* movieMeshSetName);
 -- @param movieMeshSetName char*
 -- @return int
-function LoadMovieMeshSet() end
+function LoadMovieMeshSet(movieMeshSetName) end
 
 -- @todo
 -- @module native
@@ -345,7 +477,7 @@ function LoadMovieMeshSet() end
 -- @usage void RELEASE_MOVIE_MESH_SET(int movieMeshSet);
 -- @param movieMeshSet int
 -- @return void
-function ReleaseMovieMeshSet() end
+function ReleaseMovieMeshSet(movieMeshSet) end
 
 -- int screenresx,screenresy; GET_SCREEN_RESOLUTION(&screenresx,&screenresy);
 -- @module native
@@ -353,16 +485,15 @@ function ReleaseMovieMeshSet() end
 -- @see GET_SCREEN_RESOLUTION
 -- @usage void GET_SCREEN_RESOLUTION(int* x, int* y);
 -- @param x int*
--- @param int*
+-- @param y int*
 -- @return void
-function GetScreenResolution() end
+function GetScreenResolution(x, y) end
 
 -- Setting Aspect Ratio Manually in game will return:  false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. ) true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )  Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.
 -- @module native
 -- @submodule graphics
 -- @see GET_IS_WIDESCREEN
 -- @usage BOOL GET_IS_WIDESCREEN();
--- @param undefined
 -- @return BOOL
 function GetIsWidescreen() end
 
@@ -371,7 +502,6 @@ function GetIsWidescreen() end
 -- @submodule graphics
 -- @see GET_IS_HIDEF
 -- @usage BOOL GET_IS_HIDEF();
--- @param undefined
 -- @return BOOL
 function GetIsHidef() end
 
@@ -382,7 +512,7 @@ function GetIsHidef() end
 -- @usage void SET_NIGHTVISION(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetNightvision() end
+function SetNightvision(toggle) end
 
 -- @todo
 -- @module native
@@ -391,7 +521,7 @@ function SetNightvision() end
 -- @usage void SET_NOISEOVERIDE(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetNoiseoveride() end
+function SetNoiseoveride(toggle) end
 
 -- @todo
 -- @module native
@@ -400,7 +530,7 @@ function SetNoiseoveride() end
 -- @usage void SET_NOISINESSOVERIDE(float value);
 -- @param value float
 -- @return void
-function SetNoisinessoveride() end
+function SetNoisinessoveride(value) end
 
 -- Convert a world coordinate into its relative screen coordinate.  (WorldToScreen)  Returns a boolean; whether or not the operation was successful. It will return false if the coordinates given are not visible to the rendering camera.   For .NET users...  VB: Public Shared Function World3DToScreen2d(pos as vector3) As Vector2          Dim x2dp, y2dp As New Native.OutputArgument          Native.Function.Call(Of Boolean)(Native.Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.x, pos.y, pos.z, x2dp, y2dp)         Return New Vector2(x2dp.GetResult(Of Single), y2dp.GetResult(Of Single))            End Function  C#: Vector2 World3DToScreen2d(Vector3 pos)     {         var x2dp = new OutputArgument();         var y2dp = new OutputArgument();          Function.Call<bool>(Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.X, pos.Y, pos.Z, x2dp, y2dp);         return new Vector2(x2dp.GetResult<float>(), y2dp.GetResult<float>());     } //USE VERY SMALL VALUES FOR THE SCALE OF RECTS/TEXT because it is dramatically larger on screen than in 3D, e.g '0.05' small.  Used to be called _WORLD3D_TO_SCREEN2D  I thought we lost you from the scene forever. It does seem however that calling SET_DRAW_ORIGIN then your natives, then ending it. Seems to work better for certain things such as keeping boxes around people for a predator missile e.g.
 -- @module native
@@ -408,10 +538,12 @@ function SetNoisinessoveride() end
 -- @see GET_SCREEN_COORD_FROM_WORLD_COORD
 -- @usage BOOL GET_SCREEN_COORD_FROM_WORLD_COORD(float worldX, float worldY, float worldZ, float* screenX, float* screenY);
 -- @param worldX float
--- @param float
--- @param float*
+-- @param worldY float
+-- @param worldZ float
+-- @param screenX float*
+-- @param screenY float*
 -- @return BOOL
-function GetScreenCoordFromWorldCoord() end
+function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ, screenX, screenY) end
 
 -- Returns the texture resolution of the passed texture dict+name.  Note: Most texture resolutions are doubled compared to the console version of the game.
 -- @module native
@@ -419,9 +551,9 @@ function GetScreenCoordFromWorldCoord() end
 -- @see GET_TEXTURE_RESOLUTION
 -- @usage Vector3 GET_TEXTURE_RESOLUTION(char* textureDict, char* textureName);
 -- @param textureDict char*
--- @param char*
+-- @param textureName char*
 -- @return Vector3
-function GetTextureResolution() end
+function GetTextureResolution(textureDict, textureName) end
 
 -- Purpose of p0 and p1 unknown.
 -- @module native
@@ -429,16 +561,18 @@ function GetTextureResolution() end
 -- @see SET_FLASH
 -- @usage void SET_FLASH(float p0, float p1, float fadeIn, float duration, float fadeOut);
 -- @param p0 float
--- @param float
+-- @param p1 float
+-- @param fadeIn float
+-- @param duration float
+-- @param fadeOut float
 -- @return void
-function SetFlash() end
+function SetFlash(p0, p1, fadeIn, duration, fadeOut) end
 
 -- Creates a tracked point, useful for checking the visibility of a 3D point on screen.
 -- @module native
 -- @submodule graphics
 -- @see CREATE_TRACKED_POINT
 -- @usage Object CREATE_TRACKED_POINT();
--- @param undefined
 -- @return Object
 function CreateTrackedPoint() end
 
@@ -448,9 +582,12 @@ function CreateTrackedPoint() end
 -- @see SET_TRACKED_POINT_INFO
 -- @usage Any SET_TRACKED_POINT_INFO(Object point, float x, float y, float z, float radius);
 -- @param point Object
--- @param float
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param radius float
 -- @return Any
-function SetTrackedPointInfo() end
+function SetTrackedPointInfo(point, x, y, z, radius) end
 
 -- @todo
 -- @module native
@@ -459,7 +596,7 @@ function SetTrackedPointInfo() end
 -- @usage BOOL IS_TRACKED_POINT_VISIBLE(Object point);
 -- @param point Object
 -- @return BOOL
-function IsTrackedPointVisible() end
+function IsTrackedPointVisible(point) end
 
 -- @todo
 -- @module native
@@ -468,7 +605,7 @@ function IsTrackedPointVisible() end
 -- @usage void DESTROY_TRACKED_POINT(Object point);
 -- @param point Object
 -- @return void
-function DestroyTrackedPoint() end
+function DestroyTrackedPoint(point) end
 
 -- Toggles Heatvision on/off.
 -- @module native
@@ -477,14 +614,13 @@ function DestroyTrackedPoint() end
 -- @usage void SET_SEETHROUGH(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetSeethrough() end
+function SetSeethrough(toggle) end
 
 -- @todo
 -- @module native
 -- @submodule graphics
 -- @see IS_PARTICLE_FX_DELAYED_BLINK
 -- @usage float IS_PARTICLE_FX_DELAYED_BLINK();
--- @param undefined
 -- @return float
 function IsParticleFxDelayedBlink() end
 
@@ -494,10 +630,18 @@ function IsParticleFxDelayedBlink() end
 -- @see START_PARTICLE_FX_NON_LOOPED_AT_COORD
 -- @usage int START_PARTICLE_FX_NON_LOOPED_AT_COORD(char* effectName, float xPos, float yPos, float zPos, float xRot, float yRot, float zRot, float scale, BOOL xAxis, BOOL yAxis, BOOL zAxis);
 -- @param effectName char*
--- @param float
--- @param BOOL
+-- @param xPos float
+-- @param yPos float
+-- @param zPos float
+-- @param xRot float
+-- @param yRot float
+-- @param zRot float
+-- @param scale float
+-- @param xAxis BOOL
+-- @param yAxis BOOL
+-- @param zAxis BOOL
 -- @return int
-function StartParticleFxNonLoopedAtCoord() end
+function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 -- GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_bong_smoke", PLAYER::PLAYER_PED_ID(), -0.025f, 0.13f, 0f, 0f, 0f, 0f, 31086, 0x3F800000, 0, 0, 0);  Axis - Invert Axis Flags  list: pastebin.com/N9unUFWY
 -- @module native
@@ -505,12 +649,20 @@ function StartParticleFxNonLoopedAtCoord() end
 -- @see START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE
 -- @usage BOOL START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE(char* effectName, Ped ped, float offsetX, float offsetY, float offsetZ, float rotX, float rotY, float rotZ, int boneIndex, float scale, BOOL axisX, BOOL axisY, BOOL axisZ);
 -- @param effectName char*
--- @param Ped
--- @param float
--- @param int
--- @param BOOL
+-- @param ped Ped
+-- @param offsetX float
+-- @param offsetY float
+-- @param offsetZ float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
+-- @param boneIndex int
+-- @param scale float
+-- @param axisX BOOL
+-- @param axisY BOOL
+-- @param axisZ BOOL
 -- @return BOOL
-function StartParticleFxNonLoopedOnPedBone() end
+function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
 -- Starts a particle effect on an entity for example your player. List: pastebin.com/N9unUFWY  Example: C#: Function.Call(Hash.REQUEST_NAMED_PTFX_ASSET, "scr_rcbarry2");                     Function.Call(Hash._SET_PTFX_ASSET_NEXT_CALL, "scr_rcbarry2");                             Function.Call(Hash.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY, "scr_clown_appears", Game.Player.Character, 0.0, 0.0, -0.5, 0.0, 0.0, 0.0, 1.0, false, false, false);  Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native
 -- @module native
@@ -518,11 +670,19 @@ function StartParticleFxNonLoopedOnPedBone() end
 -- @see START_PARTICLE_FX_NON_LOOPED_ON_ENTITY
 -- @usage BOOL START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(char* effectName, Entity entity, float offsetX, float offsetY, float offsetZ, float rotX, float rotY, float rotZ, float scale, BOOL axisX, BOOL axisY, BOOL axisZ);
 -- @param effectName char*
--- @param Entity
--- @param float
--- @param BOOL
+-- @param entity Entity
+-- @param offsetX float
+-- @param offsetY float
+-- @param offsetZ float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
+-- @param scale float
+-- @param axisX BOOL
+-- @param axisY BOOL
+-- @param axisZ BOOL
 -- @return BOOL
-function StartParticleFxNonLoopedOnEntity() end
+function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
 -- only works on some fx's
 -- @module native
@@ -530,9 +690,10 @@ function StartParticleFxNonLoopedOnEntity() end
 -- @see SET_PARTICLE_FX_NON_LOOPED_COLOUR
 -- @usage void SET_PARTICLE_FX_NON_LOOPED_COLOUR(float r, float g, float b);
 -- @param r float
--- @param float
+-- @param g float
+-- @param b float
 -- @return void
-function SetParticleFxNonLoopedColour() end
+function SetParticleFxNonLoopedColour(r, g, b) end
 
 -- Usage example for C#:          Function.Call(Hash.SET_PARTICLE_FX_NON_LOOPED_ALPHA, new InputArgument[] { 0.1f });  Note: the argument alpha ranges from 0.0f-1.0f !
 -- @module native
@@ -541,7 +702,7 @@ function SetParticleFxNonLoopedColour() end
 -- @usage void SET_PARTICLE_FX_NON_LOOPED_ALPHA(float alpha);
 -- @param alpha float
 -- @return void
-function SetParticleFxNonLoopedAlpha() end
+function SetParticleFxNonLoopedAlpha(alpha) end
 
 -- GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)
 -- @module native
@@ -549,10 +710,19 @@ function SetParticleFxNonLoopedAlpha() end
 -- @see START_PARTICLE_FX_LOOPED_AT_COORD
 -- @usage int START_PARTICLE_FX_LOOPED_AT_COORD(char* effectName, float x, float y, float z, float xRot, float yRot, float zRot, float scale, BOOL xAxis, BOOL yAxis, BOOL zAxis, BOOL p11);
 -- @param effectName char*
--- @param float
--- @param BOOL
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param xRot float
+-- @param yRot float
+-- @param zRot float
+-- @param scale float
+-- @param xAxis BOOL
+-- @param yAxis BOOL
+-- @param zAxis BOOL
+-- @param p11 BOOL
 -- @return int
-function StartParticleFxLoopedAtCoord() end
+function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis, p11) end
 
 -- @todo
 -- @module native
@@ -560,12 +730,20 @@ function StartParticleFxLoopedAtCoord() end
 -- @see START_PARTICLE_FX_LOOPED_ON_PED_BONE
 -- @usage int START_PARTICLE_FX_LOOPED_ON_PED_BONE(char* effectName, Ped ped, float xOffset, float yOffset, float zOffset, float xRot, float yRot, float zRot, int boneIndex, float scale, BOOL xAxis, BOOL yAxis, BOOL zAxis);
 -- @param effectName char*
--- @param Ped
--- @param float
--- @param int
--- @param BOOL
+-- @param ped Ped
+-- @param xOffset float
+-- @param yOffset float
+-- @param zOffset float
+-- @param xRot float
+-- @param yRot float
+-- @param zRot float
+-- @param boneIndex int
+-- @param scale float
+-- @param xAxis BOOL
+-- @param yAxis BOOL
+-- @param zAxis BOOL
 -- @return int
-function StartParticleFxLoopedOnPedBone() end
+function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
 -- list: pastebin.com/N9unUFWY
 -- @module native
@@ -573,11 +751,19 @@ function StartParticleFxLoopedOnPedBone() end
 -- @see START_PARTICLE_FX_LOOPED_ON_ENTITY
 -- @usage int START_PARTICLE_FX_LOOPED_ON_ENTITY(char* effectName, Entity entity, float xOffset, float yOffset, float zOffset, float xRot, float yRot, float zRot, float scale, BOOL xAxis, BOOL yAxis, BOOL zAxis);
 -- @param effectName char*
--- @param Entity
--- @param float
--- @param BOOL
+-- @param entity Entity
+-- @param xOffset float
+-- @param yOffset float
+-- @param zOffset float
+-- @param xRot float
+-- @param yRot float
+-- @param zRot float
+-- @param scale float
+-- @param xAxis BOOL
+-- @param yAxis BOOL
+-- @param zAxis BOOL
 -- @return int
-function StartParticleFxLoopedOnEntity() end
+function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 -- p1 is always 0 in the native scripts
 -- @module native
@@ -585,9 +771,9 @@ function StartParticleFxLoopedOnEntity() end
 -- @see STOP_PARTICLE_FX_LOOPED
 -- @usage void STOP_PARTICLE_FX_LOOPED(int ptfxHandle, BOOL p1);
 -- @param ptfxHandle int
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function StopParticleFxLooped() end
+function StopParticleFxLooped(ptfxHandle, p1) end
 
 -- @todo
 -- @module native
@@ -595,9 +781,9 @@ function StopParticleFxLooped() end
 -- @see REMOVE_PARTICLE_FX
 -- @usage void REMOVE_PARTICLE_FX(int ptfxHandle, BOOL p1);
 -- @param ptfxHandle int
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function RemoveParticleFx() end
+function RemoveParticleFx(ptfxHandle, p1) end
 
 -- @todo
 -- @module native
@@ -606,7 +792,7 @@ function RemoveParticleFx() end
 -- @usage void REMOVE_PARTICLE_FX_FROM_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return void
-function RemoveParticleFxFromEntity() end
+function RemoveParticleFxFromEntity(entity) end
 
 -- @todo
 -- @module native
@@ -614,9 +800,11 @@ function RemoveParticleFxFromEntity() end
 -- @see REMOVE_PARTICLE_FX_IN_RANGE
 -- @usage void REMOVE_PARTICLE_FX_IN_RANGE(float X, float Y, float Z, float radius);
 -- @param X float
--- @param float
+-- @param Y float
+-- @param Z float
+-- @param radius float
 -- @return void
-function RemoveParticleFxInRange() end
+function RemoveParticleFxInRange(X, Y, Z, radius) end
 
 -- @todo
 -- @module native
@@ -625,7 +813,7 @@ function RemoveParticleFxInRange() end
 -- @usage BOOL DOES_PARTICLE_FX_LOOPED_EXIST(int ptfxHandle);
 -- @param ptfxHandle int
 -- @return BOOL
-function DoesParticleFxLoopedExist() end
+function DoesParticleFxLoopedExist(ptfxHandle) end
 
 -- @todo
 -- @module native
@@ -633,9 +821,14 @@ function DoesParticleFxLoopedExist() end
 -- @see SET_PARTICLE_FX_LOOPED_OFFSETS
 -- @usage void SET_PARTICLE_FX_LOOPED_OFFSETS(int ptfxHandle, float x, float y, float z, float rotX, float rotY, float rotZ);
 -- @param ptfxHandle int
--- @param float
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
 -- @return void
-function SetParticleFxLoopedOffsets() end
+function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
 
 -- @todo
 -- @module native
@@ -643,11 +836,11 @@ function SetParticleFxLoopedOffsets() end
 -- @see SET_PARTICLE_FX_LOOPED_EVOLUTION
 -- @usage void SET_PARTICLE_FX_LOOPED_EVOLUTION(int ptfxHandle, char* propertyName, float amount, BOOL Id);
 -- @param ptfxHandle int
--- @param char*
--- @param float
--- @param BOOL
+-- @param propertyName char*
+-- @param amount float
+-- @param Id BOOL
 -- @return void
-function SetParticleFxLoopedEvolution() end
+function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, Id) end
 
 -- only works on some fx's  p4 = 0
 -- @module native
@@ -655,10 +848,12 @@ function SetParticleFxLoopedEvolution() end
 -- @see SET_PARTICLE_FX_LOOPED_COLOUR
 -- @usage void SET_PARTICLE_FX_LOOPED_COLOUR(int ptfxHandle, float r, float g, float b, BOOL p4);
 -- @param ptfxHandle int
--- @param float
--- @param BOOL
+-- @param r float
+-- @param g float
+-- @param b float
+-- @param p4 BOOL
 -- @return void
-function SetParticleFxLoopedColour() end
+function SetParticleFxLoopedColour(ptfxHandle, r, g, b, p4) end
 
 -- @todo
 -- @module native
@@ -666,9 +861,9 @@ function SetParticleFxLoopedColour() end
 -- @see SET_PARTICLE_FX_LOOPED_ALPHA
 -- @usage void SET_PARTICLE_FX_LOOPED_ALPHA(int ptfxHandle, float alpha);
 -- @param ptfxHandle int
--- @param float
+-- @param alpha float
 -- @return void
-function SetParticleFxLoopedAlpha() end
+function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
 
 -- @todo
 -- @module native
@@ -676,9 +871,9 @@ function SetParticleFxLoopedAlpha() end
 -- @see SET_PARTICLE_FX_LOOPED_SCALE
 -- @usage void SET_PARTICLE_FX_LOOPED_SCALE(int ptfxHandle, float scale);
 -- @param ptfxHandle int
--- @param float
+-- @param scale float
 -- @return void
-function SetParticleFxLoopedScale() end
+function SetParticleFxLoopedScale(ptfxHandle, scale) end
 
 -- @todo
 -- @module native
@@ -687,7 +882,7 @@ function SetParticleFxLoopedScale() end
 -- @usage void SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(BOOL p0);
 -- @param p0 BOOL
 -- @return void
-function SetParticleFxCamInsideVehicle() end
+function SetParticleFxCamInsideVehicle(p0) end
 
 -- @todo
 -- @module native
@@ -695,9 +890,9 @@ function SetParticleFxCamInsideVehicle() end
 -- @see SET_PARTICLE_FX_CAM_INSIDE_NONPLAYER_VEHICLE
 -- @usage void SET_PARTICLE_FX_CAM_INSIDE_NONPLAYER_VEHICLE(Any p0, BOOL p1);
 -- @param p0 Any
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function SetParticleFxCamInsideNonplayerVehicle() end
+function SetParticleFxCamInsideNonplayerVehicle(p0, p1) end
 
 -- @todo
 -- @module native
@@ -706,7 +901,7 @@ function SetParticleFxCamInsideNonplayerVehicle() end
 -- @usage void SET_PARTICLE_FX_SHOOTOUT_BOAT(Any p0);
 -- @param p0 Any
 -- @return void
-function SetParticleFxShootoutBoat() end
+function SetParticleFxShootoutBoat(p0) end
 
 -- hash collision
 -- @module native
@@ -715,7 +910,7 @@ function SetParticleFxShootoutBoat() end
 -- @usage void SET_PARTICLE_FX_BLOOD_SCALE(BOOL p0);
 -- @param p0 BOOL
 -- @return void
-function SetParticleFxBloodScale() end
+function SetParticleFxBloodScale(p0) end
 
 -- Creates cartoon effect when Michel smokes the weed
 -- @module native
@@ -724,7 +919,7 @@ function SetParticleFxBloodScale() end
 -- @usage void ENABLE_CLOWN_BLOOD_VFX(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function EnableClownBloodVfx() end
+function EnableClownBloodVfx(toggle) end
 
 -- @todo
 -- @module native
@@ -733,7 +928,7 @@ function EnableClownBloodVfx() end
 -- @usage void ENABLE_ALIEN_BLOOD_VFX(BOOL Toggle);
 -- @param Toggle BOOL
 -- @return void
-function EnableAlienBloodVfx() end
+function EnableAlienBloodVfx(Toggle) end
 
 -- @todo
 -- @module native
@@ -741,9 +936,12 @@ function EnableAlienBloodVfx() end
 -- @see WASH_DECALS_IN_RANGE
 -- @usage void WASH_DECALS_IN_RANGE(Any p0, Any p1, Any p2, Any p3, Any p4);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
+-- @param p2 Any
+-- @param p3 Any
+-- @param p4 Any
 -- @return void
-function WashDecalsInRange() end
+function WashDecalsInRange(p0, p1, p2, p3, p4) end
 
 -- @todo
 -- @module native
@@ -751,9 +949,9 @@ function WashDecalsInRange() end
 -- @see WASH_DECALS_FROM_VEHICLE
 -- @usage void WASH_DECALS_FROM_VEHICLE(Vehicle vehicle, float p1);
 -- @param vehicle Vehicle
--- @param float
+-- @param p1 float
 -- @return void
-function WashDecalsFromVehicle() end
+function WashDecalsFromVehicle(vehicle, p1) end
 
 -- Fades nearby decals within the range specified
 -- @module native
@@ -761,9 +959,12 @@ function WashDecalsFromVehicle() end
 -- @see FADE_DECALS_IN_RANGE
 -- @usage void FADE_DECALS_IN_RANGE(Any p0, Any p1, Any p2, Any p3, Any p4);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
+-- @param p2 Any
+-- @param p3 Any
+-- @param p4 Any
 -- @return void
-function FadeDecalsInRange() end
+function FadeDecalsInRange(p0, p1, p2, p3, p4) end
 
 -- Removes all decals in range from a position, it includes the bullet holes, blood pools, petrol...
 -- @module native
@@ -771,9 +972,11 @@ function FadeDecalsInRange() end
 -- @see REMOVE_DECALS_IN_RANGE
 -- @usage void REMOVE_DECALS_IN_RANGE(float x, float y, float z, float range);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
+-- @param range float
 -- @return void
-function RemoveDecalsInRange() end
+function RemoveDecalsInRange(x, y, z, range) end
 
 -- @todo
 -- @module native
@@ -782,7 +985,7 @@ function RemoveDecalsInRange() end
 -- @usage void REMOVE_DECALS_FROM_OBJECT(Object obj);
 -- @param obj Object
 -- @return void
-function RemoveDecalsFromObject() end
+function RemoveDecalsFromObject(obj) end
 
 -- @todo
 -- @module native
@@ -790,9 +993,11 @@ function RemoveDecalsFromObject() end
 -- @see REMOVE_DECALS_FROM_OBJECT_FACING
 -- @usage void REMOVE_DECALS_FROM_OBJECT_FACING(Object obj, float x, float y, float z);
 -- @param obj Object
--- @param float
+-- @param x float
+-- @param y float
+-- @param z float
 -- @return void
-function RemoveDecalsFromObjectFacing() end
+function RemoveDecalsFromObjectFacing(obj, x, y, z) end
 
 -- @todo
 -- @module native
@@ -801,7 +1006,7 @@ function RemoveDecalsFromObjectFacing() end
 -- @usage void REMOVE_DECALS_FROM_VEHICLE(Vehicle vehicle);
 -- @param vehicle Vehicle
 -- @return void
-function RemoveDecalsFromVehicle() end
+function RemoveDecalsFromVehicle(vehicle) end
 
 -- decal types:  public enum DecalTypes {     splatters_blood = 1010,     splatters_blood_dir = 1015,     splatters_blood_mist = 1017,     splatters_mud = 1020,     splatters_paint = 1030,     splatters_water = 1040,     splatters_water_hydrant = 1050,     splatters_blood2 = 1110,     weapImpact_metal = 4010,     weapImpact_concrete = 4020,     weapImpact_mattress = 4030,     weapImpact_mud = 4032,     weapImpact_wood = 4050,     weapImpact_sand = 4053,     weapImpact_cardboard = 4040,     weapImpact_melee_glass = 4100,     weapImpact_glass_blood = 4102,     weapImpact_glass_blood2 = 4104,     weapImpact_shotgun_paper = 4200,     weapImpact_shotgun_mattress,     weapImpact_shotgun_metal,     weapImpact_shotgun_wood,     weapImpact_shotgun_dirt,     weapImpact_shotgun_tvscreen,     weapImpact_shotgun_tvscreen2,     weapImpact_shotgun_tvscreen3,     weapImpact_melee_concrete = 4310,     weapImpact_melee_wood = 4312,     weapImpact_melee_metal = 4314,     burn1 = 4421,     burn2,     burn3,     burn4,     burn5,     bang_concrete_bang = 5000,     bang_concrete_bang2,     bang_bullet_bang,     bang_bullet_bang2 = 5004,     bang_glass = 5031,     bang_glass2,     solidPool_water = 9000,     solidPool_blood,     solidPool_oil,     solidPool_petrol,     solidPool_mud,     porousPool_water,     porousPool_blood,     porousPool_oil,     porousPool_petrol,     porousPool_mud,     porousPool_water_ped_drip,     liquidTrail_water = 9050 }
 -- @module native
@@ -809,10 +1014,27 @@ function RemoveDecalsFromVehicle() end
 -- @see ADD_DECAL
 -- @usage int ADD_DECAL(int decalType, float posX, float posY, float posZ, float p4, float p5, float p6, float p7, float p8, float p9, float width, float height, float rCoef, float gCoef, float bCoef, float opacity, float timeout, BOOL p17, BOOL p18, BOOL p19);
 -- @param decalType int
--- @param float
--- @param BOOL
+-- @param posX float
+-- @param posY float
+-- @param posZ float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 float
+-- @param p8 float
+-- @param p9 float
+-- @param width float
+-- @param height float
+-- @param rCoef float
+-- @param gCoef float
+-- @param bCoef float
+-- @param opacity float
+-- @param timeout float
+-- @param p17 BOOL
+-- @param p18 BOOL
+-- @param p19 BOOL
 -- @return int
-function AddDecal() end
+function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
 
 -- @todo
 -- @module native
@@ -820,9 +1042,13 @@ function AddDecal() end
 -- @see ADD_PETROL_DECAL
 -- @usage Any ADD_PETROL_DECAL(float x, float y, float z, float groundLvl, float width, float transparency);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
+-- @param groundLvl float
+-- @param width float
+-- @param transparency float
 -- @return Any
-function AddPetrolDecal() end
+function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
 
 -- @todo
 -- @module native
@@ -831,7 +1057,7 @@ function AddPetrolDecal() end
 -- @usage void REMOVE_DECAL(int decal);
 -- @param decal int
 -- @return void
-function RemoveDecal() end
+function RemoveDecal(decal) end
 
 -- @todo
 -- @module native
@@ -840,7 +1066,7 @@ function RemoveDecal() end
 -- @usage BOOL IS_DECAL_ALIVE(int decal);
 -- @param decal int
 -- @return BOOL
-function IsDecalAlive() end
+function IsDecalAlive(decal) end
 
 -- @todo
 -- @module native
@@ -849,7 +1075,7 @@ function IsDecalAlive() end
 -- @usage float GET_DECAL_WASH_LEVEL(int decal);
 -- @param decal int
 -- @return float
-function GetDecalWashLevel() end
+function GetDecalWashLevel(decal) end
 
 -- @todo
 -- @module native
@@ -857,9 +1083,9 @@ function GetDecalWashLevel() end
 -- @see MOVE_VEHICLE_DECALS
 -- @usage void MOVE_VEHICLE_DECALS(Any p0, Any p1);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
 -- @return void
-function MoveVehicleDecals() end
+function MoveVehicleDecals(p0, p1) end
 
 -- @todo
 -- @module native
@@ -868,7 +1094,7 @@ function MoveVehicleDecals() end
 -- @usage void DISABLE_VEHICLE_DISTANTLIGHTS(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function DisableVehicleDistantlights() end
+function DisableVehicleDistantlights(toggle) end
 
 -- Loads the specified timecycle modifier. Modifiers are defined separately in another file (e.g. "timecycle_mods_1.xml")  Parameters: modifierName - The modifier to load (e.g. "V_FIB_IT3", "scanline_cam", etc.)  For a full list, see here: pastebin.com/kVPwMemE
 -- @module native
@@ -877,7 +1103,7 @@ function DisableVehicleDistantlights() end
 -- @usage void SET_TIMECYCLE_MODIFIER(char* modifierName);
 -- @param modifierName char*
 -- @return void
-function SetTimecycleModifier() end
+function SetTimecycleModifier(modifierName) end
 
 -- @todo
 -- @module native
@@ -886,7 +1112,7 @@ function SetTimecycleModifier() end
 -- @usage void SET_TIMECYCLE_MODIFIER_STRENGTH(float strength);
 -- @param strength float
 -- @return void
-function SetTimecycleModifierStrength() end
+function SetTimecycleModifierStrength(strength) end
 
 -- For a full list, see here: pastebin.com/kVPwMemE
 -- @module native
@@ -894,16 +1120,15 @@ function SetTimecycleModifierStrength() end
 -- @see SET_TRANSITION_TIMECYCLE_MODIFIER
 -- @usage void SET_TRANSITION_TIMECYCLE_MODIFIER(char* modifierName, float transition);
 -- @param modifierName char*
--- @param float
+-- @param transition float
 -- @return void
-function SetTransitionTimecycleModifier() end
+function SetTransitionTimecycleModifier(modifierName, transition) end
 
 -- @todo
 -- @module native
 -- @submodule graphics
 -- @see CLEAR_TIMECYCLE_MODIFIER
 -- @usage void CLEAR_TIMECYCLE_MODIFIER();
--- @param undefined
 -- @return void
 function ClearTimecycleModifier() end
 
@@ -912,7 +1137,6 @@ function ClearTimecycleModifier() end
 -- @submodule graphics
 -- @see GET_TIMECYCLE_MODIFIER_INDEX
 -- @usage int GET_TIMECYCLE_MODIFIER_INDEX();
--- @param undefined
 -- @return int
 function GetTimecycleModifierIndex() end
 
@@ -921,7 +1145,6 @@ function GetTimecycleModifierIndex() end
 -- @submodule graphics
 -- @see PUSH_TIMECYCLE_MODIFIER
 -- @usage void PUSH_TIMECYCLE_MODIFIER();
--- @param undefined
 -- @return void
 function PushTimecycleModifier() end
 
@@ -930,7 +1153,6 @@ function PushTimecycleModifier() end
 -- @submodule graphics
 -- @see POP_TIMECYCLE_MODIFIER
 -- @usage void POP_TIMECYCLE_MODIFIER();
--- @param undefined
 -- @return void
 function PopTimecycleModifier() end
 
@@ -941,7 +1163,7 @@ function PopTimecycleModifier() end
 -- @usage int REQUEST_SCALEFORM_MOVIE(char* scaleformName);
 -- @param scaleformName char*
 -- @return int
-function RequestScaleformMovie() end
+function RequestScaleformMovie(scaleformName) end
 
 -- Also used by 0x67D02A194A2FC2BD
 -- @module native
@@ -950,7 +1172,7 @@ function RequestScaleformMovie() end
 -- @usage int REQUEST_SCALEFORM_MOVIE_INSTANCE(char* scaleformName);
 -- @param scaleformName char*
 -- @return int
-function RequestScaleformMovieInstance() end
+function RequestScaleformMovieInstance(scaleformName) end
 
 -- @todo
 -- @module native
@@ -959,7 +1181,7 @@ function RequestScaleformMovieInstance() end
 -- @usage BOOL HAS_SCALEFORM_MOVIE_LOADED(int scaleformHandle);
 -- @param scaleformHandle int
 -- @return BOOL
-function HasScaleformMovieLoaded() end
+function HasScaleformMovieLoaded(scaleformHandle) end
 
 -- @todo
 -- @module native
@@ -968,7 +1190,7 @@ function HasScaleformMovieLoaded() end
 -- @usage BOOL HAS_SCALEFORM_CONTAINER_MOVIE_LOADED_INTO_PARENT(int scaleformHandle);
 -- @param scaleformHandle int
 -- @return BOOL
-function HasScaleformContainerMovieLoadedIntoParent() end
+function HasScaleformContainerMovieLoadedIntoParent(scaleformHandle) end
 
 -- @todo
 -- @module native
@@ -977,7 +1199,7 @@ function HasScaleformContainerMovieLoadedIntoParent() end
 -- @usage void SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(int* scaleformHandle);
 -- @param scaleformHandle int*
 -- @return void
-function SetScaleformMovieAsNoLongerNeeded() end
+function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
 
 -- @todo
 -- @module native
@@ -985,9 +1207,9 @@ function SetScaleformMovieAsNoLongerNeeded() end
 -- @see SET_SCALEFORM_MOVIE_TO_USE_SYSTEM_TIME
 -- @usage void SET_SCALEFORM_MOVIE_TO_USE_SYSTEM_TIME(int scaleform, BOOL toggle);
 -- @param scaleform int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetScaleformMovieToUseSystemTime() end
+function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
 
 -- @todo
 -- @module native
@@ -995,10 +1217,17 @@ function SetScaleformMovieToUseSystemTime() end
 -- @see DRAW_SCALEFORM_MOVIE
 -- @usage void DRAW_SCALEFORM_MOVIE(int scaleformHandle, float x, float y, float width, float height, int red, int green, int blue, int alpha, int unk);
 -- @param scaleformHandle int
--- @param float
--- @param int
+-- @param x float
+-- @param y float
+-- @param width float
+-- @param height float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
+-- @param unk int
 -- @return void
-function DrawScaleformMovie() end
+function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, blue, alpha, unk) end
 
 -- unk is not used so no need
 -- @module native
@@ -1006,9 +1235,13 @@ function DrawScaleformMovie() end
 -- @see DRAW_SCALEFORM_MOVIE_FULLSCREEN
 -- @usage void DRAW_SCALEFORM_MOVIE_FULLSCREEN(int scaleform, int red, int green, int blue, int alpha, int unk);
 -- @param scaleform int
--- @param int
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
+-- @param unk int
 -- @return void
-function DrawScaleformMovieFullscreen() end
+function DrawScaleformMovieFullscreen(scaleform, red, green, blue, alpha, unk) end
 
 -- @todo
 -- @module native
@@ -1016,9 +1249,13 @@ function DrawScaleformMovieFullscreen() end
 -- @see DRAW_SCALEFORM_MOVIE_FULLSCREEN_MASKED
 -- @usage void DRAW_SCALEFORM_MOVIE_FULLSCREEN_MASKED(int scaleform1, int scaleform2, int red, int green, int blue, int alpha);
 -- @param scaleform1 int
--- @param int
+-- @param scaleform2 int
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawScaleformMovieFullscreenMasked() end
+function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, blue, alpha) end
 
 -- @todo
 -- @module native
@@ -1026,10 +1263,21 @@ function DrawScaleformMovieFullscreenMasked() end
 -- @see DRAW_SCALEFORM_MOVIE_3D
 -- @usage void DRAW_SCALEFORM_MOVIE_3D(int scaleform, float posX, float posY, float posZ, float rotX, float rotY, float rotZ, float p7, float p8, float p9, float scaleX, float scaleY, float scaleZ, Any p13);
 -- @param scaleform int
--- @param float
--- @param Any
+-- @param posX float
+-- @param posY float
+-- @param posZ float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
+-- @param p7 float
+-- @param p8 float
+-- @param p9 float
+-- @param scaleX float
+-- @param scaleY float
+-- @param scaleZ float
+-- @param p13 Any
 -- @return void
-function DrawScaleformMovie_3d() end
+function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9, scaleX, scaleY, scaleZ, p13) end
 
 -- Calls the Scaleform function.
 -- @module native
@@ -1037,9 +1285,9 @@ function DrawScaleformMovie_3d() end
 -- @see CALL_SCALEFORM_MOVIE_METHOD
 -- @usage void CALL_SCALEFORM_MOVIE_METHOD(int scaleform, char* method);
 -- @param scaleform int
--- @param char*
+-- @param method char*
 -- @return void
-function CallScaleformMovieMethod() end
+function CallScaleformMovieMethod(scaleform, method) end
 
 -- Unsurprisingly, this native is incorrectly named. Instead, this returns the name of the scaleform movie.  HASH COLLISION. PLEASE REMOVE NATIVE NAME.
 -- @module native
@@ -1048,7 +1296,7 @@ function CallScaleformMovieMethod() end
 -- @usage char* SITTING_TV(int scaleform);
 -- @param scaleform int
 -- @return char*
-function SittingTv() end
+function SittingTv(scaleform) end
 
 -- Called prior to adding a text component to the UI. After doing so, GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING is called.  Examples: GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("NUMBER"); UI::ADD_TEXT_COMPONENT_INTEGER(GAMEPLAY::ABSI(a_1)); GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();  GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRING"); UI::_ADD_TEXT_COMPONENT_STRING(a_2); GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();  GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM2"); UI::_0x17299B63C7683A2B(v_3); UI::_0x17299B63C7683A2B(v_4); GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();  GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM1"); UI::_0x17299B63C7683A2B(v_3); GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 -- @module native
@@ -1057,14 +1305,13 @@ function SittingTv() end
 -- @usage void BEGIN_TEXT_COMMAND_SCALEFORM_STRING(char* componentType);
 -- @param componentType char*
 -- @return void
-function BeginTextCommandScaleformString() end
+function BeginTextCommandScaleformString(componentType) end
 
 -- @todo
 -- @module native
 -- @submodule graphics
 -- @see END_TEXT_COMMAND_SCALEFORM_STRING
 -- @usage void END_TEXT_COMMAND_SCALEFORM_STRING();
--- @param undefined
 -- @return void
 function EndTextCommandScaleformString() end
 
@@ -1075,14 +1322,13 @@ function EndTextCommandScaleformString() end
 -- @usage void SET_TV_CHANNEL(int channel);
 -- @param channel int
 -- @return void
-function SetTvChannel() end
+function SetTvChannel(channel) end
 
 -- @todo
 -- @module native
 -- @submodule graphics
 -- @see GET_TV_CHANNEL
 -- @usage int GET_TV_CHANNEL();
--- @param undefined
 -- @return int
 function GetTvChannel() end
 
@@ -1093,14 +1339,13 @@ function GetTvChannel() end
 -- @usage void SET_TV_VOLUME(float volume);
 -- @param volume float
 -- @return void
-function SetTvVolume() end
+function SetTvVolume(volume) end
 
 -- @todo
 -- @module native
 -- @submodule graphics
 -- @see GET_TV_VOLUME
 -- @usage float GET_TV_VOLUME();
--- @param undefined
 -- @return float
 function GetTvVolume() end
 
@@ -1110,10 +1355,16 @@ function GetTvVolume() end
 -- @see DRAW_TV_CHANNEL
 -- @usage void DRAW_TV_CHANNEL(float xPos, float yPos, float xScale, float yScale, float rotation, int red, int green, int blue, int alpha);
 -- @param xPos float
--- @param float
--- @param int
+-- @param yPos float
+-- @param xScale float
+-- @param yScale float
+-- @param rotation float
+-- @param red int
+-- @param green int
+-- @param blue int
+-- @param alpha int
 -- @return void
-function DrawTvChannel() end
+function DrawTvChannel(xPos, yPos, xScale, yScale, rotation, red, green, blue, alpha) end
 
 -- @todo
 -- @module native
@@ -1122,4 +1373,4 @@ function DrawTvChannel() end
 -- @usage void ENABLE_MOVIE_SUBTITLES(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function EnableMovieSubtitles() end
+function EnableMovieSubtitles(toggle) end

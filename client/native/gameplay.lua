@@ -3,7 +3,6 @@
 -- @submodule gameplay
 -- @see GET_ALLOCATED_STACK_SIZE
 -- @usage int GET_ALLOCATED_STACK_SIZE();
--- @param undefined
 -- @return int
 function GetAllocatedStackSize() end
 
@@ -14,7 +13,7 @@ function GetAllocatedStackSize() end
 -- @usage void SET_RANDOM_SEED(int time);
 -- @param time int
 -- @return void
-function SetRandomSeed() end
+function SetRandomSeed(time) end
 
 -- Maximum value is 1. At a value of 0 the game will still run at a minimum time scale.  Slow Motion 1: 0.6 Slow Motion 2: 0.4 Slow Motion 3: 0.2
 -- @module native
@@ -23,7 +22,7 @@ function SetRandomSeed() end
 -- @usage void SET_TIME_SCALE(float time);
 -- @param time float
 -- @return void
-function SetTimeScale() end
+function SetTimeScale(time) end
 
 -- If true, the player can't save the game.    If the parameter is true, sets the mission flag to true, if the parameter is false, the function does nothing at all.  ^ also, if the mission flag is already set, the function does nothing at all
 -- @module native
@@ -32,14 +31,13 @@ function SetTimeScale() end
 -- @usage void SET_MISSION_FLAG(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetMissionFlag() end
+function SetMissionFlag(toggle) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see GET_MISSION_FLAG
 -- @usage BOOL GET_MISSION_FLAG();
--- @param undefined
 -- @return BOOL
 function GetMissionFlag() end
 
@@ -50,14 +48,13 @@ function GetMissionFlag() end
 -- @usage void SET_RANDOM_EVENT_FLAG(BOOL p0);
 -- @param p0 BOOL
 -- @return void
-function SetRandomEventFlag() end
+function SetRandomEventFlag(p0) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see GET_RANDOM_EVENT_FLAG
 -- @usage Any GET_RANDOM_EVENT_FLAG();
--- @param undefined
 -- @return Any
 function GetRandomEventFlag() end
 
@@ -66,7 +63,6 @@ function GetRandomEventFlag() end
 -- @submodule gameplay
 -- @see GET_PREV_WEATHER_TYPE_HASH_NAME
 -- @usage Hash GET_PREV_WEATHER_TYPE_HASH_NAME();
--- @param undefined
 -- @return Hash
 function GetPrevWeatherTypeHashName() end
 
@@ -75,7 +71,6 @@ function GetPrevWeatherTypeHashName() end
 -- @submodule gameplay
 -- @see GET_NEXT_WEATHER_TYPE_HASH_NAME
 -- @usage Hash GET_NEXT_WEATHER_TYPE_HASH_NAME();
--- @param undefined
 -- @return Hash
 function GetNextWeatherTypeHashName() end
 
@@ -86,7 +81,7 @@ function GetNextWeatherTypeHashName() end
 -- @usage BOOL IS_PREV_WEATHER_TYPE(char* weatherType);
 -- @param weatherType char*
 -- @return BOOL
-function IsPrevWeatherType() end
+function IsPrevWeatherType(weatherType) end
 
 -- @todo
 -- @module native
@@ -95,7 +90,7 @@ function IsPrevWeatherType() end
 -- @usage BOOL IS_NEXT_WEATHER_TYPE(char* weatherType);
 -- @param weatherType char*
 -- @return BOOL
-function IsNextWeatherType() end
+function IsNextWeatherType(weatherType) end
 
 -- The following weatherTypes are used in the scripts: "CLEAR" "EXTRASUNNY" "CLOUDS" "OVERCAST" "RAIN" "CLEARING" "THUNDER" "SMOG" "FOGGY" "XMAS" "SNOWLIGHT" "BLIZZARD"
 -- @module native
@@ -104,7 +99,7 @@ function IsNextWeatherType() end
 -- @usage void SET_WEATHER_TYPE_PERSIST(char* weatherType);
 -- @param weatherType char*
 -- @return void
-function SetWeatherTypePersist() end
+function SetWeatherTypePersist(weatherType) end
 
 -- The following weatherTypes are used in the scripts: "CLEAR" "EXTRASUNNY" "CLOUDS" "OVERCAST" "RAIN" "CLEARING" "THUNDER" "SMOG" "FOGGY" "XMAS" "SNOWLIGHT" "BLIZZARD"
 -- @module native
@@ -113,7 +108,7 @@ function SetWeatherTypePersist() end
 -- @usage void SET_WEATHER_TYPE_NOW_PERSIST(char* weatherType);
 -- @param weatherType char*
 -- @return void
-function SetWeatherTypeNowPersist() end
+function SetWeatherTypeNowPersist(weatherType) end
 
 -- The following weatherTypes are used in the scripts: "CLEAR" "EXTRASUNNY" "CLOUDS" "OVERCAST" "RAIN" "CLEARING" "THUNDER" "SMOG" "FOGGY" "XMAS" "SNOWLIGHT" "BLIZZARD"
 -- @module native
@@ -122,14 +117,13 @@ function SetWeatherTypeNowPersist() end
 -- @usage void SET_WEATHER_TYPE_NOW(char* weatherType);
 -- @param weatherType char*
 -- @return void
-function SetWeatherTypeNow() end
+function SetWeatherTypeNow(weatherType) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see SET_RANDOM_WEATHER_TYPE
 -- @usage void SET_RANDOM_WEATHER_TYPE();
--- @param undefined
 -- @return void
 function SetRandomWeatherType() end
 
@@ -138,7 +132,6 @@ function SetRandomWeatherType() end
 -- @submodule gameplay
 -- @see CLEAR_WEATHER_TYPE_PERSIST
 -- @usage void CLEAR_WEATHER_TYPE_PERSIST();
--- @param undefined
 -- @return void
 function ClearWeatherTypePersist() end
 
@@ -149,14 +142,13 @@ function ClearWeatherTypePersist() end
 -- @usage void SET_OVERRIDE_WEATHER(char* weatherType);
 -- @param weatherType char*
 -- @return void
-function SetOverrideWeather() end
+function SetOverrideWeather(weatherType) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see CLEAR_OVERRIDE_WEATHER
 -- @usage void CLEAR_OVERRIDE_WEATHER();
--- @param undefined
 -- @return void
 function ClearOverrideWeather() end
 
@@ -167,7 +159,7 @@ function ClearOverrideWeather() end
 -- @usage void SET_WIND(float speed);
 -- @param speed float
 -- @return void
-function SetWind() end
+function SetWind(speed) end
 
 -- Using this native will clamp the wind speed value to a range of 0.0- 12.0. Using SET_WIND sets the same value but without the restriction.
 -- @module native
@@ -176,14 +168,13 @@ function SetWind() end
 -- @usage void SET_WIND_SPEED(float speed);
 -- @param speed float
 -- @return void
-function SetWindSpeed() end
+function SetWindSpeed(speed) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see GET_WIND_SPEED
 -- @usage float GET_WIND_SPEED();
--- @param undefined
 -- @return float
 function GetWindSpeed() end
 
@@ -194,14 +185,13 @@ function GetWindSpeed() end
 -- @usage void SET_WIND_DIRECTION(float direction);
 -- @param direction float
 -- @return void
-function SetWindDirection() end
+function SetWindDirection(direction) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see GET_WIND_DIRECTION
 -- @usage Vector3 GET_WIND_DIRECTION();
--- @param undefined
 -- @return Vector3
 function GetWindDirection() end
 
@@ -210,7 +200,6 @@ function GetWindDirection() end
 -- @submodule gameplay
 -- @see GET_RAIN_LEVEL
 -- @usage Any GET_RAIN_LEVEL();
--- @param undefined
 -- @return Any
 function GetRainLevel() end
 
@@ -219,7 +208,6 @@ function GetRainLevel() end
 -- @submodule gameplay
 -- @see GET_SNOW_LEVEL
 -- @usage Any GET_SNOW_LEVEL();
--- @param undefined
 -- @return Any
 function GetSnowLevel() end
 
@@ -228,7 +216,6 @@ function GetSnowLevel() end
 -- @submodule gameplay
 -- @see GET_GAME_TIMER
 -- @usage int GET_GAME_TIMER();
--- @param undefined
 -- @return int
 function GetGameTimer() end
 
@@ -237,7 +224,6 @@ function GetGameTimer() end
 -- @submodule gameplay
 -- @see GET_FRAME_TIME
 -- @usage float GET_FRAME_TIME();
--- @param undefined
 -- @return float
 function GetFrameTime() end
 
@@ -246,7 +232,6 @@ function GetFrameTime() end
 -- @submodule gameplay
 -- @see GET_FRAME_COUNT
 -- @usage int GET_FRAME_COUNT();
--- @param undefined
 -- @return int
 function GetFrameCount() end
 
@@ -256,9 +241,9 @@ function GetFrameCount() end
 -- @see GET_RANDOM_FLOAT_IN_RANGE
 -- @usage float GET_RANDOM_FLOAT_IN_RANGE(float startRange, float endRange);
 -- @param startRange float
--- @param float
+-- @param endRange float
 -- @return float
-function GetRandomFloatInRange() end
+function GetRandomFloatInRange(startRange, endRange) end
 
 -- Another extremely useful native.  You can use it simply like: if (GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 2))  and the if-statement will count it as false only if the random int is 0. That means there is a one in three chance of it being false. Put a "!" in front and it means there is a one in three chance of it being true.
 -- @module native
@@ -266,9 +251,9 @@ function GetRandomFloatInRange() end
 -- @see GET_RANDOM_INT_IN_RANGE
 -- @usage int GET_RANDOM_INT_IN_RANGE(int startRange, int endRange);
 -- @param startRange int
--- @param int
+-- @param endRange int
 -- @return int
-function GetRandomIntInRange() end
+function GetRandomIntInRange(startRange, endRange) end
 
 -- Gets the ground elevation at the specified position. Note that if the specified position is below ground level, the function will output zero!  x: Position on the X-axis to get ground elevation at. y: Position on the Y-axis to get ground elevation at. z: Position on the Z-axis to get ground elevation at. groundZ: The ground elevation at the specified position. unk: Nearly always 0, very rarely 1 in the scripts.
 -- @module native
@@ -276,11 +261,12 @@ function GetRandomIntInRange() end
 -- @see GET_GROUND_Z_FOR_3D_COORD
 -- @usage BOOL GET_GROUND_Z_FOR_3D_COORD(float x, float y, float z, float* groundZ, BOOL unk);
 -- @param x float
--- @param float
--- @param float*
--- @param BOOL
+-- @param y float
+-- @param z float
+-- @param groundZ float*
+-- @param unk BOOL
 -- @return BOOL
-function GetGroundZFor_3dCoord() end
+function GetGroundZFor_3dCoord(x, y, z, groundZ, unk) end
 
 -- @todo
 -- @module native
@@ -289,7 +275,7 @@ function GetGroundZFor_3dCoord() end
 -- @usage float ASIN(float p0);
 -- @param p0 float
 -- @return float
-function Asin() end
+function Asin(p0) end
 
 -- @todo
 -- @module native
@@ -298,7 +284,7 @@ function Asin() end
 -- @usage float ACOS(float p0);
 -- @param p0 float
 -- @return float
-function Acos() end
+function Acos(p0) end
 
 -- @todo
 -- @module native
@@ -307,7 +293,7 @@ function Acos() end
 -- @usage float TAN(float p0);
 -- @param p0 float
 -- @return float
-function Tan() end
+function Tan(p0) end
 
 -- @todo
 -- @module native
@@ -316,7 +302,7 @@ function Tan() end
 -- @usage float ATAN(float p0);
 -- @param p0 float
 -- @return float
-function Atan() end
+function Atan(p0) end
 
 -- @todo
 -- @module native
@@ -324,9 +310,9 @@ function Atan() end
 -- @see ATAN2
 -- @usage float ATAN2(float p0, float p1);
 -- @param p0 float
--- @param float
+-- @param p1 float
 -- @return float
-function Atan2() end
+function Atan2(p0, p1) end
 
 -- If useZ is false, only the 2D plane (X-Y) will be considered for calculating the distance.  Consider using this faster native instead: SYSTEM::VDIST - DVIST always takes in consideration the 3D coordinates.
 -- @module native
@@ -334,10 +320,14 @@ function Atan2() end
 -- @see GET_DISTANCE_BETWEEN_COORDS
 -- @usage float GET_DISTANCE_BETWEEN_COORDS(float x1, float y1, float z1, float x2, float y2, float z2, BOOL useZ);
 -- @param x1 float
--- @param float
--- @param BOOL
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param useZ BOOL
 -- @return float
-function GetDistanceBetweenCoords() end
+function GetDistanceBetweenCoords(x1, y1, z1, x2, y2, z2, useZ) end
 
 -- @todo
 -- @module native
@@ -345,9 +335,11 @@ function GetDistanceBetweenCoords() end
 -- @see GET_ANGLE_BETWEEN_2D_VECTORS
 -- @usage float GET_ANGLE_BETWEEN_2D_VECTORS(float x1, float y1, float x2, float y2);
 -- @param x1 float
--- @param float
+-- @param y1 float
+-- @param x2 float
+-- @param y2 float
 -- @return float
-function GetAngleBetween_2dVectors() end
+function GetAngleBetween_2dVectors(x1, y1, x2, y2) end
 
 -- dx = x1  dy = y1
 -- @module native
@@ -355,9 +347,9 @@ function GetAngleBetween_2dVectors() end
 -- @see GET_HEADING_FROM_VECTOR_2D
 -- @usage float GET_HEADING_FROM_VECTOR_2D(float dx, float dy);
 -- @param dx float
--- @param float
+-- @param dy float
 -- @return float
-function GetHeadingFromVector_2d() end
+function GetHeadingFromVector_2d(dx, dy) end
 
 -- This sets bit [offset] of [address] to on.  The offsets used are different bits to be toggled on and off, typically there is only one address used in a script.  Example: GAMEPLAY::SET_BIT(&bitAddress, 1);  To check if this bit has been enabled: GAMEPLAY::IS_BIT_SET(bitAddress, 1); // will return 1 afterwards  Please note, this method may assign a value to [address] when used.
 -- @module native
@@ -365,9 +357,9 @@ function GetHeadingFromVector_2d() end
 -- @see SET_BIT
 -- @usage void SET_BIT(int* address, int offset);
 -- @param address int*
--- @param int
+-- @param offset int
 -- @return void
-function SetBit() end
+function SetBit(address, offset) end
 
 -- This sets bit [offset] of [address] to off.  Example: GAMEPLAY::CLEAR_BIT(&bitAddress, 1);  To check if this bit has been enabled: GAMEPLAY::IS_BIT_SET(bitAddress, 1); // will return 0 afterwards
 -- @module native
@@ -375,9 +367,9 @@ function SetBit() end
 -- @see CLEAR_BIT
 -- @usage void CLEAR_BIT(int* address, int offset);
 -- @param address int*
--- @param int
+-- @param offset int
 -- @return void
-function ClearBit() end
+function ClearBit(address, offset) end
 
 -- This native converts its past string to hash. It is hashed using jenkins one at a time method.
 -- @module native
@@ -386,7 +378,7 @@ function ClearBit() end
 -- @usage Hash GET_HASH_KEY(char* model);
 -- @param model char*
 -- @return Hash
-function GetHashKey() end
+function GetHashKey(model) end
 
 -- @todo
 -- @module native
@@ -394,11 +386,20 @@ function GetHashKey() end
 -- @see IS_AREA_OCCUPIED
 -- @usage BOOL IS_AREA_OCCUPIED(float p0, float p1, float p2, float p3, float p4, float p5, BOOL p6, BOOL p7, BOOL p8, BOOL p9, BOOL p10, Any p11, BOOL p12);
 -- @param p0 float
--- @param float
--- @param BOOL
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 BOOL
+-- @param p7 BOOL
+-- @param p8 BOOL
+-- @param p9 BOOL
+-- @param p10 BOOL
+-- @param p11 Any
+-- @param p12 BOOL
 -- @return BOOL
-function IsAreaOccupied() end
+function IsAreaOccupied(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
 -- @todo
 -- @module native
@@ -406,11 +407,18 @@ function IsAreaOccupied() end
 -- @see IS_POSITION_OCCUPIED
 -- @usage BOOL IS_POSITION_OCCUPIED(float x, float y, float z, float range, BOOL p4, BOOL p5, BOOL p6, BOOL p7, BOOL p8, Any p9, BOOL p10);
 -- @param x float
--- @param float
--- @param BOOL
--- @param Any
+-- @param y float
+-- @param z float
+-- @param range float
+-- @param p4 BOOL
+-- @param p5 BOOL
+-- @param p6 BOOL
+-- @param p7 BOOL
+-- @param p8 BOOL
+-- @param p9 Any
+-- @param p10 BOOL
 -- @return BOOL
-function IsPositionOccupied() end
+function IsPositionOccupied(x, y, z, range, p4, p5, p6, p7, p8, p9, p10) end
 
 -- @todo
 -- @module native
@@ -418,10 +426,14 @@ function IsPositionOccupied() end
 -- @see IS_POINT_OBSCURED_BY_A_MISSION_ENTITY
 -- @usage BOOL IS_POINT_OBSCURED_BY_A_MISSION_ENTITY(float p0, float p1, float p2, float p3, float p4, float p5, Any p6);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 Any
 -- @return BOOL
-function IsPointObscuredByAMissionEntity() end
+function IsPointObscuredByAMissionEntity(p0, p1, p2, p3, p4, p5, p6) end
 
 -- Example: CLEAR_AREA(0, 0, 0, 30, true, false, false, false);
 -- @module native
@@ -429,10 +441,15 @@ function IsPointObscuredByAMissionEntity() end
 -- @see CLEAR_AREA
 -- @usage void CLEAR_AREA(float X, float Y, float Z, float radius, BOOL p4, BOOL ignoreCopCars, BOOL ignoreObjects, BOOL p7);
 -- @param X float
--- @param float
--- @param BOOL
+-- @param Y float
+-- @param Z float
+-- @param radius float
+-- @param p4 BOOL
+-- @param ignoreCopCars BOOL
+-- @param ignoreObjects BOOL
+-- @param p7 BOOL
 -- @return void
-function ClearArea() end
+function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 
 -- Example: 		CLEAR_AREA_OF_VEHICLES(0, 0, 0, 10000, false, false, false, false, false);
 -- @module native
@@ -440,10 +457,16 @@ function ClearArea() end
 -- @see CLEAR_AREA_OF_VEHICLES
 -- @usage void CLEAR_AREA_OF_VEHICLES(float x, float y, float z, float radius, BOOL p4, BOOL p5, BOOL p6, BOOL p7, BOOL p8);
 -- @param x float
--- @param float
--- @param BOOL
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param p4 BOOL
+-- @param p5 BOOL
+-- @param p6 BOOL
+-- @param p7 BOOL
+-- @param p8 BOOL
 -- @return void
-function ClearAreaOfVehicles() end
+function ClearAreaOfVehicles(x, y, z, radius, p4, p5, p6, p7, p8) end
 
 -- @todo
 -- @module native
@@ -451,10 +474,19 @@ function ClearAreaOfVehicles() end
 -- @see CLEAR_ANGLED_AREA_OF_VEHICLES
 -- @usage void CLEAR_ANGLED_AREA_OF_VEHICLES(float p0, float p1, float p2, float p3, float p4, float p5, float p6, BOOL p7, BOOL p8, BOOL p9, BOOL p10, BOOL p11);
 -- @param p0 float
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 BOOL
+-- @param p8 BOOL
+-- @param p9 BOOL
+-- @param p10 BOOL
+-- @param p11 BOOL
 -- @return void
-function ClearAngledAreaOfVehicles() end
+function ClearAngledAreaOfVehicles(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
 -- I looked through the PC scripts that this site provides you with a link to find. It shows the last param mainly uses, (0, 2, 6, 16, and 17) so I am going to assume it is a type of flag.
 -- @module native
@@ -462,10 +494,12 @@ function ClearAngledAreaOfVehicles() end
 -- @see CLEAR_AREA_OF_OBJECTS
 -- @usage void CLEAR_AREA_OF_OBJECTS(float x, float y, float z, float radius, int flags);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param flags int
 -- @return void
-function ClearAreaOfObjects() end
+function ClearAreaOfObjects(x, y, z, radius, flags) end
 
 -- Example: 		CLEAR_AREA_OF_PEDS(0, 0, 0, 10000, 1);
 -- @module native
@@ -473,10 +507,12 @@ function ClearAreaOfObjects() end
 -- @see CLEAR_AREA_OF_PEDS
 -- @usage void CLEAR_AREA_OF_PEDS(float x, float y, float z, float radius, int flags);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param flags int
 -- @return void
-function ClearAreaOfPeds() end
+function ClearAreaOfPeds(x, y, z, radius, flags) end
 
 -- flags appears to always be 0
 -- @module native
@@ -484,10 +520,12 @@ function ClearAreaOfPeds() end
 -- @see CLEAR_AREA_OF_COPS
 -- @usage void CLEAR_AREA_OF_COPS(float x, float y, float z, float radius, int flags);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param flags int
 -- @return void
-function ClearAreaOfCops() end
+function ClearAreaOfCops(x, y, z, radius, flags) end
 
 -- flags is usually 0 in the scripts.
 -- @module native
@@ -495,10 +533,12 @@ function ClearAreaOfCops() end
 -- @see CLEAR_AREA_OF_PROJECTILES
 -- @usage void CLEAR_AREA_OF_PROJECTILES(float x, float y, float z, float radius, int flags);
 -- @param x float
--- @param float
--- @param int
+-- @param y float
+-- @param z float
+-- @param radius float
+-- @param flags int
 -- @return void
-function ClearAreaOfProjectiles() end
+function ClearAreaOfProjectiles(x, y, z, radius, flags) end
 
 -- The bool is not a toggle!!!
 -- @module native
@@ -507,7 +547,7 @@ function ClearAreaOfProjectiles() end
 -- @usage void SET_SAVE_MENU_ACTIVE(BOOL unk);
 -- @param unk BOOL
 -- @return void
-function SetSaveMenuActive() end
+function SetSaveMenuActive(unk) end
 
 -- @todo
 -- @module native
@@ -516,7 +556,7 @@ function SetSaveMenuActive() end
 -- @usage void SET_CREDITS_ACTIVE(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetCreditsActive() end
+function SetCreditsActive(toggle) end
 
 -- For a full list, see here: pastebin.com/yLNWicUi
 -- @module native
@@ -525,14 +565,13 @@ function SetCreditsActive() end
 -- @usage void TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME(char* scriptName);
 -- @param scriptName char*
 -- @return void
-function TerminateAllScriptsWithThisName() end
+function TerminateAllScriptsWithThisName(scriptName) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME
 -- @usage void NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
--- @param undefined
 -- @return void
 function NetworkSetScriptIsSafeForNetworkGame() end
 
@@ -542,10 +581,12 @@ function NetworkSetScriptIsSafeForNetworkGame() end
 -- @see ADD_HOSPITAL_RESTART
 -- @usage int ADD_HOSPITAL_RESTART(float x, float y, float z, float p3, Any p4);
 -- @param x float
--- @param float
--- @param Any
+-- @param y float
+-- @param z float
+-- @param p3 float
+-- @param p4 Any
 -- @return int
-function AddHospitalRestart() end
+function AddHospitalRestart(x, y, z, p3, p4) end
 
 -- The game by default has 5 hospital respawn points. Disabling them all will cause the player to respawn at the last position they were.   Doesn't work....
 -- @module native
@@ -553,9 +594,9 @@ function AddHospitalRestart() end
 -- @see DISABLE_HOSPITAL_RESTART
 -- @usage void DISABLE_HOSPITAL_RESTART(int hospitalIndex, BOOL toggle);
 -- @param hospitalIndex int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function DisableHospitalRestart() end
+function DisableHospitalRestart(hospitalIndex, toggle) end
 
 -- @todo
 -- @module native
@@ -563,10 +604,12 @@ function DisableHospitalRestart() end
 -- @see ADD_POLICE_RESTART
 -- @usage Any ADD_POLICE_RESTART(float p0, float p1, float p2, float p3, Any p4);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 Any
 -- @return Any
-function AddPoliceRestart() end
+function AddPoliceRestart(p0, p1, p2, p3, p4) end
 
 -- Disables the spawn point at the police house on the specified index.  policeIndex: The police house index. toggle: true to enable the spawn point, false to disable.
 -- @module native
@@ -574,9 +617,9 @@ function AddPoliceRestart() end
 -- @see DISABLE_POLICE_RESTART
 -- @usage void DISABLE_POLICE_RESTART(int policeIndex, BOOL toggle);
 -- @param policeIndex int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function DisablePoliceRestart() end
+function DisablePoliceRestart(policeIndex, toggle) end
 
 -- @todo
 -- @module native
@@ -585,7 +628,7 @@ function DisablePoliceRestart() end
 -- @usage void IGNORE_NEXT_RESTART(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function IgnoreNextRestart() end
+function IgnoreNextRestart(toggle) end
 
 -- Sets whether the game should fade out after the player dies.
 -- @module native
@@ -594,7 +637,7 @@ function IgnoreNextRestart() end
 -- @usage void SET_FADE_OUT_AFTER_DEATH(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetFadeOutAfterDeath() end
+function SetFadeOutAfterDeath(toggle) end
 
 -- Sets whether the game should fade out after the player is arrested.
 -- @module native
@@ -603,7 +646,7 @@ function SetFadeOutAfterDeath() end
 -- @usage void SET_FADE_OUT_AFTER_ARREST(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetFadeOutAfterArrest() end
+function SetFadeOutAfterArrest(toggle) end
 
 -- Sets whether the game should fade in after the player dies or is arrested.
 -- @module native
@@ -612,7 +655,7 @@ function SetFadeOutAfterArrest() end
 -- @usage void SET_FADE_IN_AFTER_DEATH_ARREST(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetFadeInAfterDeathArrest() end
+function SetFadeInAfterDeathArrest(toggle) end
 
 -- @todo
 -- @module native
@@ -621,7 +664,7 @@ function SetFadeInAfterDeathArrest() end
 -- @usage void SET_FADE_IN_AFTER_LOAD(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetFadeInAfterLoad() end
+function SetFadeInAfterLoad(toggle) end
 
 -- @todo
 -- @module native
@@ -629,11 +672,14 @@ function SetFadeInAfterLoad() end
 -- @see REGISTER_SAVE_HOUSE
 -- @usage Any REGISTER_SAVE_HOUSE(float p0, float p1, float p2, float p3, Any* p4, Any p5, Any p6);
 -- @param p0 float
--- @param float
--- @param Any*
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 Any*
+-- @param p5 Any
+-- @param p6 Any
 -- @return Any
-function RegisterSaveHouse() end
+function RegisterSaveHouse(p0, p1, p2, p3, p4, p5, p6) end
 
 -- @todo
 -- @module native
@@ -641,9 +687,10 @@ function RegisterSaveHouse() end
 -- @see SET_SAVE_HOUSE
 -- @usage void SET_SAVE_HOUSE(Any p0, BOOL p1, BOOL p2);
 -- @param p0 Any
--- @param BOOL
+-- @param p1 BOOL
+-- @param p2 BOOL
 -- @return void
-function SetSaveHouse() end
+function SetSaveHouse(p0, p1, p2) end
 
 -- @todo
 -- @module native
@@ -651,17 +698,21 @@ function SetSaveHouse() end
 -- @see OVERRIDE_SAVE_HOUSE
 -- @usage BOOL OVERRIDE_SAVE_HOUSE(BOOL p0, float p1, float p2, float p3, float p4, BOOL p5, float p6, float p7);
 -- @param p0 BOOL
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 BOOL
+-- @param p6 float
+-- @param p7 float
 -- @return BOOL
-function OverrideSaveHouse() end
+function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see DO_AUTO_SAVE
 -- @usage void DO_AUTO_SAVE();
--- @param undefined
 -- @return void
 function DoAutoSave() end
 
@@ -670,7 +721,6 @@ function DoAutoSave() end
 -- @submodule gameplay
 -- @see IS_AUTO_SAVE_IN_PROGRESS
 -- @usage BOOL IS_AUTO_SAVE_IN_PROGRESS();
--- @param undefined
 -- @return BOOL
 function IsAutoSaveInProgress() end
 
@@ -680,16 +730,15 @@ function IsAutoSaveInProgress() end
 -- @see BEGIN_REPLAY_STATS
 -- @usage void BEGIN_REPLAY_STATS(Any p0, Any p1);
 -- @param p0 Any
--- @param Any
+-- @param p1 Any
 -- @return void
-function BeginReplayStats() end
+function BeginReplayStats(p0, p1) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see END_REPLAY_STATS
 -- @usage void END_REPLAY_STATS();
--- @param undefined
 -- @return void
 function EndReplayStats() end
 
@@ -698,7 +747,6 @@ function EndReplayStats() end
 -- @submodule gameplay
 -- @see CLEAR_REPLAY_STATS
 -- @usage void CLEAR_REPLAY_STATS();
--- @param undefined
 -- @return void
 function ClearReplayStats() end
 
@@ -707,7 +755,6 @@ function ClearReplayStats() end
 -- @submodule gameplay
 -- @see IS_MEMORY_CARD_IN_USE
 -- @usage BOOL IS_MEMORY_CARD_IN_USE();
--- @param undefined
 -- @return BOOL
 function IsMemoryCardInUse() end
 
@@ -717,13 +764,20 @@ function IsMemoryCardInUse() end
 -- @see SHOOT_SINGLE_BULLET_BETWEEN_COORDS
 -- @usage void SHOOT_SINGLE_BULLET_BETWEEN_COORDS(float x1, float y1, float z1, float x2, float y2, float z2, int damage, BOOL p7, Hash weaponHash, Ped ownerPed, BOOL isAudible, BOOL isInvisible, float speed);
 -- @param x1 float
--- @param float
--- @param int
--- @param BOOL
--- @param Hash
--- @param Ped
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param damage int
+-- @param p7 BOOL
+-- @param weaponHash Hash
+-- @param ownerPed Ped
+-- @param isAudible BOOL
+-- @param isInvisible BOOL
+-- @param speed float
 -- @return void
-function ShootSingleBulletBetweenCoords() end
+function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed) end
 
 -- Gets the dimensions of a model.  Calculate (maximum - minimum) to get the size, in which case, Y will be how long the model is.  Example from the scripts: GAMEPLAY::GET_MODEL_DIMENSIONS(ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()), &v_1A, &v_17);
 -- @module native
@@ -731,9 +785,10 @@ function ShootSingleBulletBetweenCoords() end
 -- @see GET_MODEL_DIMENSIONS
 -- @usage void GET_MODEL_DIMENSIONS(Hash modelHash, Vector3* minimum, Vector3* maximum);
 -- @param modelHash Hash
--- @param Vector3*
+-- @param minimum Vector3*
+-- @param maximum Vector3*
 -- @return void
-function GetModelDimensions() end
+function GetModelDimensions(modelHash, minimum, maximum) end
 
 -- Sets a visually fake wanted level on the user interface. Used by Rockstar's scripts to "override" regular wanted levels and make custom ones while the real wanted level and multipliers are ignored.  Max is 5, anything above this makes it just 5. Also the mini-map gets the red & blue flashing effect. I wish I could use this to fake I had 6 stars like a few of the old GTAs'
 -- @module native
@@ -742,14 +797,13 @@ function GetModelDimensions() end
 -- @usage void SET_FAKE_WANTED_LEVEL(int fakeWantedLevel);
 -- @param fakeWantedLevel int
 -- @return void
-function SetFakeWantedLevel() end
+function SetFakeWantedLevel(fakeWantedLevel) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see GET_FAKE_WANTED_LEVEL
 -- @usage int GET_FAKE_WANTED_LEVEL();
--- @param undefined
 -- @return int
 function GetFakeWantedLevel() end
 
@@ -759,9 +813,9 @@ function GetFakeWantedLevel() end
 -- @see IS_BIT_SET
 -- @usage BOOL IS_BIT_SET(int address, int offset);
 -- @param address int
--- @param int
+-- @param offset int
 -- @return BOOL
-function IsBitSet() end
+function IsBitSet(address, offset) end
 
 -- Hash collision
 -- @module native
@@ -770,7 +824,7 @@ function IsBitSet() end
 -- @usage void USING_MISSION_CREATOR(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function UsingMissionCreator() end
+function UsingMissionCreator(toggle) end
 
 -- @todo
 -- @module native
@@ -779,14 +833,13 @@ function UsingMissionCreator() end
 -- @usage void SET_MINIGAME_IN_PROGRESS(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetMinigameInProgress() end
+function SetMinigameInProgress(toggle) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see IS_MINIGAME_IN_PROGRESS
 -- @usage BOOL IS_MINIGAME_IN_PROGRESS();
--- @param undefined
 -- @return BOOL
 function IsMinigameInProgress() end
 
@@ -795,7 +848,6 @@ function IsMinigameInProgress() end
 -- @submodule gameplay
 -- @see IS_THIS_A_MINIGAME_SCRIPT
 -- @usage BOOL IS_THIS_A_MINIGAME_SCRIPT();
--- @param undefined
 -- @return BOOL
 function IsThisAMinigameScript() end
 
@@ -804,7 +856,6 @@ function IsThisAMinigameScript() end
 -- @submodule gameplay
 -- @see IS_SNIPER_INVERTED
 -- @usage BOOL IS_SNIPER_INVERTED();
--- @param undefined
 -- @return BOOL
 function IsSniperInverted() end
 
@@ -815,7 +866,7 @@ function IsSniperInverted() end
 -- @usage int GET_PROFILE_SETTING(int profileSetting);
 -- @param profileSetting int
 -- @return int
-function GetProfileSetting() end
+function GetProfileSetting(profileSetting) end
 
 -- is this like strcmp??
 -- @module native
@@ -823,9 +874,9 @@ function GetProfileSetting() end
 -- @see ARE_STRINGS_EQUAL
 -- @usage BOOL ARE_STRINGS_EQUAL(char* string1, char* string2);
 -- @param string1 char*
--- @param char*
+-- @param string2 char*
 -- @return BOOL
-function AreStringsEqual() end
+function AreStringsEqual(string1, string2) end
 
 -- Compares two strings up to a specified number of characters.  Parameters: str1 - String to be compared. str2 - String to be compared. matchCase - Comparison will be case-sensitive. maxLength - Maximum number of characters to compare. A value of -1 indicates an infinite length.  Returns: A value indicating the relationship between the strings: <0 - The first non-matching character in 'str1' is less than the one in 'str2'. (e.g. 'A' < 'B', so result = -1) 0 - The contents of both strings are equal. >0 - The first non-matching character in 'str1' is less than the one in 'str2'. (e.g. 'B' > 'A', so result = 1)  Examples: GAMEPLAY::COMPARE_STRINGS("STRING", "string", false, -1); // 0; equal GAMEPLAY::COMPARE_STRINGS("TESTING", "test", false, 4); // 0; equal GAMEPLAY::COMPARE_STRINGS("R2D2", "R2xx", false, 2); // 0; equal GAMEPLAY::COMPARE_STRINGS("foo", "bar", false, -1); // 4; 'f' > 'b' GAMEPLAY::COMPARE_STRINGS("A", "A", true, 1); // 0; equal  When comparing case-sensitive strings, lower-case characters are greater than upper-case characters: GAMEPLAY::COMPARE_STRINGS("A", "a", true, 1); // -1; 'A' < 'a' GAMEPLAY::COMPARE_STRINGS("a", "A", true, 1); // 1; 'a' > 'A'
 -- @module native
@@ -833,11 +884,11 @@ function AreStringsEqual() end
 -- @see COMPARE_STRINGS
 -- @usage int COMPARE_STRINGS(char* str1, char* str2, BOOL matchCase, int maxLength);
 -- @param str1 char*
--- @param char*
--- @param BOOL
--- @param int
+-- @param str2 char*
+-- @param matchCase BOOL
+-- @param maxLength int
 -- @return int
-function CompareStrings() end
+function CompareStrings(str1, str2, matchCase, maxLength) end
 
 -- @todo
 -- @module native
@@ -846,7 +897,7 @@ function CompareStrings() end
 -- @usage int ABSI(int value);
 -- @param value int
 -- @return int
-function Absi() end
+function Absi(value) end
 
 -- @todo
 -- @module native
@@ -855,7 +906,7 @@ function Absi() end
 -- @usage float ABSF(float value);
 -- @param value float
 -- @return float
-function Absf() end
+function Absf(value) end
 
 -- Determines whether there is a sniper bullet within the specified coordinates. The coordinates form a rectangle.
 -- @module native
@@ -863,9 +914,13 @@ function Absf() end
 -- @see IS_SNIPER_BULLET_IN_AREA
 -- @usage BOOL IS_SNIPER_BULLET_IN_AREA(float x1, float y1, float z1, float x2, float y2, float z2);
 -- @param x1 float
--- @param float
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
 -- @return BOOL
-function IsSniperBulletInArea() end
+function IsSniperBulletInArea(x1, y1, z1, x2, y2, z2) end
 
 -- Determines whether there is a projectile within the specified coordinates. The coordinates form a rectangle.     ownedByPlayer = only projectiles fired by the player will be detected.
 -- @module native
@@ -873,10 +928,14 @@ function IsSniperBulletInArea() end
 -- @see IS_PROJECTILE_IN_AREA
 -- @usage BOOL IS_PROJECTILE_IN_AREA(float x1, float y1, float z1, float x2, float y2, float z2, BOOL ownedByPlayer);
 -- @param x1 float
--- @param float
--- @param BOOL
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param ownedByPlayer BOOL
 -- @return BOOL
-function IsProjectileInArea() end
+function IsProjectileInArea(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 
 -- Determines whether there is a projectile of a specific type within the specified coordinates. The coordinates form a rectangle.  Note: This native hasn't been tested yet.
 -- @module native
@@ -884,11 +943,15 @@ function IsProjectileInArea() end
 -- @see IS_PROJECTILE_TYPE_IN_AREA
 -- @usage BOOL IS_PROJECTILE_TYPE_IN_AREA(float x1, float y1, float z1, float x2, float y2, float z2, int type, BOOL p7);
 -- @param x1 float
--- @param float
--- @param int
--- @param BOOL
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param type int
+-- @param p7 BOOL
 -- @return BOOL
-function IsProjectileTypeInArea() end
+function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, p7) end
 
 -- @todo
 -- @module native
@@ -896,11 +959,16 @@ function IsProjectileTypeInArea() end
 -- @see IS_PROJECTILE_TYPE_IN_ANGLED_AREA
 -- @usage BOOL IS_PROJECTILE_TYPE_IN_ANGLED_AREA(float p0, float p1, float p2, float p3, float p4, float p5, float p6, Any p7, BOOL p8);
 -- @param p0 float
--- @param float
--- @param Any
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 Any
+-- @param p8 BOOL
 -- @return BOOL
-function IsProjectileTypeInAngledArea() end
+function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
 -- @todo
 -- @module native
@@ -908,10 +976,15 @@ function IsProjectileTypeInAngledArea() end
 -- @see IS_BULLET_IN_ANGLED_AREA
 -- @usage BOOL IS_BULLET_IN_ANGLED_AREA(float p0, float p1, float p2, float p3, float p4, float p5, float p6, BOOL p7);
 -- @param p0 float
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 BOOL
 -- @return BOOL
-function IsBulletInAngledArea() end
+function IsBulletInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 -- @todo
 -- @module native
@@ -919,10 +992,12 @@ function IsBulletInAngledArea() end
 -- @see IS_BULLET_IN_AREA
 -- @usage BOOL IS_BULLET_IN_AREA(float p0, float p1, float p2, float p3, BOOL p4);
 -- @param p0 float
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 BOOL
 -- @return BOOL
-function IsBulletInArea() end
+function IsBulletInArea(p0, p1, p2, p3, p4) end
 
 -- @todo
 -- @module native
@@ -930,10 +1005,14 @@ function IsBulletInArea() end
 -- @see IS_BULLET_IN_BOX
 -- @usage BOOL IS_BULLET_IN_BOX(float p0, float p1, float p2, float p3, float p4, float p5, BOOL p6);
 -- @param p0 float
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 BOOL
 -- @return BOOL
-function IsBulletInBox() end
+function IsBulletInBox(p0, p1, p2, p3, p4, p5, p6) end
 
 -- p3 - possibly radius?
 -- @module native
@@ -941,10 +1020,13 @@ function IsBulletInBox() end
 -- @see HAS_BULLET_IMPACTED_IN_AREA
 -- @usage BOOL HAS_BULLET_IMPACTED_IN_AREA(float x, float y, float z, float p3, BOOL p4, BOOL p5);
 -- @param x float
--- @param float
--- @param BOOL
+-- @param y float
+-- @param z float
+-- @param p3 float
+-- @param p4 BOOL
+-- @param p5 BOOL
 -- @return BOOL
-function HasBulletImpactedInArea() end
+function HasBulletImpactedInArea(x, y, z, p3, p4, p5) end
 
 -- @todo
 -- @module native
@@ -952,17 +1034,21 @@ function HasBulletImpactedInArea() end
 -- @see HAS_BULLET_IMPACTED_IN_BOX
 -- @usage BOOL HAS_BULLET_IMPACTED_IN_BOX(float p0, float p1, float p2, float p3, float p4, float p5, BOOL p6, BOOL p7);
 -- @param p0 float
--- @param float
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 BOOL
+-- @param p7 BOOL
 -- @return BOOL
-function HasBulletImpactedInBox() end
+function HasBulletImpactedInBox(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 -- PS4  MulleDK19: This function is hard-coded to always return 0.  Force67: I patched return result and got this : i.imgur.com/hUn7zSj.jpg  translate please?
 -- @module native
 -- @submodule gameplay
 -- @see IS_ORBIS_VERSION
 -- @usage BOOL IS_ORBIS_VERSION();
--- @param undefined
 -- @return BOOL
 function IsOrbisVersion() end
 
@@ -971,7 +1057,6 @@ function IsOrbisVersion() end
 -- @submodule gameplay
 -- @see IS_DURANGO_VERSION
 -- @usage BOOL IS_DURANGO_VERSION();
--- @param undefined
 -- @return BOOL
 function IsDurangoVersion() end
 
@@ -980,7 +1065,6 @@ function IsDurangoVersion() end
 -- @submodule gameplay
 -- @see IS_XBOX360_VERSION
 -- @usage BOOL IS_XBOX360_VERSION();
--- @param undefined
 -- @return BOOL
 function IsXbox360Version() end
 
@@ -989,7 +1073,6 @@ function IsXbox360Version() end
 -- @submodule gameplay
 -- @see IS_PS3_VERSION
 -- @usage BOOL IS_PS3_VERSION();
--- @param undefined
 -- @return BOOL
 function IsPs3Version() end
 
@@ -998,7 +1081,6 @@ function IsPs3Version() end
 -- @submodule gameplay
 -- @see IS_PC_VERSION
 -- @usage BOOL IS_PC_VERSION();
--- @param undefined
 -- @return BOOL
 function IsPcVersion() end
 
@@ -1007,7 +1089,6 @@ function IsPcVersion() end
 -- @submodule gameplay
 -- @see IS_AUSSIE_VERSION
 -- @usage BOOL IS_AUSSIE_VERSION();
--- @param undefined
 -- @return BOOL
 function IsAussieVersion() end
 
@@ -1018,7 +1099,7 @@ function IsAussieVersion() end
 -- @usage BOOL IS_STRING_NULL(char* string);
 -- @param string char*
 -- @return BOOL
-function IsStringNull() end
+function IsStringNull(string) end
 
 -- @todo
 -- @module native
@@ -1027,7 +1108,7 @@ function IsStringNull() end
 -- @usage BOOL IS_STRING_NULL_OR_EMPTY(char* string);
 -- @param string char*
 -- @return BOOL
-function IsStringNullOrEmpty() end
+function IsStringNullOrEmpty(string) end
 
 -- Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.  If all checks have passed successfully, the return value will be set to whatever strtol(string, 0i64, 10); returns.
 -- @module native
@@ -1035,9 +1116,9 @@ function IsStringNullOrEmpty() end
 -- @see STRING_TO_INT
 -- @usage BOOL STRING_TO_INT(char* string, int* outInteger);
 -- @param string char*
--- @param int*
+-- @param outInteger int*
 -- @return BOOL
-function StringToInt() end
+function StringToInt(string, outInteger) end
 
 -- @todo
 -- @module native
@@ -1045,9 +1126,11 @@ function StringToInt() end
 -- @see SET_BITS_IN_RANGE
 -- @usage void SET_BITS_IN_RANGE(int* var, int rangeStart, int rangeEnd, int p3);
 -- @param var int*
--- @param int
+-- @param rangeStart int
+-- @param rangeEnd int
+-- @param p3 int
 -- @return void
-function SetBitsInRange() end
+function SetBitsInRange(var, rangeStart, rangeEnd, p3) end
 
 -- @todo
 -- @module native
@@ -1055,9 +1138,10 @@ function SetBitsInRange() end
 -- @see GET_BITS_IN_RANGE
 -- @usage int GET_BITS_IN_RANGE(int var, int rangeStart, int rangeEnd);
 -- @param var int
--- @param int
+-- @param rangeStart int
+-- @param rangeEnd int
 -- @return int
-function GetBitsInRange() end
+function GetBitsInRange(var, rangeStart, rangeEnd) end
 
 -- @todo
 -- @module native
@@ -1065,10 +1149,24 @@ function GetBitsInRange() end
 -- @see ADD_STUNT_JUMP
 -- @usage int ADD_STUNT_JUMP(float p0, float p1, float p2, float p3, float p4, float p5, float p6, float p7, float p8, float p9, float p10, float p11, float p12, float p13, float p14, Any p15, Any p16);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 float
+-- @param p8 float
+-- @param p9 float
+-- @param p10 float
+-- @param p11 float
+-- @param p12 float
+-- @param p13 float
+-- @param p14 float
+-- @param p15 Any
+-- @param p16 Any
 -- @return int
-function AddStuntJump() end
+function AddStuntJump(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16) end
 
 -- @todo
 -- @module native
@@ -1076,10 +1174,26 @@ function AddStuntJump() end
 -- @see ADD_STUNT_JUMP_ANGLED
 -- @usage int ADD_STUNT_JUMP_ANGLED(float p0, float p1, float p2, float p3, float p4, float p5, float p6, float p7, float p8, float p9, float p10, float p11, float p12, float p13, float p14, float p15, float p16, Any p17, Any p18);
 -- @param p0 float
--- @param float
--- @param Any
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 float
+-- @param p8 float
+-- @param p9 float
+-- @param p10 float
+-- @param p11 float
+-- @param p12 float
+-- @param p13 float
+-- @param p14 float
+-- @param p15 float
+-- @param p16 float
+-- @param p17 Any
+-- @param p18 Any
 -- @return int
-function AddStuntJumpAngled() end
+function AddStuntJumpAngled(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18) end
 
 -- @todo
 -- @module native
@@ -1088,7 +1202,7 @@ function AddStuntJumpAngled() end
 -- @usage void DELETE_STUNT_JUMP(int p0);
 -- @param p0 int
 -- @return void
-function DeleteStuntJump() end
+function DeleteStuntJump(p0) end
 
 -- @todo
 -- @module native
@@ -1097,7 +1211,7 @@ function DeleteStuntJump() end
 -- @usage void ENABLE_STUNT_JUMP_SET(int p0);
 -- @param p0 int
 -- @return void
-function EnableStuntJumpSet() end
+function EnableStuntJumpSet(p0) end
 
 -- @todo
 -- @module native
@@ -1106,14 +1220,13 @@ function EnableStuntJumpSet() end
 -- @usage void DISABLE_STUNT_JUMP_SET(int p0);
 -- @param p0 int
 -- @return void
-function DisableStuntJumpSet() end
+function DisableStuntJumpSet(p0) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see IS_STUNT_JUMP_IN_PROGRESS
 -- @usage BOOL IS_STUNT_JUMP_IN_PROGRESS();
--- @param undefined
 -- @return BOOL
 function IsStuntJumpInProgress() end
 
@@ -1122,7 +1235,6 @@ function IsStuntJumpInProgress() end
 -- @submodule gameplay
 -- @see IS_STUNT_JUMP_MESSAGE_SHOWING
 -- @usage BOOL IS_STUNT_JUMP_MESSAGE_SHOWING();
--- @param undefined
 -- @return BOOL
 function IsStuntJumpMessageShowing() end
 
@@ -1131,7 +1243,6 @@ function IsStuntJumpMessageShowing() end
 -- @submodule gameplay
 -- @see CANCEL_STUNT_JUMP
 -- @usage void CANCEL_STUNT_JUMP();
--- @param undefined
 -- @return void
 function CancelStuntJump() end
 
@@ -1142,7 +1253,7 @@ function CancelStuntJump() end
 -- @usage void SET_GAME_PAUSED(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetGamePaused() end
+function SetGamePaused(toggle) end
 
 -- @todo
 -- @module native
@@ -1151,7 +1262,7 @@ function SetGamePaused() end
 -- @usage void SET_THIS_SCRIPT_CAN_BE_PAUSED(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetThisScriptCanBePaused() end
+function SetThisScriptCanBePaused(toggle) end
 
 -- @todo
 -- @module native
@@ -1160,14 +1271,13 @@ function SetThisScriptCanBePaused() end
 -- @usage void SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function SetThisScriptCanRemoveBlipsCreatedByAnyScript() end
+function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 
 -- This function is hard-coded to always return 0.
 -- @module native
 -- @submodule gameplay
 -- @see IS_FRONTEND_FADING
 -- @usage BOOL IS_FRONTEND_FADING();
--- @param undefined
 -- @return BOOL
 function IsFrontendFading() end
 
@@ -1176,7 +1286,6 @@ function IsFrontendFading() end
 -- @submodule gameplay
 -- @see POPULATE_NOW
 -- @usage void POPULATE_NOW();
--- @param undefined
 -- @return void
 function PopulateNow() end
 
@@ -1185,7 +1294,6 @@ function PopulateNow() end
 -- @submodule gameplay
 -- @see GET_INDEX_OF_CURRENT_LEVEL
 -- @usage int GET_INDEX_OF_CURRENT_LEVEL();
--- @param undefined
 -- @return int
 function GetIndexOfCurrentLevel() end
 
@@ -1196,7 +1304,7 @@ function GetIndexOfCurrentLevel() end
 -- @usage void SET_GRAVITY_LEVEL(int level);
 -- @param level int
 -- @return void
-function SetGravityLevel() end
+function SetGravityLevel(level) end
 
 -- @todo
 -- @module native
@@ -1204,17 +1312,16 @@ function SetGravityLevel() end
 -- @see START_SAVE_DATA
 -- @usage void START_SAVE_DATA(Any* p0, Any p1, BOOL p2);
 -- @param p0 Any*
--- @param Any
--- @param BOOL
+-- @param p1 Any
+-- @param p2 BOOL
 -- @return void
-function StartSaveData() end
+function StartSaveData(p0, p1, p2) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see STOP_SAVE_DATA
 -- @usage void STOP_SAVE_DATA();
--- @param undefined
 -- @return void
 function StopSaveData() end
 
@@ -1224,9 +1331,9 @@ function StopSaveData() end
 -- @see REGISTER_INT_TO_SAVE
 -- @usage void REGISTER_INT_TO_SAVE(Any* p0, char* name);
 -- @param p0 Any*
--- @param char*
+-- @param name char*
 -- @return void
-function RegisterIntToSave() end
+function RegisterIntToSave(p0, name) end
 
 -- @todo
 -- @module native
@@ -1234,9 +1341,9 @@ function RegisterIntToSave() end
 -- @see REGISTER_ENUM_TO_SAVE
 -- @usage void REGISTER_ENUM_TO_SAVE(Any* p0, char* name);
 -- @param p0 Any*
--- @param char*
+-- @param name char*
 -- @return void
-function RegisterEnumToSave() end
+function RegisterEnumToSave(p0, name) end
 
 -- @todo
 -- @module native
@@ -1244,9 +1351,9 @@ function RegisterEnumToSave() end
 -- @see REGISTER_FLOAT_TO_SAVE
 -- @usage void REGISTER_FLOAT_TO_SAVE(Any* p0, char* name);
 -- @param p0 Any*
--- @param char*
+-- @param name char*
 -- @return void
-function RegisterFloatToSave() end
+function RegisterFloatToSave(p0, name) end
 
 -- @todo
 -- @module native
@@ -1254,9 +1361,9 @@ function RegisterFloatToSave() end
 -- @see REGISTER_BOOL_TO_SAVE
 -- @usage void REGISTER_BOOL_TO_SAVE(Any* p0, char* name);
 -- @param p0 Any*
--- @param char*
+-- @param name char*
 -- @return void
-function RegisterBoolToSave() end
+function RegisterBoolToSave(p0, name) end
 
 -- @todo
 -- @module native
@@ -1264,16 +1371,15 @@ function RegisterBoolToSave() end
 -- @see REGISTER_TEXT_LABEL_TO_SAVE
 -- @usage void REGISTER_TEXT_LABEL_TO_SAVE(Any* p0, char* name);
 -- @param p0 Any*
--- @param char*
+-- @param name char*
 -- @return void
-function RegisterTextLabelToSave() end
+function RegisterTextLabelToSave(p0, name) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see STOP_SAVE_STRUCT
 -- @usage void STOP_SAVE_STRUCT();
--- @param undefined
 -- @return void
 function StopSaveStruct() end
 
@@ -1282,7 +1388,6 @@ function StopSaveStruct() end
 -- @submodule gameplay
 -- @see STOP_SAVE_ARRAY
 -- @usage void STOP_SAVE_ARRAY();
--- @param undefined
 -- @return void
 function StopSaveArray() end
 
@@ -1292,9 +1397,9 @@ function StopSaveArray() end
 -- @see ENABLE_DISPATCH_SERVICE
 -- @usage void ENABLE_DISPATCH_SERVICE(int dispatchService, BOOL toggle);
 -- @param dispatchService int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function EnableDispatchService() end
+function EnableDispatchService(dispatchService, toggle) end
 
 -- p0 could be type  ===================================================== enum IncidentTypes{     FireDepartment = 3,     Paramedics = 5,     Police = 7,     PedsInCavalcades = 11,      Merryweather = 14 };  As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  Side Note 2: I say it breaks as if you call this proper, if(CREATE_INCIDENT) etc it will return false if you do as I said above. =====================================================
 -- @module native
@@ -1302,11 +1407,14 @@ function EnableDispatchService() end
 -- @see CREATE_INCIDENT
 -- @usage BOOL CREATE_INCIDENT(int incidentType, float x, float y, float z, int p5, float radius, int* outIncidentID);
 -- @param incidentType int
--- @param float
--- @param int
--- @param int*
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param p5 int
+-- @param radius float
+-- @param outIncidentID int*
 -- @return BOOL
-function CreateIncident() end
+function CreateIncident(incidentType, x, y, z, p5, radius, outIncidentID) end
 
 -- p0 could be type (valueused in scripts: 14, 7, 5, 3, 11) p1 is a return from get_player_ped() in am_gang_call.c, but player_ped_id() in other (non am) scripts. p3 is usually 0f or 3f  ===================================================== enum IncidentTypes{     FireDepartment = 3,     Paramedics = 5,     Police = 7,     PedsInCavalcades = 11,      Merryweather = 14 };  As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  Side Note 2: I say it breaks as if you call this proper, if(CREATE_INCIDENT) etc it will return false if you do as I said above. =====================================================
 -- @module native
@@ -1314,12 +1422,12 @@ function CreateIncident() end
 -- @see CREATE_INCIDENT_WITH_ENTITY
 -- @usage BOOL CREATE_INCIDENT_WITH_ENTITY(int incidentType, Ped ped, int amountOfPeople, float radius, int* outIncidentID);
 -- @param incidentType int
--- @param Ped
--- @param int
--- @param float
--- @param int*
+-- @param ped Ped
+-- @param amountOfPeople int
+-- @param radius float
+-- @param outIncidentID int*
 -- @return BOOL
-function CreateIncidentWithEntity() end
+function CreateIncidentWithEntity(incidentType, ped, amountOfPeople, radius, outIncidentID) end
 
 -- Delete an incident with a given id.  ======================================================= Correction, I have change this to int, instead of int* as it doesn't use a pointer to the createdIncident. If you try it you will crash (or) freeze. =======================================================
 -- @module native
@@ -1328,7 +1436,7 @@ function CreateIncidentWithEntity() end
 -- @usage void DELETE_INCIDENT(int incidentId);
 -- @param incidentId int
 -- @return void
-function DeleteIncident() end
+function DeleteIncident(incidentId) end
 
 -- ======================================================= Correction, I have change this to int, instead of int* as it doesn't use a pointer to the createdIncident. If you try it you will crash (or) freeze. =======================================================
 -- @module native
@@ -1337,7 +1445,7 @@ function DeleteIncident() end
 -- @usage BOOL IS_INCIDENT_VALID(int incidentId);
 -- @param incidentId int
 -- @return BOOL
-function IsIncidentValid() end
+function IsIncidentValid(incidentId) end
 
 -- Finds a position ahead of the player by predicting the players next actions. The positions match path finding node positions. When roads diverge, the position may rapidly change between two or more positions. This is due to the engine not being certain of which path the player will take.  ======================================================= I may sort this with alter research, but if someone already knows please tell what the difference in  X2, Y2, Z2 is. I doubt it's rotation. Is it like  checkpoints where X1, Y1, Z1 is your/a position and X2, Y2, Z2 is a given position ahead of that position? =======================================================
 -- @module native
@@ -1345,10 +1453,15 @@ function IsIncidentValid() end
 -- @see FIND_SPAWN_POINT_IN_DIRECTION
 -- @usage BOOL FIND_SPAWN_POINT_IN_DIRECTION(float x1, float y1, float z1, float x2, float y2, float z2, float distance, Vector3* spawnPoint);
 -- @param x1 float
--- @param float
--- @param Vector3*
+-- @param y1 float
+-- @param z1 float
+-- @param x2 float
+-- @param y2 float
+-- @param z2 float
+-- @param distance float
+-- @param spawnPoint Vector3*
 -- @return BOOL
-function FindSpawnPointInDirection() end
+function FindSpawnPointInDirection(x1, y1, z1, x2, y2, z2, distance, spawnPoint) end
 
 -- Makes the ped jump around like they're in a tennis match
 -- @module native
@@ -1356,9 +1469,10 @@ function FindSpawnPointInDirection() end
 -- @see ENABLE_TENNIS_MODE
 -- @usage void ENABLE_TENNIS_MODE(Ped ped, BOOL toggle, BOOL p2);
 -- @param ped Ped
--- @param BOOL
+-- @param toggle BOOL
+-- @param p2 BOOL
 -- @return void
-function EnableTennisMode() end
+function EnableTennisMode(ped, toggle, p2) end
 
 -- Return whether tennis mode is active or not.
 -- @module native
@@ -1367,14 +1481,13 @@ function EnableTennisMode() end
 -- @usage BOOL IS_TENNIS_MODE(Ped ped);
 -- @param ped Ped
 -- @return BOOL
-function IsTennisMode() end
+function IsTennisMode(ped) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see RESET_DISPATCH_IDEAL_SPAWN_DISTANCE
 -- @usage void RESET_DISPATCH_IDEAL_SPAWN_DISTANCE();
--- @param undefined
 -- @return void
 function ResetDispatchIdealSpawnDistance() end
 
@@ -1385,7 +1498,7 @@ function ResetDispatchIdealSpawnDistance() end
 -- @usage void SET_DISPATCH_IDEAL_SPAWN_DISTANCE(float p0);
 -- @param p0 float
 -- @return void
-function SetDispatchIdealSpawnDistance() end
+function SetDispatchIdealSpawnDistance(p0) end
 
 -- @todo
 -- @module native
@@ -1393,9 +1506,9 @@ function SetDispatchIdealSpawnDistance() end
 -- @see SET_DISPATCH_TIME_BETWEEN_SPAWN_ATTEMPTS
 -- @usage void SET_DISPATCH_TIME_BETWEEN_SPAWN_ATTEMPTS(Any p0, float p1);
 -- @param p0 Any
--- @param float
+-- @param p1 float
 -- @return void
-function SetDispatchTimeBetweenSpawnAttempts() end
+function SetDispatchTimeBetweenSpawnAttempts(p0, p1) end
 
 -- @todo
 -- @module native
@@ -1403,9 +1516,9 @@ function SetDispatchTimeBetweenSpawnAttempts() end
 -- @see SET_DISPATCH_TIME_BETWEEN_SPAWN_ATTEMPTS_MULTIPLIER
 -- @usage void SET_DISPATCH_TIME_BETWEEN_SPAWN_ATTEMPTS_MULTIPLIER(Any p0, float p1);
 -- @param p0 Any
--- @param float
+-- @param p1 float
 -- @return void
-function SetDispatchTimeBetweenSpawnAttemptsMultiplier() end
+function SetDispatchTimeBetweenSpawnAttemptsMultiplier(p0, p1) end
 
 -- @todo
 -- @module native
@@ -1414,14 +1527,13 @@ function SetDispatchTimeBetweenSpawnAttemptsMultiplier() end
 -- @usage void REMOVE_DISPATCH_SPAWN_BLOCKING_AREA(Any p0);
 -- @param p0 Any
 -- @return void
-function RemoveDispatchSpawnBlockingArea() end
+function RemoveDispatchSpawnBlockingArea(p0) end
 
 -- @todo
 -- @module native
 -- @submodule gameplay
 -- @see RESET_DISPATCH_SPAWN_BLOCKING_AREAS
 -- @usage void RESET_DISPATCH_SPAWN_BLOCKING_AREAS();
--- @param undefined
 -- @return void
 function ResetDispatchSpawnBlockingAreas() end
 
@@ -1431,17 +1543,21 @@ function ResetDispatchSpawnBlockingAreas() end
 -- @see DISPLAY_ONSCREEN_KEYBOARD
 -- @usage void DISPLAY_ONSCREEN_KEYBOARD(int p0, char* windowTitle, char* p2, char* defaultText, char* defaultConcat1, char* defaultConcat2, char* defaultConcat3, int maxInputLength);
 -- @param p0 int
--- @param char*
--- @param int
+-- @param windowTitle char*
+-- @param p2 char*
+-- @param defaultText char*
+-- @param defaultConcat1 char*
+-- @param defaultConcat2 char*
+-- @param defaultConcat3 char*
+-- @param maxInputLength int
 -- @return void
-function DisplayOnscreenKeyboard() end
+function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
 
 -- Returns the current status of the onscreen keyboard, and updates the output.  Status Codes:  0 - User still editing 1 - User has finished editing 2 - User has canceled editing 3 - Keyboard isn't active
 -- @module native
 -- @submodule gameplay
 -- @see UPDATE_ONSCREEN_KEYBOARD
 -- @usage int UPDATE_ONSCREEN_KEYBOARD();
--- @param undefined
 -- @return int
 function UpdateOnscreenKeyboard() end
 
@@ -1450,7 +1566,6 @@ function UpdateOnscreenKeyboard() end
 -- @submodule gameplay
 -- @see GET_ONSCREEN_KEYBOARD_RESULT
 -- @usage char* GET_ONSCREEN_KEYBOARD_RESULT();
--- @param undefined
 -- @return char*
 function GetOnscreenKeyboardResult() end
 
@@ -1461,7 +1576,7 @@ function GetOnscreenKeyboardResult() end
 -- @usage Any SET_EXPLOSIVE_AMMO_THIS_FRAME(Player player);
 -- @param player Player
 -- @return Any
-function SetExplosiveAmmoThisFrame() end
+function SetExplosiveAmmoThisFrame(player) end
 
 -- @todo
 -- @module native
@@ -1470,7 +1585,7 @@ function SetExplosiveAmmoThisFrame() end
 -- @usage Any SET_FIRE_AMMO_THIS_FRAME(Player player);
 -- @param player Player
 -- @return Any
-function SetFireAmmoThisFrame() end
+function SetFireAmmoThisFrame(player) end
 
 -- @todo
 -- @module native
@@ -1479,7 +1594,7 @@ function SetFireAmmoThisFrame() end
 -- @usage Any SET_EXPLOSIVE_MELEE_THIS_FRAME(Player player);
 -- @param player Player
 -- @return Any
-function SetExplosiveMeleeThisFrame() end
+function SetExplosiveMeleeThisFrame(player) end
 
 -- @todo
 -- @module native
@@ -1488,4 +1603,4 @@ function SetExplosiveMeleeThisFrame() end
 -- @usage Any SET_SUPER_JUMP_THIS_FRAME(Player player);
 -- @param player Player
 -- @return Any
-function SetSuperJumpThisFrame() end
+function SetSuperJumpThisFrame(player) end

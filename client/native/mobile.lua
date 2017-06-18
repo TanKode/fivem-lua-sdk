@@ -5,14 +5,13 @@
 -- @usage void CREATE_MOBILE_PHONE(int phoneType);
 -- @param phoneType int
 -- @return void
-function CreateMobilePhone() end
+function CreateMobilePhone(phoneType) end
 
 -- Destroys the currently active mobile phone.
 -- @module native
 -- @submodule mobile
 -- @see DESTROY_MOBILE_PHONE
 -- @usage void DESTROY_MOBILE_PHONE();
--- @param undefined
 -- @return void
 function DestroyMobilePhone() end
 
@@ -23,7 +22,7 @@ function DestroyMobilePhone() end
 -- @usage void SET_MOBILE_PHONE_SCALE(float scale);
 -- @param scale float
 -- @return void
-function SetMobilePhoneScale() end
+function SetMobilePhoneScale(scale) end
 
 -- Last parameter is unknown and always zero.
 -- @module native
@@ -31,10 +30,11 @@ function SetMobilePhoneScale() end
 -- @see SET_MOBILE_PHONE_ROTATION
 -- @usage void SET_MOBILE_PHONE_ROTATION(float rotX, float rotY, float rotZ, Any p3);
 -- @param rotX float
--- @param float
--- @param Any
+-- @param rotY float
+-- @param rotZ float
+-- @param p3 Any
 -- @return void
-function SetMobilePhoneRotation() end
+function SetMobilePhoneRotation(rotX, rotY, rotZ, p3) end
 
 -- @todo
 -- @module native
@@ -42,9 +42,9 @@ function SetMobilePhoneRotation() end
 -- @see GET_MOBILE_PHONE_ROTATION
 -- @usage void GET_MOBILE_PHONE_ROTATION(Vector3* rotation, Any p1);
 -- @param rotation Vector3*
--- @param Any
+-- @param p1 Any
 -- @return void
-function GetMobilePhoneRotation() end
+function GetMobilePhoneRotation(rotation, p1) end
 
 -- @todo
 -- @module native
@@ -52,9 +52,10 @@ function GetMobilePhoneRotation() end
 -- @see SET_MOBILE_PHONE_POSITION
 -- @usage void SET_MOBILE_PHONE_POSITION(float posX, float posY, float posZ);
 -- @param posX float
--- @param float
+-- @param posY float
+-- @param posZ float
 -- @return void
-function SetMobilePhonePosition() end
+function SetMobilePhonePosition(posX, posY, posZ) end
 
 -- @todo
 -- @module native
@@ -63,7 +64,7 @@ function SetMobilePhonePosition() end
 -- @usage void GET_MOBILE_PHONE_POSITION(Vector3* position);
 -- @param position Vector3*
 -- @return void
-function GetMobilePhonePosition() end
+function GetMobilePhonePosition(position) end
 
 -- If bool Toggle = true so the mobile is hide to screen. If bool Toggle = false so the mobile is show to screen.
 -- @module native
@@ -72,14 +73,13 @@ function GetMobilePhonePosition() end
 -- @usage void SCRIPT_IS_MOVING_MOBILE_PHONE_OFFSCREEN(BOOL toggle);
 -- @param toggle BOOL
 -- @return void
-function ScriptIsMovingMobilePhoneOffscreen() end
+function ScriptIsMovingMobilePhoneOffscreen(toggle) end
 
 -- This one is weird and seems to return a TRUE state regardless of whether the phone is visible on screen or tucked away.   I can confirm the above. This function is hard-coded to always return 1.
 -- @module native
 -- @submodule mobile
 -- @see CAN_PHONE_BE_SEEN_ON_SCREEN
 -- @usage BOOL CAN_PHONE_BE_SEEN_ON_SCREEN();
--- @param undefined
 -- @return BOOL
 function CanPhoneBeSeenOnScreen() end
 
@@ -89,9 +89,9 @@ function CanPhoneBeSeenOnScreen() end
 -- @see CELL_CAM_ACTIVATE
 -- @usage void CELL_CAM_ACTIVATE(BOOL p0, BOOL p1);
 -- @param p0 BOOL
--- @param BOOL
+-- @param p1 BOOL
 -- @return void
-function CellCamActivate() end
+function CellCamActivate(p0, p1) end
 
 -- @todo
 -- @module native
@@ -100,7 +100,7 @@ function CellCamActivate() end
 -- @usage BOOL CELL_CAM_IS_CHAR_VISIBLE_NO_FACE_CHECK(Entity entity);
 -- @param entity Entity
 -- @return BOOL
-function CellCamIsCharVisibleNoFaceCheck() end
+function CellCamIsCharVisibleNoFaceCheck(entity) end
 
 -- @todo
 -- @module native
@@ -109,4 +109,4 @@ function CellCamIsCharVisibleNoFaceCheck() end
 -- @usage void GET_MOBILE_PHONE_RENDER_ID(int* renderId);
 -- @param renderId int*
 -- @return void
-function GetMobilePhoneRenderId() end
+function GetMobilePhoneRenderId(renderId) end

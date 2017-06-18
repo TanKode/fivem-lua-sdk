@@ -3,7 +3,6 @@
 -- @submodule app
 -- @see APP_DATA_VALID
 -- @usage BOOL APP_DATA_VALID();
--- @param undefined
 -- @return BOOL
 function AppDataValid() end
 
@@ -14,7 +13,7 @@ function AppDataValid() end
 -- @usage int APP_GET_INT(char* property);
 -- @param property char*
 -- @return int
-function AppGetInt() end
+function AppGetInt(property) end
 
 -- @todo
 -- @module native
@@ -23,7 +22,7 @@ function AppGetInt() end
 -- @usage float APP_GET_FLOAT(char* property);
 -- @param property char*
 -- @return float
-function AppGetFloat() end
+function AppGetFloat(property) end
 
 -- @todo
 -- @module native
@@ -32,7 +31,7 @@ function AppGetFloat() end
 -- @usage char* APP_GET_STRING(char* property);
 -- @param property char*
 -- @return char*
-function AppGetString() end
+function AppGetString(property) end
 
 -- @todo
 -- @module native
@@ -40,9 +39,9 @@ function AppGetString() end
 -- @see APP_SET_INT
 -- @usage void APP_SET_INT(char* property, int value);
 -- @param property char*
--- @param int
+-- @param value int
 -- @return void
-function AppSetInt() end
+function AppSetInt(property, value) end
 
 -- @todo
 -- @module native
@@ -50,9 +49,9 @@ function AppSetInt() end
 -- @see APP_SET_FLOAT
 -- @usage void APP_SET_FLOAT(char* property, float value);
 -- @param property char*
--- @param float
+-- @param value float
 -- @return void
-function AppSetFloat() end
+function AppSetFloat(property, value) end
 
 -- @todo
 -- @module native
@@ -60,9 +59,9 @@ function AppSetFloat() end
 -- @see APP_SET_STRING
 -- @usage void APP_SET_STRING(char* property, char* value);
 -- @param property char*
--- @param char*
+-- @param value char*
 -- @return void
-function AppSetString() end
+function AppSetString(property, value) end
 
 -- Called in the gamescripts like: APP::APP_SET_APP("car"); APP::APP_SET_APP("dog");
 -- @module native
@@ -71,7 +70,7 @@ function AppSetString() end
 -- @usage void APP_SET_APP(char* appName);
 -- @param appName char*
 -- @return void
-function AppSetApp() end
+function AppSetApp(appName) end
 
 -- @todo
 -- @module native
@@ -80,14 +79,13 @@ function AppSetApp() end
 -- @usage void APP_SET_BLOCK(char* blockName);
 -- @param blockName char*
 -- @return void
-function AppSetBlock() end
+function AppSetBlock(blockName) end
 
 -- @todo
 -- @module native
 -- @submodule app
 -- @see APP_CLEAR_BLOCK
 -- @usage void APP_CLEAR_BLOCK();
--- @param undefined
 -- @return void
 function AppClearBlock() end
 
@@ -96,7 +94,6 @@ function AppClearBlock() end
 -- @submodule app
 -- @see APP_CLOSE_APP
 -- @usage void APP_CLOSE_APP();
--- @param undefined
 -- @return void
 function AppCloseApp() end
 
@@ -105,7 +102,6 @@ function AppCloseApp() end
 -- @submodule app
 -- @see APP_CLOSE_BLOCK
 -- @usage void APP_CLOSE_BLOCK();
--- @param undefined
 -- @return void
 function AppCloseBlock() end
 
@@ -114,7 +110,6 @@ function AppCloseBlock() end
 -- @submodule app
 -- @see APP_HAS_LINKED_SOCIAL_CLUB_ACCOUNT
 -- @usage BOOL APP_HAS_LINKED_SOCIAL_CLUB_ACCOUNT();
--- @param undefined
 -- @return BOOL
 function AppHasLinkedSocialClubAccount() end
 
@@ -125,14 +120,13 @@ function AppHasLinkedSocialClubAccount() end
 -- @usage BOOL APP_HAS_SYNCED_DATA(char* appName);
 -- @param appName char*
 -- @return BOOL
-function AppHasSyncedData() end
+function AppHasSyncedData(appName) end
 
 -- @todo
 -- @module native
 -- @submodule app
 -- @see APP_SAVE_DATA
 -- @usage void APP_SAVE_DATA();
--- @param undefined
 -- @return void
 function AppSaveData() end
 
@@ -141,7 +135,6 @@ function AppSaveData() end
 -- @submodule app
 -- @see APP_GET_DELETED_FILE_STATUS
 -- @usage Any APP_GET_DELETED_FILE_STATUS();
--- @param undefined
 -- @return Any
 function AppGetDeletedFileStatus() end
 
@@ -152,4 +145,4 @@ function AppGetDeletedFileStatus() end
 -- @usage BOOL APP_DELETE_APP_DATA(char* appName);
 -- @param appName char*
 -- @return BOOL
-function AppDeleteAppData() end
+function AppDeleteAppData(appName) end

@@ -3,7 +3,6 @@
 -- @submodule datafile
 -- @see DATAFILE_CREATE
 -- @usage void DATAFILE_CREATE();
--- @param undefined
 -- @return void
 function DatafileCreate() end
 
@@ -12,7 +11,6 @@ function DatafileCreate() end
 -- @submodule datafile
 -- @see DATAFILE_DELETE
 -- @usage void DATAFILE_DELETE();
--- @param undefined
 -- @return void
 function DatafileDelete() end
 
@@ -21,7 +19,6 @@ function DatafileDelete() end
 -- @submodule datafile
 -- @see DATAFILE_GET_FILE_DICT
 -- @usage char* DATAFILE_GET_FILE_DICT();
--- @param undefined
 -- @return char*
 function DatafileGetFileDict() end
 
@@ -30,6 +27,5 @@ function DatafileGetFileDict() end
 -- @submodule datafile
 -- @see DATAFILE_IS_SAVE_PENDING
 -- @usage BOOL DATAFILE_IS_SAVE_PENDING();
--- @param undefined
 -- @return BOOL
 function DatafileIsSavePending() end

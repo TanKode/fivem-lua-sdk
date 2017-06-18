@@ -4,12 +4,24 @@
 -- @see ADD_ROPE
 -- @usage Object ADD_ROPE(float x, float y, float z, float rotX, float rotY, float rotZ, float length, int ropeType, float maxLength, float minLength, float p10, BOOL p11, BOOL p12, BOOL rigid, float p14, BOOL breakWhenShot, Any* unkPtr);
 -- @param x float
--- @param float
--- @param int
--- @param BOOL
--- @param Any*
+-- @param y float
+-- @param z float
+-- @param rotX float
+-- @param rotY float
+-- @param rotZ float
+-- @param length float
+-- @param ropeType int
+-- @param maxLength float
+-- @param minLength float
+-- @param p10 float
+-- @param p11 BOOL
+-- @param p12 BOOL
+-- @param rigid BOOL
+-- @param p14 float
+-- @param breakWhenShot BOOL
+-- @param unkPtr Any*
 -- @return Object
-function AddRope() end
+function AddRope(x, y, z, rotX, rotY, rotZ, length, ropeType, maxLength, minLength, p10, p11, p12, rigid, p14, breakWhenShot, unkPtr) end
 
 -- @todo
 -- @module native
@@ -18,7 +30,7 @@ function AddRope() end
 -- @usage void DELETE_ROPE(Object* rope);
 -- @param rope Object*
 -- @return void
-function DeleteRope() end
+function DeleteRope(rope) end
 
 -- @todo
 -- @module native
@@ -27,7 +39,7 @@ function DeleteRope() end
 -- @usage Any DELETE_CHILD_ROPE(Object rope);
 -- @param rope Object
 -- @return Any
-function DeleteChildRope() end
+function DeleteChildRope(rope) end
 
 -- Ptr is correct
 -- @module native
@@ -36,7 +48,7 @@ function DeleteChildRope() end
 -- @usage BOOL DOES_ROPE_EXIST(Object* rope);
 -- @param rope Object*
 -- @return BOOL
-function DoesRopeExist() end
+function DoesRopeExist(rope) end
 
 -- @todo
 -- @module native
@@ -44,9 +56,9 @@ function DoesRopeExist() end
 -- @see ROPE_DRAW_SHADOW_ENABLED
 -- @usage void ROPE_DRAW_SHADOW_ENABLED(Object* rope, BOOL toggle);
 -- @param rope Object*
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function RopeDrawShadowEnabled() end
+function RopeDrawShadowEnabled(rope, toggle) end
 
 -- Rope presets can be found in the gamefiles. One example is "ropeFamily3", it is NOT a hash but rather a string.
 -- @module native
@@ -54,9 +66,9 @@ function RopeDrawShadowEnabled() end
 -- @see LOAD_ROPE_DATA
 -- @usage Any LOAD_ROPE_DATA(Object rope, char* rope_preset);
 -- @param rope Object
--- @param char*
+-- @param rope_preset char*
 -- @return Any
-function LoadRopeData() end
+function LoadRopeData(rope, rope_preset) end
 
 -- @todo
 -- @module native
@@ -64,10 +76,12 @@ function LoadRopeData() end
 -- @see PIN_ROPE_VERTEX
 -- @usage void PIN_ROPE_VERTEX(Object rope, int vertex, float x, float y, float z);
 -- @param rope Object
--- @param int
--- @param float
+-- @param vertex int
+-- @param x float
+-- @param y float
+-- @param z float
 -- @return void
-function PinRopeVertex() end
+function PinRopeVertex(rope, vertex, x, y, z) end
 
 -- @todo
 -- @module native
@@ -75,9 +89,9 @@ function PinRopeVertex() end
 -- @see UNPIN_ROPE_VERTEX
 -- @usage Any UNPIN_ROPE_VERTEX(Object rope, int vertex);
 -- @param rope Object
--- @param int
+-- @param vertex int
 -- @return Any
-function UnpinRopeVertex() end
+function UnpinRopeVertex(rope, vertex) end
 
 -- @todo
 -- @module native
@@ -86,7 +100,7 @@ function UnpinRopeVertex() end
 -- @usage int GET_ROPE_VERTEX_COUNT(Object rope);
 -- @param rope Object
 -- @return int
-function GetRopeVertexCount() end
+function GetRopeVertexCount(rope) end
 
 -- Attaches entity 1 to entity 2.
 -- @module native
@@ -94,12 +108,21 @@ function GetRopeVertexCount() end
 -- @see ATTACH_ENTITIES_TO_ROPE
 -- @usage void ATTACH_ENTITIES_TO_ROPE(Object rope, Entity ent1, Entity ent2, float ent1_x, float ent1_y, float ent1_z, float ent2_x, float ent2_y, float ent2_z, float length, BOOL p10, BOOL p11, Any* p12, Any* p13);
 -- @param rope Object
--- @param Entity
--- @param float
--- @param BOOL
--- @param Any*
+-- @param ent1 Entity
+-- @param ent2 Entity
+-- @param ent1_x float
+-- @param ent1_y float
+-- @param ent1_z float
+-- @param ent2_x float
+-- @param ent2_y float
+-- @param ent2_z float
+-- @param length float
+-- @param p10 BOOL
+-- @param p11 BOOL
+-- @param p12 Any*
+-- @param p13 Any*
 -- @return void
-function AttachEntitiesToRope() end
+function AttachEntitiesToRope(rope, ent1, ent2, ent1_x, ent1_y, ent1_z, ent2_x, ent2_y, ent2_z, length, p10, p11, p12, p13) end
 
 -- The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.
 -- @module native
@@ -107,11 +130,13 @@ function AttachEntitiesToRope() end
 -- @see ATTACH_ROPE_TO_ENTITY
 -- @usage void ATTACH_ROPE_TO_ENTITY(Object rope, Entity entity, float x, float y, float z, BOOL p5);
 -- @param rope Object
--- @param Entity
--- @param float
--- @param BOOL
+-- @param entity Entity
+-- @param x float
+-- @param y float
+-- @param z float
+-- @param p5 BOOL
 -- @return void
-function AttachRopeToEntity() end
+function AttachRopeToEntity(rope, entity, x, y, z, p5) end
 
 -- @todo
 -- @module native
@@ -119,9 +144,9 @@ function AttachRopeToEntity() end
 -- @see DETACH_ROPE_FROM_ENTITY
 -- @usage void DETACH_ROPE_FROM_ENTITY(Object rope, Entity entity);
 -- @param rope Object
--- @param Entity
+-- @param entity Entity
 -- @return void
-function DetachRopeFromEntity() end
+function DetachRopeFromEntity(rope, entity) end
 
 -- @todo
 -- @module native
@@ -130,7 +155,7 @@ function DetachRopeFromEntity() end
 -- @usage void ROPE_SET_UPDATE_PINVERTS(Object rope);
 -- @param rope Object
 -- @return void
-function RopeSetUpdatePinverts() end
+function RopeSetUpdatePinverts(rope) end
 
 -- @todo
 -- @module native
@@ -139,7 +164,7 @@ function RopeSetUpdatePinverts() end
 -- @usage Any GET_ROPE_LAST_VERTEX_COORD(Object rope);
 -- @param rope Object
 -- @return Any
-function GetRopeLastVertexCoord() end
+function GetRopeLastVertexCoord(rope) end
 
 -- @todo
 -- @module native
@@ -147,9 +172,9 @@ function GetRopeLastVertexCoord() end
 -- @see GET_ROPE_VERTEX_COORD
 -- @usage Any GET_ROPE_VERTEX_COORD(Object rope, int vertex);
 -- @param rope Object
--- @param int
+-- @param vertex int
 -- @return Any
-function GetRopeVertexCoord() end
+function GetRopeVertexCoord(rope, vertex) end
 
 -- @todo
 -- @module native
@@ -158,7 +183,7 @@ function GetRopeVertexCoord() end
 -- @usage void START_ROPE_WINDING(Object rope);
 -- @param rope Object
 -- @return void
-function StartRopeWinding() end
+function StartRopeWinding(rope) end
 
 -- @todo
 -- @module native
@@ -167,7 +192,7 @@ function StartRopeWinding() end
 -- @usage void STOP_ROPE_WINDING(Object rope);
 -- @param rope Object
 -- @return void
-function StopRopeWinding() end
+function StopRopeWinding(rope) end
 
 -- @todo
 -- @module native
@@ -176,7 +201,7 @@ function StopRopeWinding() end
 -- @usage void START_ROPE_UNWINDING_FRONT(Object rope);
 -- @param rope Object
 -- @return void
-function StartRopeUnwindingFront() end
+function StartRopeUnwindingFront(rope) end
 
 -- @todo
 -- @module native
@@ -185,7 +210,7 @@ function StartRopeUnwindingFront() end
 -- @usage void STOP_ROPE_UNWINDING_FRONT(Object rope);
 -- @param rope Object
 -- @return void
-function StopRopeUnwindingFront() end
+function StopRopeUnwindingFront(rope) end
 
 -- @todo
 -- @module native
@@ -194,14 +219,13 @@ function StopRopeUnwindingFront() end
 -- @usage void ROPE_CONVERT_TO_SIMPLE(Object rope);
 -- @param rope Object
 -- @return void
-function RopeConvertToSimple() end
+function RopeConvertToSimple(rope) end
 
 -- Loads rope textures for all ropes in the current scene.
 -- @module native
 -- @submodule rope
 -- @see ROPE_LOAD_TEXTURES
 -- @usage Any ROPE_LOAD_TEXTURES();
--- @param undefined
 -- @return Any
 function RopeLoadTextures() end
 
@@ -210,7 +234,6 @@ function RopeLoadTextures() end
 -- @submodule rope
 -- @see ROPE_ARE_TEXTURES_LOADED
 -- @usage BOOL ROPE_ARE_TEXTURES_LOADED();
--- @param undefined
 -- @return BOOL
 function RopeAreTexturesLoaded() end
 
@@ -219,7 +242,6 @@ function RopeAreTexturesLoaded() end
 -- @submodule rope
 -- @see ROPE_UNLOAD_TEXTURES
 -- @usage Any ROPE_UNLOAD_TEXTURES();
--- @param undefined
 -- @return Any
 function RopeUnloadTextures() end
 
@@ -229,9 +251,9 @@ function RopeUnloadTextures() end
 -- @see ROPE_FORCE_LENGTH
 -- @usage Any ROPE_FORCE_LENGTH(Object rope, float length);
 -- @param rope Object
--- @param float
+-- @param length float
 -- @return Any
-function RopeForceLength() end
+function RopeForceLength(rope, length) end
 
 -- Reset a rope to a certain length.
 -- @module native
@@ -239,9 +261,9 @@ function RopeForceLength() end
 -- @see ROPE_RESET_LENGTH
 -- @usage Any ROPE_RESET_LENGTH(Object rope, BOOL length);
 -- @param rope Object
--- @param BOOL
+-- @param length BOOL
 -- @return Any
-function RopeResetLength() end
+function RopeResetLength(rope, length) end
 
 -- @todo
 -- @module native
@@ -249,9 +271,14 @@ function RopeResetLength() end
 -- @see APPLY_IMPULSE_TO_CLOTH
 -- @usage void APPLY_IMPULSE_TO_CLOTH(float posX, float posY, float posZ, float vecX, float vecY, float vecZ, float impulse);
 -- @param posX float
--- @param float
+-- @param posY float
+-- @param posZ float
+-- @param vecX float
+-- @param vecY float
+-- @param vecZ float
+-- @param impulse float
 -- @return void
-function ApplyImpulseToCloth() end
+function ApplyImpulseToCloth(posX, posY, posZ, vecX, vecY, vecZ, impulse) end
 
 -- @todo
 -- @module native
@@ -259,10 +286,10 @@ function ApplyImpulseToCloth() end
 -- @see SET_DAMPING
 -- @usage void SET_DAMPING(Object rope, int vertex, float value);
 -- @param rope Object
--- @param int
--- @param float
+-- @param vertex int
+-- @param value float
 -- @return void
-function SetDamping() end
+function SetDamping(rope, vertex, value) end
 
 -- seems to be frequently used with the NETWORK::NET_TO_x natives, particularly with vehicles. It is often the only ROPE:: native in a script.
 -- @module native
@@ -271,7 +298,7 @@ function SetDamping() end
 -- @usage void ACTIVATE_PHYSICS(Entity entity);
 -- @param entity Entity
 -- @return void
-function ActivatePhysics() end
+function ActivatePhysics(entity) end
 
 -- @todo
 -- @module native
@@ -279,9 +306,11 @@ function ActivatePhysics() end
 -- @see SET_CGOFFSET
 -- @usage void SET_CGOFFSET(Object rope, float x, float y, float z);
 -- @param rope Object
--- @param float
+-- @param x float
+-- @param y float
+-- @param z float
 -- @return void
-function SetCgoffset() end
+function SetCgoffset(rope, x, y, z) end
 
 -- @todo
 -- @module native
@@ -290,7 +319,7 @@ function SetCgoffset() end
 -- @usage Vector3 GET_CGOFFSET(Object rope);
 -- @param rope Object
 -- @return Vector3
-function GetCgoffset() end
+function GetCgoffset(rope) end
 
 -- @todo
 -- @module native
@@ -299,7 +328,7 @@ function GetCgoffset() end
 -- @usage void SET_CG_AT_BOUNDCENTER(Object rope);
 -- @param rope Object
 -- @return void
-function SetCgAtBoundcenter() end
+function SetCgAtBoundcenter(rope) end
 
 -- @todo
 -- @module native
@@ -307,11 +336,18 @@ function SetCgAtBoundcenter() end
 -- @see BREAK_ENTITY_GLASS
 -- @usage void BREAK_ENTITY_GLASS(Any p0, float p1, float p2, float p3, float p4, float p5, float p6, float p7, float p8, Any p9, BOOL p10);
 -- @param p0 Any
--- @param float
--- @param Any
--- @param BOOL
+-- @param p1 float
+-- @param p2 float
+-- @param p3 float
+-- @param p4 float
+-- @param p5 float
+-- @param p6 float
+-- @param p7 float
+-- @param p8 float
+-- @param p9 Any
+-- @param p10 BOOL
 -- @return void
-function BreakEntityGlass() end
+function BreakEntityGlass(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
 -- @todo
 -- @module native
@@ -319,9 +355,9 @@ function BreakEntityGlass() end
 -- @see SET_DISABLE_BREAKING
 -- @usage Any SET_DISABLE_BREAKING(Object rope, BOOL enabled);
 -- @param rope Object
--- @param BOOL
+-- @param enabled BOOL
 -- @return Any
-function SetDisableBreaking() end
+function SetDisableBreaking(rope, enabled) end
 
 -- sometimes used used with NET_TO_OBJ hash collision last 2 words
 -- @module native
@@ -329,6 +365,6 @@ function SetDisableBreaking() end
 -- @see SET_DISABLE_FRAG_DAMAGE
 -- @usage void SET_DISABLE_FRAG_DAMAGE(Object object, BOOL toggle);
 -- @param object Object
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function SetDisableFragDamage() end
+function SetDisableFragDamage(object, toggle) end

@@ -5,13 +5,12 @@
 -- @usage BOOL IS_DLC_PRESENT(Hash dlcHash);
 -- @param dlcHash Hash
 -- @return BOOL
-function IsDlcPresent() end
+function IsDlcPresent(dlcHash) end
 
 -- @todo
 -- @module native
 -- @submodule dlc2
 -- @see GET_IS_LOADING_SCREEN_ACTIVE
 -- @usage BOOL GET_IS_LOADING_SCREEN_ACTIVE();
--- @param undefined
 -- @return BOOL
 function GetIsLoadingScreenActive() end

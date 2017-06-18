@@ -5,7 +5,7 @@
 -- @usage int GET_INTERIOR_GROUP_ID(int interiorID);
 -- @param interiorID int
 -- @return int
-function GetInteriorGroupId() end
+function GetInteriorGroupId(interiorID) end
 
 -- @todo
 -- @module native
@@ -13,16 +13,17 @@ function GetInteriorGroupId() end
 -- @see GET_OFFSET_FROM_INTERIOR_IN_WORLD_COORDS
 -- @usage Vector3 GET_OFFSET_FROM_INTERIOR_IN_WORLD_COORDS(int interiorID, float x, float y, float z);
 -- @param interiorID int
--- @param float
+-- @param x float
+-- @param y float
+-- @param z float
 -- @return Vector3
-function GetOffsetFromInteriorInWorldCoords() end
+function GetOffsetFromInteriorInWorldCoords(interiorID, x, y, z) end
 
 -- @todo
 -- @module native
 -- @submodule interior
 -- @see IS_INTERIOR_SCENE
 -- @usage BOOL IS_INTERIOR_SCENE();
--- @param undefined
 -- @return BOOL
 function IsInteriorScene() end
 
@@ -33,7 +34,7 @@ function IsInteriorScene() end
 -- @usage BOOL IS_VALID_INTERIOR(int interiorID);
 -- @param interiorID int
 -- @return BOOL
-function IsValidInterior() end
+function IsValidInterior(interiorID) end
 
 -- @todo
 -- @module native
@@ -42,7 +43,7 @@ function IsValidInterior() end
 -- @usage void CLEAR_ROOM_FOR_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return void
-function ClearRoomForEntity() end
+function ClearRoomForEntity(entity) end
 
 -- Does anyone know what this does? I know online modding isn't generally supported especially by the owner of this db, but I first thought this could be used to force ourselves into someones apartment, but I see now that isn't possible.
 -- @module native
@@ -50,10 +51,10 @@ function ClearRoomForEntity() end
 -- @see FORCE_ROOM_FOR_ENTITY
 -- @usage void FORCE_ROOM_FOR_ENTITY(Entity entity, int interiorID, Hash roomHashKey);
 -- @param entity Entity
--- @param int
--- @param Hash
+-- @param interiorID int
+-- @param roomHashKey Hash
 -- @return void
-function ForceRoomForEntity() end
+function ForceRoomForEntity(entity, interiorID, roomHashKey) end
 
 -- Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.
 -- @module native
@@ -62,7 +63,7 @@ function ForceRoomForEntity() end
 -- @usage Hash GET_ROOM_KEY_FROM_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return Hash
-function GetRoomKeyFromEntity() end
+function GetRoomKeyFromEntity(entity) end
 
 -- Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY
 -- @module native
@@ -71,7 +72,7 @@ function GetRoomKeyFromEntity() end
 -- @usage Hash GET_KEY_FOR_ENTITY_IN_ROOM(Entity entity);
 -- @param entity Entity
 -- @return Hash
-function GetKeyForEntityInRoom() end
+function GetKeyForEntityInRoom(entity) end
 
 -- Returns the handle of the interior that the entity is in. Returns 0 if outside.
 -- @module native
@@ -80,7 +81,7 @@ function GetKeyForEntityInRoom() end
 -- @usage int GET_INTERIOR_FROM_ENTITY(Entity entity);
 -- @param entity Entity
 -- @return int
-function GetInteriorFromEntity() end
+function GetInteriorFromEntity(entity) end
 
 -- Returns interior ID from specified coordinates. If coordinates are outside, then it returns 0.  Example for VB.NET Dim interiorID As Integer = Native.Function.Call(Of Integer)(Hash.GET_INTERIOR_AT_COORDS, X, Y, Z)
 -- @module native
@@ -88,9 +89,10 @@ function GetInteriorFromEntity() end
 -- @see GET_INTERIOR_AT_COORDS
 -- @usage int GET_INTERIOR_AT_COORDS(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return int
-function GetInteriorAtCoords() end
+function GetInteriorAtCoords(x, y, z) end
 
 -- @todo
 -- @module native
@@ -98,9 +100,9 @@ function GetInteriorAtCoords() end
 -- @see ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME
 -- @usage void ADD_PICKUP_TO_INTERIOR_ROOM_BY_NAME(Pickup pickup, char* roomName);
 -- @param pickup Pickup
--- @param char*
+-- @param roomName char*
 -- @return void
-function AddPickupToInteriorRoomByName() end
+function AddPickupToInteriorRoomByName(pickup, roomName) end
 
 -- Does something similar to INTERIOR::DISABLE_INTERIOR.  You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside.
 -- @module native
@@ -109,7 +111,7 @@ function AddPickupToInteriorRoomByName() end
 -- @usage void UNPIN_INTERIOR(int interiorID);
 -- @param interiorID int
 -- @return void
-function UnpinInterior() end
+function UnpinInterior(interiorID) end
 
 -- @todo
 -- @module native
@@ -118,7 +120,7 @@ function UnpinInterior() end
 -- @usage BOOL IS_INTERIOR_READY(int interiorID);
 -- @param interiorID int
 -- @return BOOL
-function IsInteriorReady() end
+function IsInteriorReady(interiorID) end
 
 -- Returns the interior ID representing the requested interior at that location (if found?). The supplied interior string is not the same as the one used to load the interior.  Use: INTERIOR::UNPIN_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(x, y, z, interior))  Interior types include: "V_Michael", "V_Franklins", "V_Franklinshouse", etc.. you can find them in the scripts.  Not a very useful native as you could just use GET_INTERIOR_AT_COORDS instead and get the same result, without even having to specify the interior type.
 -- @module native
@@ -126,10 +128,11 @@ function IsInteriorReady() end
 -- @see GET_INTERIOR_AT_COORDS_WITH_TYPE
 -- @usage int GET_INTERIOR_AT_COORDS_WITH_TYPE(float x, float y, float z, char* interiorType);
 -- @param x float
--- @param float
--- @param char*
+-- @param y float
+-- @param z float
+-- @param interiorType char*
 -- @return int
-function GetInteriorAtCoordsWithType() end
+function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 
 -- @todo
 -- @module native
@@ -137,9 +140,10 @@ function GetInteriorAtCoordsWithType() end
 -- @see GET_INTERIOR_FROM_COLLISION
 -- @usage int GET_INTERIOR_FROM_COLLISION(float x, float y, float z);
 -- @param x float
--- @param float
+-- @param y float
+-- @param z float
 -- @return int
-function GetInteriorFromCollision() end
+function GetInteriorFromCollision(x, y, z) end
 
 -- @todo
 -- @module native
@@ -148,7 +152,7 @@ function GetInteriorFromCollision() end
 -- @usage void REFRESH_INTERIOR(int interiorID);
 -- @param interiorID int
 -- @return void
-function RefreshInterior() end
+function RefreshInterior(interiorID) end
 
 -- Example:  This removes the interior from the strip club and when trying to walk inside the player just falls:  INTERIOR::DISABLE_INTERIOR(118018, true);
 -- @module native
@@ -156,9 +160,9 @@ function RefreshInterior() end
 -- @see DISABLE_INTERIOR
 -- @usage void DISABLE_INTERIOR(int interiorID, BOOL toggle);
 -- @param interiorID int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function DisableInterior() end
+function DisableInterior(interiorID, toggle) end
 
 -- @todo
 -- @module native
@@ -167,7 +171,7 @@ function DisableInterior() end
 -- @usage BOOL IS_INTERIOR_DISABLED(int interiorID);
 -- @param interiorID int
 -- @return BOOL
-function IsInteriorDisabled() end
+function IsInteriorDisabled(interiorID) end
 
 -- Does something similar to INTERIOR::DISABLE_INTERIOR
 -- @module native
@@ -175,9 +179,9 @@ function IsInteriorDisabled() end
 -- @see CAP_INTERIOR
 -- @usage void CAP_INTERIOR(int interiorID, BOOL toggle);
 -- @param interiorID int
--- @param BOOL
+-- @param toggle BOOL
 -- @return void
-function CapInterior() end
+function CapInterior(interiorID, toggle) end
 
 -- @todo
 -- @module native
@@ -186,4 +190,4 @@ function CapInterior() end
 -- @usage BOOL IS_INTERIOR_CAPPED(int interiorID);
 -- @param interiorID int
 -- @return BOOL
-function IsInteriorCapped() end
+function IsInteriorCapped(interiorID) end
