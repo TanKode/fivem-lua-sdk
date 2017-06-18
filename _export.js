@@ -27,7 +27,7 @@ $('main').each(function() {
 			method.see = splittedUsage.join(' ').trim();
 			method.params = {};
 			$.each(method.see.match("\\((.*)\\)")[1].split(','), function() {
-				var param = this.split(' ')
+				var param = this.trim().split(' ');
 				method.params[param[1]] = param[0];
 			});
 
@@ -41,9 +41,8 @@ $('main').each(function() {
 			$.each(method.params, function(name, type) {
 				doc += "-- @param "+name+" "+type+"\n";
 			});
-			doc += ""
-				+ "-- @return "+method.return+"\n"
-				+ "function "+method.function+"() end"+"\n\n";
+			doc += "-- @return "+method.return+"\n";
+			doc += "function "+method.function+"("+Object.keys(method.params).join(', ')+") end"+"\n\n";
 		}
 	});
 	console.log(doc.trim());
