@@ -553,10 +553,10 @@ function SetTextJustification(justifyType) end
 -- @submodule ui
 -- @see SET_TEXT_WRAP
 -- @usage void SET_TEXT_WRAP(float start, float end);
--- @param start float
--- @param end float
+-- @param startF(start) float
+-- @param endF(end) float
 -- @return void
-function SetTextWrap(start, end) end
+function SetTextWrap(startF, endF) end
 
 -- from script am_mp_yacht.c int? ui::set_text_leading(2);
 -- @module native
