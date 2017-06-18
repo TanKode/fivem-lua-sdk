@@ -882,9 +882,9 @@ function ClearSequenceTask(taskSequence) end
 -- @see SET_SEQUENCE_TO_REPEAT
 -- @usage void SET_SEQUENCE_TO_REPEAT(Object taskSequence, BOOL repeat);
 -- @param taskSequence Object
--- @param repeat BOOL
+-- @param shouldRepeat(repeat) BOOL
 -- @return void
-function SetSequenceToRepeat(taskSequence, repeat) end
+function SetSequenceToRepeat(taskSequence, shouldRepeat) end
 
 -- returned values: 0 to 7 = task that's currently in progress, 0 meaning the first one.
 -- @module native
