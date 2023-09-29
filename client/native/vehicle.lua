@@ -203,7 +203,7 @@ function GetVehicleNumberOfPassengers(vehicle) end
 -- @return int
 function GetVehicleMaxNumberOfPassengers(vehicle) end
 
--- Returns max number of passengers (including the driver) for the specified vehicle model.  For a full list, see here: pastebin.com/MdETCS1j
+-- Returns max number of passengers (including the driver) for the specified vehicle model.  For a full list, see here: (This page is no longer available. It has either expired, been removed by its creator, or removed by one of the Pastebin staff.)
 -- @module native
 -- @submodule vehicle
 -- @see GET_VEHICLE_MODEL_NUMBER_OF_SEATS
